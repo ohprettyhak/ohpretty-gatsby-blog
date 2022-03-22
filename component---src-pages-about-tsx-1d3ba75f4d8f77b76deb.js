@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkohpretty_gatsby_blog=self.webpackChunkohpretty_gatsby_blog||[]).push([[49],{564:function(e,t,l){l.r(t);var u=l(7294),n=l(8631),a=l(3240);t.default=function(){return(0,n.I0)()({type:"CHANGETITLE",value:"About"}),u.createElement(a.H,null,u.createElement("p",null,"으앙"))}}}]);
