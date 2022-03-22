@@ -54,7 +54,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public -b deploy"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public -b gh-pages"
   },
   "homepage": "https://ohprettyhak.github.io/ohpretty-gatsby-blog/"
 }

@@ -4,16 +4,16 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 import metaConfig from '../../../gatsby-meta-config';
-import GlobalStyle from '../../styles/global-style';
+import { GlobalStyle, ModeStyle } from '../../styles';
 
 const TopNavigation = styled.nav`
   position: fixed;
   z-index: 9;
   width: 100%;
   height: 56px;
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: var(--primary);
   background-position: center center;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.line};
+  border-bottom: 1px solid var(--line);
   transition: all 0.2s ease;
 `;
 
@@ -55,7 +55,7 @@ const TopLinkList = styled.li`
     height: 100%;
     padding: 0;
     font-weight: 500;
-    color: ${({ theme }) => theme.colors.font};
+    color: var(--text);
     text-decoration: none;
     user-select: none;
     vertical-align: middle;
@@ -66,14 +66,21 @@ const TopLinkList = styled.li`
 const Logo = styled(Link)`
   display: flex;
   align-items: center;
+  color: var(--text);
   text-decoration: none;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+
+  :hover {
+    opacity: 0.7;
+  }
 `;
 
 const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   opacity: 1;
-  color: ${({ theme }) => theme.colors.font};
+  color: var(--text);
   transition: opacity 0.2s ease;
   cursor: pointer;
 
@@ -87,14 +94,14 @@ const Menu = styled.div`
   border-bottom: none;
   align-items: center;
   cursor: pointer;
-  padding: 20px 0;
+  padding: 16px 0;
 
   ion-icon {
     width: 24px;
     height: 24px;
     margin: 0;
     padding: 0;
-    color: ${({ theme }) => theme.colors.font};
+    color: var(--text);
     vertical-align: middle;
   }
 
@@ -110,7 +117,7 @@ const MobileMenu = styled.div`
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(245, 245, 245, 0.98);
+  background: var(--mobile-menu);
   z-index: 9;
   animation: fadein-dropdown 0.3s both 0.3s;
   -moz-animation: fadein-dropdown 0.3s both 0.3s;
@@ -148,7 +155,7 @@ const MobileMenuList = styled.li`
 
   a {
     width: 100%;
-    color: ${({ theme }) => theme.colors.font};
+    color: var(--text);
     text-decoration: none;
   }
 `;
@@ -165,6 +172,7 @@ const Navigation: React.FC = () => {
   return (
     <React.Fragment>
       <GlobalStyle />
+      <ModeStyle />
       <TopNavigation>
         <TopNavigationContainer>
           {pathname === metaConfig.sitePathPrefix ? (

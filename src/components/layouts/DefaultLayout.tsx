@@ -1,9 +1,8 @@
 import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 
 import { Head, Navigation } from '../common';
-import useTheme from '../../lib/hooks/useTheme';
-import { darkTheme, lightTheme } from '../../styles/theme';
+import { useDarkMode } from '../../lib/hooks/useDarkMode';
 
 const Main = styled.main`
   width: 100%;
@@ -16,7 +15,7 @@ const Main = styled.main`
 const Container = styled.div`
   height: 100%;
   padding-top: 56px;
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: var(--primary);
   transition: background-color 0.2s ease;
 `;
 
@@ -24,24 +23,18 @@ type SitePageContext = {
   children: React.ReactNode;
 };
 
-const DefaultLayout: React.FC<SitePageContext> = React.memo(({ children }) => {
-  const [themeMode, toggleTheme] = useTheme();
-  const theme = themeMode === 'light' ? lightTheme : darkTheme;
-
+const DefaultLayout: React.FC<SitePageContext> = ({ children }) => {
+  const { theme, toggleTheme } = useDarkMode();
   return (
-    <ThemeProvider theme={theme}>
-      <React.Fragment>
-        <Head />
-        <Navigation />
-        <Container>
-          <Main>
-            {children}
-            <button onClick={toggleTheme}>adsf</button>
-          </Main>
-        </Container>
-      </React.Fragment>
-    </ThemeProvider>
+    <React.Fragment>
+      <Head />
+      <Navigation />
+      <Container>
+        <Main>{children}</Main>
+        <button onClick={toggleTheme}>asdf</button>
+      </Container>
+    </React.Fragment>
   );
-});
+};
 
 export default DefaultLayout;

@@ -16,7 +16,6 @@ const GlobalStyle = createGlobalStyle`
 
   html, body, #___gatsby, #gatsby-focus-wrapper {
     height: 100%;
-    transition: background-color 0.2s ease;
   }
 
   *::selection {

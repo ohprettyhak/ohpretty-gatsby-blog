@@ -8,8 +8,8 @@ const Cover = styled.section`
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   padding: 100px 0;
-  background-color: ${({ theme }) => theme.colors.cover};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.line};
+  background-color: var(--cover);
+  border-bottom: 1px solid var(--line);
   transition: all 0.2s ease;
 `;
 
@@ -25,7 +25,7 @@ const CoverContents = styled.div`
 `;
 
 const CoverContentTitle = styled.h2`
-  color: ${({ theme }) => theme.colors.font};
+  color: var(--text);
   font-weight: 700;
   font-size: 2.4rem;
   line-height: 1.2;
@@ -34,7 +34,7 @@ const CoverContentTitle = styled.h2`
 const CoverContentSub = styled.p`
   padding-top: 16px;
   font-size: 1rem;
-  color: ${({ theme }) => theme.colors.fontSecondary};
+  color: var(--text-secondary);
   line-height: 1.5;
 `;
 
@@ -47,7 +47,7 @@ const CoverContentsUser = styled.p`
 `;
 
 const CoverContentLink = styled.a`
-  color: ${({ theme }) => theme.colors.fontSecondary};
+  color: var(--text-secondary);
   text-decoration: none;
   opacity: 1;
   transition: opacity 0.2s ease;
