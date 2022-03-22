@@ -29,6 +29,14 @@ const CoverContentTitle = styled.h2`
   font-weight: 700;
   font-size: 2.4rem;
   line-height: 1.2;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 2.2rem;
+  }
+
+  @media only screen and (max-width: 425px) {
+    font-size: 1.8rem;
+  }
 `;
 
 const CoverContentSub = styled.p`
@@ -36,6 +44,14 @@ const CoverContentSub = styled.p`
   font-size: 1rem;
   color: var(--text-secondary);
   line-height: 1.5;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 0.95rem;
+  }
+
+  @media only screen and (max-width: 425px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const CoverContentsUser = styled.p`

@@ -34,7 +34,7 @@ const TopLinkWrap = styled.ul`
   padding: 0;
   list-style: none;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 768px) {
     display: none;
   }
 `;
@@ -105,7 +105,7 @@ const Menu = styled.div`
     vertical-align: middle;
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 768px) {
     display: flex;
   }
 `;
