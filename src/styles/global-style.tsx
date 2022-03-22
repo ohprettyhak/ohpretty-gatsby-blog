@@ -19,17 +19,17 @@ const GlobalStyle = createGlobalStyle`
   }
 
   *::selection {
-    background: #e9ecef;
+    background: var(--selection);
     text-shadow: none;
   }
 
   *::-moz-selection {
-    background: #e9ecef;
+    background: var(--selection);
     text-shadow: none;
   }
 
   *::-webkit-selection {
-    background: #e9ecef;
+    background: var(--selection);
     text-shadow: none;
   }
 

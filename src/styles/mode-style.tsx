@@ -15,6 +15,7 @@ const ModeStyle = createGlobalStyle`
       --text: #343a40;
       --text-secondary: #868e96;
       --cover: #fcfcfc;
+      --selection: #e9ecef;
     }
 
     &.dark {
@@ -24,6 +25,7 @@ const ModeStyle = createGlobalStyle`
       --text: white;
       --text-secondary: #bbbbbb;
       --cover: #221e1a;
+      --selection: rgba(255, 255, 255, 0.15);
     }
 }
 `;
