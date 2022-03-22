@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-post-list-template-tsx",
+    "path": "/post/",
+    "result": {"pageContext":{"limit":6,"skip":0,"max":1,"current":1}},
+    "staticQueryHashes": []}

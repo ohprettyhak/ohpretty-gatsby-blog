@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://ohprettyhak.github.io/ohpretty-gatsby-blog/sitemap/sitemap-index.xml
+Host: https://ohprettyhak.github.io
