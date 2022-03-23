@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Head, Navigation } from '../common';
-import { useDarkMode } from '../../lib/hooks/useDarkMode';
 
 const Main = styled.main`
   width: 100%;
@@ -24,14 +23,12 @@ type SitePageContext = {
 };
 
 const DefaultLayout: React.FC<SitePageContext> = ({ children }) => {
-  const { theme, toggleTheme } = useDarkMode();
   return (
     <React.Fragment>
       <Head />
       <Navigation />
       <Container>
         <Main>{children}</Main>
-        <button onClick={toggleTheme}>asdf</button>
       </Container>
     </React.Fragment>
   );

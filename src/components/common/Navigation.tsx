@@ -2,9 +2,11 @@ import React from 'react';
 import { useLocation } from '@reach/router';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import Switch from 'react-switch';
 
 import metaConfig from '../../../gatsby-meta-config';
 import { GlobalStyle, ModeStyle } from '../../styles';
+import { useDarkMode } from '../../lib/hooks/useDarkMode';
 
 const TopNavigation = styled.nav`
   position: fixed;
@@ -61,6 +63,12 @@ const TopLinkList = styled.li`
     vertical-align: middle;
     background-color: transparent;
   }
+`;
+
+const ThemeToggleContainer = styled.div`
+  display: flex;
+  margin: 0 0 0 36px;
+  align-items: center;
 `;
 
 const Logo = styled(Link)`
@@ -162,6 +170,7 @@ const MobileMenuList = styled.li`
 
 const Navigation: React.FC = () => {
   const { pathname } = useLocation();
+  const { theme, toggleTheme } = useDarkMode();
 
   const setMobileMenu = (action: boolean) => {
     const view = document.getElementById('mobile-menu');
@@ -198,6 +207,52 @@ const Navigation: React.FC = () => {
                 Github
               </a>
             </TopLinkList>
+            <ThemeToggleContainer>
+              {theme && (
+                <Switch
+                  checked={theme === 'light' ? false : true}
+                  onChange={toggleTheme}
+                  onColor="#ffffff"
+                  offColor="#25201d"
+                  onHandleColor="#25201d"
+                  offHandleColor="#ffffff"
+                  handleDiameter={20}
+                  uncheckedIcon={false}
+                  uncheckedHandleIcon={
+                    <div
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        height: '100%',
+                        fontSize: 12,
+                      }}
+                    >
+                      🌤️
+                    </div>
+                  }
+                  checkedIcon={false}
+                  checkedHandleIcon={
+                    <div
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        height: '100%',
+                        fontSize: 12,
+                      }}
+                    >
+                      🌙
+                    </div>
+                  }
+                  height={22}
+                  width={46}
+                  boxShadow="0px 1px 5px rgba(37, 32, 29, 0.6)"
+                  activeBoxShadow="0px 0px 1px 5px rgba(37, 32, 29, 0.2)"
+                />
+              )}
+              {!theme && <div style={{ width: '46px' }} />}
+            </ThemeToggleContainer>
           </TopLinkWrap>
           <Menu onClick={() => setMobileMenu(true)}>
             <ion-icon name="menu-outline" />
