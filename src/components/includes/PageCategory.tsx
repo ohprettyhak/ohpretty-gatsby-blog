@@ -12,14 +12,14 @@ const CategoryList = styled.ul`
 const CategoryItem = styled.li`
   display: inline-block;
   margin: 0 12px 14px 0;
-  color: #868e96;
   font-size: 0.8rem;
   font-weight: 500;
   text-transform: uppercase;
   cursor: pointer;
   border-radius: 96px;
-  border: solid 1px rgba(143, 144, 156, 0.5);
+  border: solid 1px var(--category-border);
   user-select: none;
+  background-color: var(--category-background);
   -ms-user-select: none;
   -moz-user-select: -moz-none;
   -webkit-user-select: none;
@@ -29,13 +29,15 @@ const CategoryItem = styled.li`
 const CategoryItemPressed = styled.p`
   display: inline-block;
   padding: 4px 12px;
+  color: var(--text);
   cursor: default;
-  opacity: 0.9;
+  opacity: 0.8;
 `;
 
 const CategoryItemLink = styled(Link)`
   display: inline-block;
   padding: 4px 12px;
+  color: var(--text-secondary);
   text-decoration: none;
   opacity: 0.5;
   transition: 0.3s ease opacity;
@@ -47,15 +49,15 @@ const CategoryItemLink = styled(Link)`
 
 type CategoryDataProps = {
   categories: Array<any>;
-  cur: number;
+  categoryQuery: string;
   totalPosts: number;
 };
 
-const PageCategory: React.FC<CategoryDataProps> = React.memo(({ categories, cur, totalPosts }) => {
+const PageCategory: React.FC<CategoryDataProps> = React.memo(({ categories, categoryQuery, totalPosts }) => {
   return (
     <CategoryList>
       <CategoryItem key="total">
-        {cur === null ? (
+        {categoryQuery === null ? (
           <CategoryItemPressed>All ({totalPosts})</CategoryItemPressed>
         ) : (
           <CategoryItemLink to={`/post/`}>All ({totalPosts})</CategoryItemLink>
@@ -63,7 +65,7 @@ const PageCategory: React.FC<CategoryDataProps> = React.memo(({ categories, cur,
       </CategoryItem>
       {categories.map(({ fieldValue, totalCount }) => (
         <CategoryItem key={fieldValue}>
-          {cur === fieldValue ? (
+          {categoryQuery === fieldValue ? (
             <CategoryItemPressed>
               {fieldValue} ({totalCount})
             </CategoryItemPressed>

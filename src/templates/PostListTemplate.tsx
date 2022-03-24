@@ -171,7 +171,7 @@ const PostListTemplate: React.FC<PageProps<GetPostListQuery, SitePageContext>> =
 
   return (
     <DefaultLayout>
-      <PageCategory categories={categories} cur={cur} totalPosts={totalPosts} />
+      <PageCategory categories={categories} categoryQuery={categoryQuery} totalPosts={totalPosts} />
       <PostsList>
         {postsList.map(({ node }) => (
           <PostsItem key={node.id} data-sal="slide-up" data-sal-duration="300" data-sal-easing="ease">
