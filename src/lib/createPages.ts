@@ -102,7 +102,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
           skip: i * postsPerPage,
           cur: i + 1,
           max: categoryMaxPageSize,
-          totalPosts: category.totalCount,
+          totalPosts: posts.length,
           categoryQuery: category.fieldValue,
           categories,
         },
