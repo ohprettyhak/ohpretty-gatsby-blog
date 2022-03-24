@@ -6,6 +6,7 @@ import styled from 'styled-components';
 
 import { DefaultLayout } from '../components/layouts';
 import { GetPostListQuery } from '../lib/graphql-types';
+import { PageCategory } from '../components/includes';
 
 const PostsList = styled.section`
   display: grid;
@@ -159,7 +160,7 @@ type NodeArray = {
 };
 
 const PostListTemplate: React.FC<PageProps<GetPostListQuery, SitePageContext>> = React.memo(({ data, pageContext }) => {
-  const { cur, max, categoryQuery, categories } = pageContext;
+  const { cur, max, totalPosts, categoryQuery, categories } = pageContext;
 
   const dispatch = useDispatch();
   dispatch({ type: 'CHANGETITLE', value: categoryQuery ? categoryQuery : 'Post' });
@@ -170,6 +171,7 @@ const PostListTemplate: React.FC<PageProps<GetPostListQuery, SitePageContext>> =
 
   return (
     <DefaultLayout>
+      <PageCategory categories={categories} cur={cur} totalPosts={totalPosts} />
       <PostsList>
         {postsList.map(({ node }) => (
           <PostsItem
