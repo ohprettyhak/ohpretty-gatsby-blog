@@ -15,7 +15,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html, body, #___gatsby, #gatsby-focus-wrapper {
-    height: 100%;
+    min-height: 100vh;
+    background-color: var(--primary);
   }
 
   *::selection {
