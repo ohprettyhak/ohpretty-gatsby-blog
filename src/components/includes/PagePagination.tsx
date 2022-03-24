@@ -33,14 +33,27 @@ const PaginationItem = styled(Link)`
 type PageDataProps = {
   cur: number;
   max: number;
-  path: string;
+  categoryQuery: string;
 };
 
-const PagePagination: React.FC<PageDataProps> = ({ cur, max, path }) => {
+const PagePagination: React.FC<PageDataProps> = ({ cur, max, categoryQuery }) => {
+  const path = categoryQuery ? categoryQuery.toLowerCase() : null;
   const rst = [];
+
   if (cur !== 1)
     rst.push(
-      <PaginationItem key={`back`} to={path === null ? `/post/${cur - 1}/` : `/category/${path}/${cur - 1}/`}>
+      <PaginationItem
+        key={`back`}
+        to={
+          path === null
+            ? cur - 1 == 1
+              ? `/post/`
+              : `/post/${cur - 1}/`
+            : cur - 1 == 1
+            ? `/category/${path}/`
+            : `/category/${path}/${cur - 1}/`
+        }
+      >
         &larr;&nbsp;&nbsp;Newer Posts
       </PaginationItem>,
     );

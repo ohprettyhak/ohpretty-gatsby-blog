@@ -174,13 +174,7 @@ const PostListTemplate: React.FC<PageProps<GetPostListQuery, SitePageContext>> =
       <PageCategory categories={categories} cur={cur} totalPosts={totalPosts} />
       <PostsList>
         {postsList.map(({ node }) => (
-          <PostsItem
-            key={node.id}
-            data-sal="slide-up"
-            data-sal-delay="1100"
-            data-sal-duration="300"
-            data-sal-easing="ease"
-          >
+          <PostsItem key={node.id} data-sal="slide-up" data-sal-duration="300" data-sal-easing="ease">
             <PostsLink to={node.fields.slug}>
               <PostsImageWapper>
                 <PostsImage image={getImage(node.frontmatter.cover)} alt={node.frontmatter.title} />
@@ -215,7 +209,7 @@ const PostListTemplate: React.FC<PageProps<GetPostListQuery, SitePageContext>> =
           </PostsItem>
         ))}
       </PostsList>
-      <PagePagination cur={cur} max={max} path={categoryQuery} />
+      <PagePagination cur={cur} max={max} categoryQuery={categoryQuery} />
     </DefaultLayout>
   );
 });
