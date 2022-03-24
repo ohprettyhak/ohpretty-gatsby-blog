@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkohpretty_gatsby_blog=self.webpackChunkohpretty_gatsby_blog||[]).push([[703],{8958:function(e,t,l){l.r(t);var n=l(7294),u=l(8631),a=l(5007),r=n.memo((function(e){return(0,u.I0)()({type:"CHANGETITLE",value:"Post List"}),n.createElement(a.H,null,n.createElement("p",null,"ㅇ"))}));t.default=r}}]);
