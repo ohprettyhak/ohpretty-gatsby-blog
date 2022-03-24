@@ -65,7 +65,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
   }
 
   const categories = data.categories.group;
-  const postsPerPage: number = 6;
+  const postsPerPage: number = 1;
   const postMaxPageSize: number = Math.ceil(posts.length / postsPerPage);
   Array.from({ length: postMaxPageSize }).forEach((_, i) => {
     createPage({

@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 import { DefaultLayout } from '../components/layouts';
 import { GetPostListQuery } from '../lib/graphql-types';
-import { PageCategory } from '../components/includes';
+import { PageCategory, PagePagination } from '../components/includes';
 
 const PostsList = styled.section`
   display: grid;
@@ -215,6 +215,7 @@ const PostListTemplate: React.FC<PageProps<GetPostListQuery, SitePageContext>> =
           </PostsItem>
         ))}
       </PostsList>
+      <PagePagination cur={cur} max={max} path={categoryQuery} />
     </DefaultLayout>
   );
 });
