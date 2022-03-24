@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 
 import metaConfig from '../../gatsby-meta-config';
 import { DefaultLayout } from '../components/layouts';
@@ -74,6 +75,9 @@ const CoverContentLink = styled.a`
 `;
 
 const IndexPage: React.FC = () => {
+  const dispatch = useDispatch();
+  dispatch({ type: 'CHANGETITLE', value: 'index' });
+
   return (
     <DefaultLayout>
       <Cover>

@@ -2,20 +2,20 @@ import { CreatePagesArgs } from 'gatsby';
 import { createFilePath } from 'gatsby-source-filesystem';
 import path from 'path';
 
-//import { GetPostsDataQuery } from './graphql-types';
+import { GetPostsDataQuery } from './graphql-types';
 
 export async function createNodes({ node, getNode, actions }) {
   const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode, basePath: `contents` });
-    createNodeField({ node, name: `slug`, value: `/posts${slug}` });
+    createNodeField({ node, name: `slug`, value: `/post${slug}` });
   }
 }
 
 export async function createPages({ actions, graphql }: CreatePagesArgs) {
   const { createPage } = actions;
 
-  const { data, errors } = await graphql<any, any>(`
+  const { data, errors } = await graphql<GetPostsDataQuery>(`
     query getPostsData {
       posts: allMarkdownRemark(sort: { fields: frontmatter___date, order: ASC }) {
         edges {
@@ -56,7 +56,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
         path: node.fields.slug,
         context: {
           id: node.id,
-          previous: previousPostId,
+          prev: previousPostId,
           next: nextPostId,
         },
         component: path.resolve(__dirname, '../templates/PostTemplate.tsx'),
@@ -64,18 +64,60 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
     });
   }
 
-  const postsPerPage = 6;
-  const postMaxPageSize = Math.ceil(posts.length / postsPerPage);
+  const categories = data.categories.group;
+  const postsPerPage: number = 6;
+  const postMaxPageSize: number = Math.ceil(posts.length / postsPerPage);
   Array.from({ length: postMaxPageSize }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/post/` : `/post/${i + 1}/`,
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
+        cur: i + 1,
         max: postMaxPageSize,
-        current: i + 1,
+        totalPosts: posts.length,
+        categoryQuery: null,
+        categories: categories,
       },
       component: path.resolve(__dirname, '../templates/PostListTemplate.tsx'),
+    });
+  });
+  createPage({
+    path: `/post/1/`,
+    context: {
+      toPage: '/post/',
+    },
+    component: path.resolve(__dirname, '../lib/PageRedirect.tsx'),
+  });
+
+  categories.forEach((category) => {
+    const categoryMaxPageSize: number = Math.ceil(category.totalCount / postsPerPage);
+    const name: string = category.fieldValue.toLowerCase();
+
+    Array.from({ length: categoryMaxPageSize }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/category/${name}/` : `/category/${name}/${i + 1}/`,
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          cur: i + 1,
+          max: categoryMaxPageSize,
+          totalPosts: category.totalCount,
+          categoryQuery: category.fieldValue,
+          categories,
+        },
+        component: path.resolve(__dirname, '../templates/PostListTemplate.tsx'),
+      });
+
+      if (i === 0) {
+        createPage({
+          path: `/category/${name}/1/`,
+          context: {
+            toPage: `/category/${name}/`,
+          },
+          component: path.resolve(__dirname, '../lib/PageRedirect.tsx'),
+        });
+      }
     });
   });
 }

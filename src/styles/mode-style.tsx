@@ -12,7 +12,7 @@ const ModeStyle = createGlobalStyle`
       --primary: white;
       --line: #eeeeee;
       --mobile-menu: rgba(245, 245, 245, 0.98);
-      --text: #343a40;
+      --text: #25201d;
       --text-secondary: #868e96;
       --cover: #fcfcfc;
       --selection: #e9ecef;
