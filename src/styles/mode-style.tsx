@@ -2,9 +2,11 @@ import { createGlobalStyle } from 'styled-components';
 
 const ModeStyle = createGlobalStyle`
   :root {
-    --mobile: 425px,
-    --tablet: 768px,
-    --desktop: 1200px,
+    --mobile: 425px;
+    --tablet: 768px;
+    --desktop: 1200px;
+    --default-font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Pretendard, Roboto, 'Noto Sans KR', 'Segoe UI', 'Malgun Gothic', sans-serif;
+    --code-font-family: 'JetBrains Mono', SFMono-Regular, Pretendard, Menlo, Consolas, 'PT Mono', 'Liberation Mono', Courier, monospace;
   }
 
   body {
