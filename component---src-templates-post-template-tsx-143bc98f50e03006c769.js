@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkohpretty_gatsby_blog=self.webpackChunkohpretty_gatsby_blog||[]).push([[133],{9934:function(e,t,l){l.r(t);var n=l(7294),r=l(9940),u=n.memo((function(e){return n.createElement(r.j,null,n.createElement("code",null,n.createElement("pre",null,JSON.stringify(e,null,4))))}));t.default=u}}]);
