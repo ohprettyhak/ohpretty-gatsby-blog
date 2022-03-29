@@ -28,14 +28,22 @@ module.exports = {
               quality: 80,
             },
           },
+          `gatsby-remark-autolink-headers`,
         ],
       },
     },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-no-sourcemaps`,
-    `gatsby-plugin-robots-txt`,
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: metaConfig.siteBaseUrl,
+        sitemap: metaConfig.siteBaseUrl + '/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {
@@ -47,7 +55,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: metaConfig.siteBaseUrl + metaConfig.sitePathPrefix,
+        siteUrl: metaConfig.siteBaseUrl,
       },
     },
     {

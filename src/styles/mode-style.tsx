@@ -25,6 +25,7 @@ const ModeStyle = createGlobalStyle`
       // post 
       --category-border: rgba(143, 144, 156, 0.5);
       --category-background: white;
+      --recommend-post: rgb(248, 248, 248);
     }
 
     &.dark {
@@ -42,6 +43,7 @@ const ModeStyle = createGlobalStyle`
       // post 
       --category-border: rgba(143, 144, 156, 0.5);
       --category-background: #221e1a;
+      --recommend-post: #1F1A18;
     }
 }
 `;

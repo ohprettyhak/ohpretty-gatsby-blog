@@ -24,6 +24,9 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
             fields {
               slug
             }
+            frontmatter {
+              categories
+            }
           }
           next {
             id
@@ -58,6 +61,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
           id: node.id,
           prev: previousPostId,
           next: nextPostId,
+          categories: node.frontmatter.categories,
         },
         component: path.resolve(__dirname, '../templates/PostTemplate.tsx'),
       });

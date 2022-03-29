@@ -418,9 +418,9 @@ export type markdownremarktableofcontentsargs = {
 export type markdownremarkfrontmatter = {
   title?: Maybe<Scalars['String']>;
   categories?: Maybe<Array<Maybe<Scalars['String']>>>;
-  cover?: Maybe<file>;
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
   date?: Maybe<Scalars['Date']>;
+  cover?: Maybe<file>;
 };
 
 
@@ -1237,9 +1237,9 @@ export type markdownremarkfilterinput = {
 export type markdownremarkfrontmatterfilterinput = {
   title?: InputMaybe<stringqueryoperatorinput>;
   categories?: InputMaybe<stringqueryoperatorinput>;
-  cover?: InputMaybe<filefilterinput>;
   tags?: InputMaybe<stringqueryoperatorinput>;
   date?: InputMaybe<datequeryoperatorinput>;
+  cover?: InputMaybe<filefilterinput>;
 };
 
 export type filefilterinput = {
@@ -1498,6 +1498,8 @@ export type filefieldsenum =
   | 'childrenMarkdownRemark___id'
   | 'childrenMarkdownRemark___frontmatter___title'
   | 'childrenMarkdownRemark___frontmatter___categories'
+  | 'childrenMarkdownRemark___frontmatter___tags'
+  | 'childrenMarkdownRemark___frontmatter___date'
   | 'childrenMarkdownRemark___frontmatter___cover___sourceInstanceName'
   | 'childrenMarkdownRemark___frontmatter___cover___absolutePath'
   | 'childrenMarkdownRemark___frontmatter___cover___relativePath'
@@ -1536,8 +1538,6 @@ export type filefieldsenum =
   | 'childrenMarkdownRemark___frontmatter___cover___childrenImageSharp'
   | 'childrenMarkdownRemark___frontmatter___cover___id'
   | 'childrenMarkdownRemark___frontmatter___cover___children'
-  | 'childrenMarkdownRemark___frontmatter___tags'
-  | 'childrenMarkdownRemark___frontmatter___date'
   | 'childrenMarkdownRemark___excerpt'
   | 'childrenMarkdownRemark___rawMarkdownBody'
   | 'childrenMarkdownRemark___fileAbsolutePath'
@@ -1594,6 +1594,8 @@ export type filefieldsenum =
   | 'childMarkdownRemark___id'
   | 'childMarkdownRemark___frontmatter___title'
   | 'childMarkdownRemark___frontmatter___categories'
+  | 'childMarkdownRemark___frontmatter___tags'
+  | 'childMarkdownRemark___frontmatter___date'
   | 'childMarkdownRemark___frontmatter___cover___sourceInstanceName'
   | 'childMarkdownRemark___frontmatter___cover___absolutePath'
   | 'childMarkdownRemark___frontmatter___cover___relativePath'
@@ -1632,8 +1634,6 @@ export type filefieldsenum =
   | 'childMarkdownRemark___frontmatter___cover___childrenImageSharp'
   | 'childMarkdownRemark___frontmatter___cover___id'
   | 'childMarkdownRemark___frontmatter___cover___children'
-  | 'childMarkdownRemark___frontmatter___tags'
-  | 'childMarkdownRemark___frontmatter___date'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
@@ -3326,6 +3326,8 @@ export type markdownremarkfieldsenum =
   | 'id'
   | 'frontmatter___title'
   | 'frontmatter___categories'
+  | 'frontmatter___tags'
+  | 'frontmatter___date'
   | 'frontmatter___cover___sourceInstanceName'
   | 'frontmatter___cover___absolutePath'
   | 'frontmatter___cover___relativePath'
@@ -3404,8 +3406,6 @@ export type markdownremarkfieldsenum =
   | 'frontmatter___cover___internal___mediaType'
   | 'frontmatter___cover___internal___owner'
   | 'frontmatter___cover___internal___type'
-  | 'frontmatter___tags'
-  | 'frontmatter___date'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -4524,7 +4524,7 @@ export type imagesharpsortinput = {
 export type GetPostsDataQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPostsDataQuery = { posts: { edges: Array<{ node: { id: string, fields?: { slug?: string | null } | null }, next?: { id: string } | null, previous?: { id: string } | null }> }, categories: { group: Array<{ fieldValue?: string | null, totalCount: number }> } };
+export type GetPostsDataQuery = { posts: { edges: Array<{ node: { id: string, fields?: { slug?: string | null } | null, frontmatter?: { categories?: Array<string | null> | null } | null }, next?: { id: string } | null, previous?: { id: string } | null }> }, categories: { group: Array<{ fieldValue?: string | null, totalCount: number }> } };
 
 export type GetPostListQueryVariables = Exact<{
   skip: Scalars['Int'];
@@ -4534,6 +4534,15 @@ export type GetPostListQueryVariables = Exact<{
 
 
 export type GetPostListQuery = { defaultPosts: { edges: Array<{ node: { excerpt?: string | null, timeToRead?: number | null, id: string, fields?: { slug?: string | null } | null, frontmatter?: { title?: string | null, categories?: Array<string | null> | null, date?: any | null, cover?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null } }> }, categoryPosts: { edges: Array<{ node: { excerpt?: string | null, timeToRead?: number | null, id: string, fields?: { slug?: string | null } | null, frontmatter?: { title?: string | null, categories?: Array<string | null> | null, date?: any | null, cover?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null } }> } };
+
+export type GetPostDetailQueryVariables = Exact<{
+  id: Scalars['String'];
+  prev?: InputMaybe<Scalars['String']>;
+  next?: InputMaybe<Scalars['String']>;
+}>;
+
+
+export type GetPostDetailQuery = { node?: { id: string, excerpt?: string | null, html?: string | null, timeToRead?: number | null, frontmatter?: { title?: string | null, date?: any | null, cover?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null } | null, previous?: { fields?: { slug?: string | null } | null, frontmatter?: { title?: string | null } | null } | null, next?: { fields?: { slug?: string | null } | null, frontmatter?: { title?: string | null } | null } | null };
 
 export type GatsbyImageSharpFixedFragment = { base64?: string | null, width: number, height: number, src: string, srcSet: string };
 

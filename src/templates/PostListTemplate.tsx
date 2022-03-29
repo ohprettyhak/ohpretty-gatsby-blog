@@ -101,12 +101,14 @@ const PostsCategoriesLink = styled(Link)`
 `;
 
 const PostsTitle = styled.h3`
+  width: 100%;
   margin-top: 2px;
   overflow: hidden;
   color: var(--text);
   font-size: 1.15rem;
   letter-spacing: -1px;
-  white-space: nowrap;
+  word-break: break-all;
+  white-space: normal;
 `;
 
 const PostsExcerpt = styled.p`

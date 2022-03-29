@@ -6,13 +6,13 @@ import { Head, Navigation } from '../common';
 const Main = styled.main`
   width: 100%;
   max-width: 1200px;
-  height: 100%;
+  min-height: 100%;
   margin: 0 auto;
   padding: 0 6%;
 `;
 
 const Container = styled.div`
-  height: 100%;
+  min-height: 100%;
   padding-top: 56px;
   background-color: var(--primary);
   transition: background-color 0.2s ease;

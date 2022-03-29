@@ -2707,7 +2707,7 @@
     "@types/node" "*"
     form-data "^3.0.0"
 
-"@types/node@*", "@types/node@>=10.0.0", "@types/node@^17.0.21", "@types/node@^17.0.5":
+"@types/node@*", "@types/node@>=10.0.0", "@types/node@^17.0.21":
   version "17.0.21"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.21.tgz#864b987c0c68d07b4345845c3e63b75edd143644"
   integrity sha512-DBZCJbhII3r90XbQxI8Y9IjjiiOGlZ0Hr32omXIZvwwZ7p4DMMXGrKXVyPfuoBOri9XNtL0UK69jYIBIsRX3QQ==
@@ -2716,6 +2716,11 @@
   version "16.9.1"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.9.1.tgz#0611b37db4246c937feef529ddcc018cf8e35708"
   integrity sha512-QpLcX9ZSsq3YYUUnD3nFDY8H7wctAhQj/TFKL8Ya8v5fMm3CFXxo8zStsLAl780ltoYoo1WvKUVGBQK+1ifr7g==
+
+"@types/node@^17.0.5":
+  version "17.0.23"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.23.tgz#3b41a6e643589ac6442bdbd7a4a3ded62f33f7da"
+  integrity sha512-UxDxWn7dl97rKVeVS61vErvw086aCYhDLyvRQZ5Rk65rZKepaFdm53GeqXaKBuOhED4e9uWq34IC3TdSdJJ2Gw==
 
 "@types/node@^8.5.7":
   version "8.10.66"
@@ -6599,10 +6604,10 @@ gatsby-plugin-sharp@^4.10.2:
     svgo "1.3.2"
     uuid "3.4.0"
 
-gatsby-plugin-sitemap@^5.10.1:
-  version "5.10.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sitemap/-/gatsby-plugin-sitemap-5.10.1.tgz#297e9434802e1d829b257ab9627ba581f48cb154"
-  integrity sha512-EO5GWLhkN3gfOXLX8QlbIepu2Kq1kk4bBgU5M2CjZAyVQhahZAJxdBat7JgLTpKZL4lSJgVSCl9IkeKgHvm+pg==
+gatsby-plugin-sitemap@^5.10.2:
+  version "5.10.2"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sitemap/-/gatsby-plugin-sitemap-5.10.2.tgz#208149b900b166c42aa88a5f5436f5c6bf6561e9"
+  integrity sha512-X6pVbytl/QfdfGrnXAEKPf5vc38WIbclmHYIfbgjXUYA9yckTxnfuYZqkS2YwCmbcUTHG1ugcmXMeBGVo77IBQ==
   dependencies:
     "@babel/runtime" "^7.15.4"
     common-tags "^1.8.2"
@@ -6663,6 +6668,17 @@ gatsby-react-router-scroll@^5.10.0:
   dependencies:
     "@babel/runtime" "^7.15.4"
     prop-types "^15.7.2"
+
+gatsby-remark-autolink-headers@^5.10.2:
+  version "5.10.2"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-autolink-headers/-/gatsby-remark-autolink-headers-5.10.2.tgz#7c90122697f94b0be6df43efac628c04b482719a"
+  integrity sha512-7VjfqBtMXIEPNxruqWDiOZpO63xukcBVyJqIdrW2avp1J+AIi70BVroYPDHxshnxf/1n7SqHxsIE4fqdHR/k1g==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    github-slugger "^1.3.0"
+    lodash "^4.17.21"
+    mdast-util-to-string "^2.0.0"
+    unist-util-visit "^2.0.3"
 
 gatsby-remark-vscode@^3.3.1:
   version "3.3.1"
@@ -7075,7 +7091,7 @@ github-from-package@0.0.0:
   resolved "https://registry.yarnpkg.com/github-from-package/-/github-from-package-0.0.0.tgz#97fb5d96bfde8973313f20e8288ef9a167fa64ce"
   integrity sha1-l/tdlr/eiXMxPyDoKI75oWf6ZM4=
 
-github-slugger@^1.2.1:
+github-slugger@^1.2.1, github-slugger@^1.3.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/github-slugger/-/github-slugger-1.4.0.tgz#206eb96cdb22ee56fdc53a28d5a302338463444e"
   integrity sha512-w0dzqw/nt51xMVmlaV1+JRzN+oCa1KfcgGEWhxUG16wbdA+Xnt/yoFO8Z8x/V82ZcZ0wy6ln9QDup5avbhiDhQ==
