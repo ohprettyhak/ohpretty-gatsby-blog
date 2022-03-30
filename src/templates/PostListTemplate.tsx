@@ -46,11 +46,11 @@ const PostsImageWapper = styled.div`
     height: calc(20vw - 25px);
   }
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 768px) {
     height: calc(30vw - 25px);
   }
 
-  @media only screen and (max-width: 560px) {
+  @media only screen and (max-width: 425px) {
     height: calc(50vw);
   }
 `;
