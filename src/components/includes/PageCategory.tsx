@@ -2,16 +2,18 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-const CategoryList = styled.ul`
+const CategoryList = styled.div`
   margin-top: 56px;
   padding: 0;
   margin-bottom: 4px;
-  list-style: none;
+  overflow: auto;
+  white-space: nowrap;
 `;
 
-const CategoryItem = styled.li`
+const CategoryItem = styled.div`
   display: inline-block;
   margin: 0 12px 14px 0;
+  zoom: 1;
   font-size: 0.8rem;
   font-weight: 500;
   cursor: pointer;
