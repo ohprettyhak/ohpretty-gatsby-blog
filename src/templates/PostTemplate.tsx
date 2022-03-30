@@ -9,6 +9,171 @@ import metaConfig from '../../gatsby-meta-config';
 import { PostLayout } from '../components/layouts';
 import { GetPostDetailQuery } from '../lib/graphql-types';
 
+const PostArticle = styled.article`
+  .before {
+    display: flex;
+    top: auto;
+    left: auto;
+    padding-right: 8px;
+    margin: 0;
+    border-bottom: none;
+    transform: translateX(-150%);
+
+    svg {
+      fill: var(--text);
+    }
+
+    @media only screen and (max-width: 768px) {
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+  }
+
+  .before:hover {
+    background-color: transparent;
+    border-radius: none;
+    border-bottom: none;
+  }
+
+  h1 {
+    display: flex;
+    align-items: center;
+    color: var(--text);
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1.2;
+    padding-top: 4px;
+    padding-bottom: 8px;
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  h2 {
+    display: flex;
+    align-items: center;
+    padding-top: 4px;
+    margin-bottom: 8px;
+    color: var(--text);
+    font-size: 2rem;
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  h3 {
+    display: flex;
+    align-items: center;
+    padding-top: 2px;
+    margin-bottom: 4px;
+    color: var(--text);
+    font-size: 1.5rem;
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  h4 {
+    display: flex;
+    align-items: center;
+    padding-top: 1px;
+    margin-bottom: 2px;
+    color: var(--text);
+    font-size: 1.05rem;
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  h5 {
+    display: flex;
+    align-items: center;
+    padding-top: 1px;
+    margin-bottom: 2px;
+    color: var(--text);
+    font-size: 1rem;
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  h6 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+    color: var(--text);
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  p {
+    line-height: 1.5;
+    margin-bottom: 8px;
+    color: var(--text);
+    font-weight: 400;
+    word-break: break-all;
+    white-space: normal;
+  }
+
+  code {
+    padding: 4px;
+    color: var(--text);
+    font-size: 0.85rem;
+    font-family: var(--code-font-family);
+    font-weight: 400;
+    border-radius: 4px;
+    background-color: var(--recommend-post);
+    transition: background-color 0.2s ease;
+  }
+
+  ul {
+    padding-left: 1.5rem;
+  }
+
+  ol {
+    padding-left: 1.5rem;
+  }
+
+  li {
+    font-size: 0.95rem;
+    color: var(--text);
+    font-weight: 300;
+    padding: 4px 0;
+  }
+
+  a {
+    margin-bottom: 8px;
+    color: var(--text);
+    transition: 0.3s;
+    text-decoration: none;
+    border-bottom: 1px dashed var(--text);
+    border-radius: 0px;
+    background-color: transparent;
+  }
+
+  a:hover {
+    background-color: var(--selection);
+    border-radius: 2px;
+    border-bottom: 1px solid var(--text);
+  }
+
+  table {
+    width: 100%;
+    margin: 8px 0 12px 0;
+    padding: 0;
+  }
+
+  th {
+    color: var(--text);
+    font-weight: bold;
+  }
+
+  td {
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+`;
+
 const PostHeader = styled.section`
   margin-top: 48px;
 
@@ -134,7 +299,7 @@ const PostTemplate: React.FC<PageProps<GetPostDetailQuery, null>> = React.memo((
 
   return (
     <PostLayout>
-      <article>
+      <PostArticle>
         <PostHeader>
           <h1>{node.frontmatter.title}</h1>
           <PostSub>
@@ -160,7 +325,7 @@ const PostTemplate: React.FC<PageProps<GetPostDetailQuery, null>> = React.memo((
           </PostCover>
         )}
         <PostContent dangerouslySetInnerHTML={{ __html: node.html }} />
-      </article>
+      </PostArticle>
       <RecommendPost>
         <RecommendPostList>
           {previous !== null ? (

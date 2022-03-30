@@ -7,7 +7,7 @@ const HighlightStyle = createGlobalStyle`
 
   .grvsc-code {
     padding: 0 !important;
-    font-size: 1rem !important;
+    font-size: 0.95rem !important;
     font-weight: 400 !important;
     border-radius: 0 !important;
     background-color: #191614 !important;
@@ -24,26 +24,40 @@ const HighlightStyle = createGlobalStyle`
     font-size: 0.7rem;
   }
 
+  .grvsc-source::selection {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    text-shadow: none;
+  }
+  
+  .grvsc-source::-moz-selection {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    text-shadow: none;
+  }
+  
+  .grvsc-source::-webkit-selection {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    text-shadow: none;
+  }
+
   .grvsc-source > span::selection {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
+    background-color: rgba(255, 255, 255, 0.15) !important;
     text-shadow: none;
   }
   
   .grvsc-source > span::-moz-selection {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
+    background-color: rgba(255, 255, 255, 0.15) !important;
     text-shadow: none;
   }
   
   .grvsc-source > span::-webkit-selection {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
+    background-color: rgba(255, 255, 255, 0.15) !important;
     text-shadow: none;
   }
 
   .grvsc-line, .grvsc-code {
     width: 100%;
+    color: white !important;
+    font-size: 0.95rem;
   }
 
   .grvsc-gutter-pad {

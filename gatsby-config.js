@@ -13,10 +13,6 @@ module.exports = {
               theme: 'Default Dark+',
               inlineCode: {
                 marker: '•',
-                theme: {
-                  default: 'Default Light+',
-                  dark: 'Default Dark+',
-                },
               },
             },
           },
@@ -28,7 +24,15 @@ module.exports = {
               quality: 80,
             },
           },
-          `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              offsetY: `64`,
+              maintainCase: true,
+              removeAccents: true,
+              elements: [`h1`, `h2`, `h3`, `h4`],
+            },
+          },
         ],
       },
     },
