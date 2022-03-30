@@ -4524,7 +4524,7 @@ export type imagesharpsortinput = {
 export type GetPostsDataQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPostsDataQuery = { posts: { edges: Array<{ node: { id: string, fields?: { slug?: string | null } | null, frontmatter?: { categories?: Array<string | null> | null } | null }, next?: { id: string } | null, previous?: { id: string } | null }> }, categories: { group: Array<{ fieldValue?: string | null, totalCount: number }> } };
+export type GetPostsDataQuery = { posts: { edges: Array<{ node: { id: string, fields?: { slug?: string | null } | null, frontmatter?: { categories?: Array<string | null> | null } | null }, next?: { id: string } | null, previous?: { id: string } | null }> }, categories: { group: Array<{ fieldValue?: string | null, totalCount: number }> }, uncategorized: { totalCount: number } };
 
 export type GetPostListQueryVariables = Exact<{
   skip: Scalars['Int'];
@@ -4533,7 +4533,7 @@ export type GetPostListQueryVariables = Exact<{
 }>;
 
 
-export type GetPostListQuery = { defaultPosts: { edges: Array<{ node: { excerpt?: string | null, timeToRead?: number | null, id: string, fields?: { slug?: string | null } | null, frontmatter?: { title?: string | null, categories?: Array<string | null> | null, date?: any | null, cover?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null } }> }, categoryPosts: { edges: Array<{ node: { excerpt?: string | null, timeToRead?: number | null, id: string, fields?: { slug?: string | null } | null, frontmatter?: { title?: string | null, categories?: Array<string | null> | null, date?: any | null, cover?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null } }> } };
+export type GetPostListQuery = { defaultPosts: { edges: Array<{ node: { excerpt?: string | null, timeToRead?: number | null, id: string, fields?: { slug?: string | null } | null, frontmatter?: { title?: string | null, categories?: Array<string | null> | null, date?: any | null, cover?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null } }> }, categoryPosts: { edges: Array<{ node: { excerpt?: string | null, timeToRead?: number | null, id: string, fields?: { slug?: string | null } | null, frontmatter?: { title?: string | null, categories?: Array<string | null> | null, date?: any | null, cover?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null } }> }, uncategorizedPosts: { edges: Array<{ node: { excerpt?: string | null, timeToRead?: number | null, id: string, fields?: { slug?: string | null } | null, frontmatter?: { title?: string | null, categories?: Array<string | null> | null, date?: any | null, cover?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null } }> } };
 
 export type GetPostDetailQueryVariables = Exact<{
   id: Scalars['String'];

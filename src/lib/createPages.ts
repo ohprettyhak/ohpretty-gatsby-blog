@@ -43,6 +43,10 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
           totalCount
         }
       }
+
+      uncategorized: allMarkdownRemark(filter: { frontmatter: { categories: { eq: null } } }) {
+        totalCount
+      }
     }
   `);
 
@@ -68,7 +72,10 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
     });
   }
 
-  const categories = data.categories.group;
+  let categories = data.categories.group;
+  if (data.uncategorized.totalCount > 0)
+    categories.push({ fieldValue: 'Uncategorized', totalCount: data.uncategorized.totalCount });
+
   const postsPerPage: number = 1;
   const postMaxPageSize: number = Math.ceil(posts.length / postsPerPage);
   Array.from({ length: postMaxPageSize }).forEach((_, i) => {

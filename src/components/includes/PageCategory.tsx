@@ -14,7 +14,6 @@ const CategoryItem = styled.li`
   margin: 0 12px 14px 0;
   font-size: 0.8rem;
   font-weight: 500;
-  text-transform: uppercase;
   cursor: pointer;
   border-radius: 96px;
   border: solid 1px var(--category-border);

@@ -92,7 +92,6 @@ const PostsCategories = styled.span`
 const PostsCategoriesLink = styled(Link)`
   color: #adb5bd;
   text-decoration: none;
-  text-transform: uppercase;
   transition: color 0.2s ease;
 
   :hover {
@@ -168,8 +167,10 @@ const PostListTemplate: React.FC<PageProps<GetPostListQuery, SitePageContext>> =
   dispatch({ type: 'CHANGETITLE', value: categoryQuery ? categoryQuery : 'Post' });
 
   let postsList: Array<NodeArray>;
-  if (categoryQuery) postsList = data.categoryPosts.edges;
-  else postsList = data.defaultPosts.edges;
+  if (categoryQuery) {
+    if (categoryQuery === 'Uncategorized') postsList = data.uncategorizedPosts.edges;
+    else postsList = data.categoryPosts.edges;
+  } else postsList = data.defaultPosts.edges;
 
   return (
     <DefaultLayout>
@@ -192,6 +193,9 @@ const PostListTemplate: React.FC<PageProps<GetPostListQuery, SitePageContext>> =
                       {index !== node.frontmatter.categories.length - 1 && ', '}
                     </React.Fragment>
                   ))}
+                {!node.frontmatter.categories && (
+                  <PostsCategoriesLink to={`/category/uncategorized`}>Uncategorized</PostsCategoriesLink>
+                )}
               </PostsCategories>
               <PostsLink to={node.fields.slug}>
                 <PostsTitle>{node.frontmatter.title}</PostsTitle>
@@ -248,6 +252,34 @@ export const postListQuery = graphql`
       limit: $limit
       skip: $skip
       filter: { frontmatter: { categories: { eq: $categoryQuery } } }
+    ) {
+      edges {
+        node {
+          excerpt(truncate: true, pruneLength: 100)
+          timeToRead
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            categories
+            date(formatString: "YYYY년 MM월 DD일")
+            cover {
+              childImageSharp {
+                gatsbyImageData(formats: AUTO, placeholder: BLURRED)
+              }
+            }
+          }
+        }
+      }
+    }
+
+    uncategorizedPosts: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $limit
+      skip: $skip
+      filter: { frontmatter: { categories: { eq: null } } }
     ) {
       edges {
         node {
