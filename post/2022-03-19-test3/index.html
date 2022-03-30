@@ -43,7 +43,7 @@
           var offset = element.getBoundingClientRect().top + scrollTop - clientTop
           // Wait for the browser to finish rendering before scrolling.
           setTimeout((function() {
-            window.scrollTo(0, offset - 0)
+            window.scrollTo(0, offset - 64)
           }), 0)
         }
       }
@@ -63,16 +63,19 @@ html,body,#___gatsby,#gatsby-focus-wrapper{height:1px;min-height:100vh;}/*!sc*/
 @-o-keyframes fadein{from{opacity:0;}to{opacity:1;}}/*!sc*/
 data-styled.g1[id="sc-global-iMCVOu1"]{content:"sc-global-iMCVOu1,"}/*!sc*/
 .default-dark{background-color:#191614 !important;}/*!sc*/
-.grvsc-code{padding:0 !important;font-size:1rem !important;font-weight:400 !important;border-radius:0 !important;background-color:#191614 !important;}/*!sc*/
+.grvsc-code{padding:0 !important;font-size:0.95rem !important;font-weight:400 !important;border-radius:0 !important;background-color:#191614 !important;}/*!sc*/
 .grvsc-source > span{font-family:var(--code-font-family);font-size:0.85rem;}/*!sc*/
 .grvsc-line-number::before{color:#aaaaaa;font-family:var(--code-font-family);font-size:0.7rem;}/*!sc*/
-.grvsc-source > span::selection{background-color:rgba(255,255,255,0.1);color:white;text-shadow:none;}/*!sc*/
-.grvsc-source > span::-moz-selection{background-color:rgba(255,255,255,0.1);color:white;text-shadow:none;}/*!sc*/
-.grvsc-source > span::-webkit-selection{background-color:rgba(255,255,255,0.1);color:white;text-shadow:none;}/*!sc*/
-.grvsc-line,.grvsc-code{width:100%;}/*!sc*/
+.grvsc-source::selection{background-color:rgba(255,255,255,0.15) !important;text-shadow:none;}/*!sc*/
+.grvsc-source::-moz-selection{background-color:rgba(255,255,255,0.15) !important;text-shadow:none;}/*!sc*/
+.grvsc-source::-webkit-selection{background-color:rgba(255,255,255,0.15) !important;text-shadow:none;}/*!sc*/
+.grvsc-source > span::selection{background-color:rgba(255,255,255,0.15) !important;text-shadow:none;}/*!sc*/
+.grvsc-source > span::-moz-selection{background-color:rgba(255,255,255,0.15) !important;text-shadow:none;}/*!sc*/
+.grvsc-source > span::-webkit-selection{background-color:rgba(255,255,255,0.15) !important;text-shadow:none;}/*!sc*/
+.grvsc-line,.grvsc-code{width:100%;color:white !important;font-size:0.95rem;}/*!sc*/
 .grvsc-gutter-pad{padding-left:0 !important;}/*!sc*/
 .grvsc-line-number{width:3rem !important;padding:0 8px 0 12px !important;}/*!sc*/
-data-styled.g2[id="sc-global-hashwy1"]{content:"sc-global-hashwy1,"}/*!sc*/
+data-styled.g2[id="sc-global-iXdrtB1"]{content:"sc-global-iXdrtB1,"}/*!sc*/
 :root{--mobile:425px;--tablet:768px;--desktop:1200px;--default-font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',Pretendard,Roboto,'Noto Sans KR','Segoe UI','Malgun Gothic',sans-serif;--code-font-family:'JetBrains Mono',SFMono-Regular,Pretendard,Menlo,Consolas,'PT Mono','Liberation Mono',Courier,monospace;}/*!sc*/
 body.light{--primary:white;--line:#eeeeee;--mobile-menu:rgba(245,245,245,0.98);--text:#25201d;--text-secondary:#868e96;--cover:#fcfcfc;--selection:#e9ecef;--category-border:rgba(143,144,156,0.5);--category-background:white;--recommend-post:rgb(248,248,248);}/*!sc*/
 body.dark{--primary:#25201d;--line:#1a1613;--mobile-menu:rgba(37,32,29,0.98);--text:white;--text-secondary:#bbbbbb;--cover:#221e1a;--selection:rgba(255,255,255,0.15);--category-border:rgba(143,144,156,0.5);--category-background:#221e1a;--recommend-post:#1F1A18;}/*!sc*/
@@ -113,53 +116,63 @@ data-styled.g16[id="Navigation__MobileMenuWrap-sc-1mahtxu-12"]{content:"hmgHBU,"
 .eTsZBN{margin:24px 0;font-size:1.5rem;font-weight:700;}/*!sc*/
 .eTsZBN a{width:100%;color:var(--text);-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
 data-styled.g17[id="Navigation__MobileMenuList-sc-1mahtxu-13"]{content:"eTsZBN,"}/*!sc*/
-.jzvbJA{width:100%;max-width:900px;min-height:100%;margin:0 auto;padding:0 6%;}/*!sc*/
-.jzvbJA .before{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;top:auto;left:auto;padding-right:8px;margin:0;-webkit-transform:translateX(-150%);-ms-transform:translateX(-150%);transform:translateX(-150%);}/*!sc*/
-.jzvbJA .before svg{fill:var(--text);}/*!sc*/
-@media only screen and (max-width:768px){.jzvbJA .before{-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);transform:translateX(-100%);padding-right:4px;}}/*!sc*/
-.jzvbJA h1{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:var(--text);font-size:2.4rem;font-weight:800;line-height:1.2;padding-bottom:8px;word-break:break-word;white-space:normal;}/*!sc*/
-.jzvbJA h2{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-bottom:8px;color:var(--text);font-size:2rem;word-break:break-word;white-space:normal;}/*!sc*/
-.jzvbJA h3{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-bottom:4px;color:var(--text);font-size:1.5rem;word-break:break-word;white-space:normal;}/*!sc*/
-.jzvbJA h4{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-bottom:2px;color:var(--text);font-size:1.05rem;word-break:break-word;white-space:normal;}/*!sc*/
-.jzvbJA h5{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-bottom:2px;color:var(--text);font-size:1rem;word-break:break-word;white-space:normal;}/*!sc*/
-.jzvbJA p{line-height:1.5;margin-bottom:8px;color:var(--text);word-break:break-all;white-space:normal;}/*!sc*/
-.jzvbJA code{padding:4px;font-size:0.9rem;font-family:var(--code-font-family);font-weight:400;border-radius:4px;background-color:#eeeeee;}/*!sc*/
-.jzvbJA ul{padding-left:1.5rem;}/*!sc*/
-.jzvbJA li{font-size:0.95rem;color:black;font-weight:300;padding:4px 0;}/*!sc*/
-data-styled.g20[id="PostLayout__Main-sc-q8288l-0"]{content:"jzvbJA,"}/*!sc*/
+.diTXkp{width:100%;max-width:960px;min-height:100%;margin:0 auto;padding:0 6%;}/*!sc*/
+data-styled.g20[id="PostLayout__Main-sc-q8288l-0"]{content:"diTXkp,"}/*!sc*/
 .fdydkC{min-height:100%;padding-top:56px;background-color:var(--primary);-webkit-transition:background-color 0.2s ease;transition:background-color 0.2s ease;}/*!sc*/
 data-styled.g21[id="PostLayout__Container-sc-q8288l-1"]{content:"fdydkC,"}/*!sc*/
-.dCJsww{margin-top:48px;}/*!sc*/
-.dCJsww ion-icon{height:16px;margin-right:4px;margin-bottom:2px;vertical-align:middle;}/*!sc*/
-data-styled.g22[id="PostTemplate__PostHeader-sc-e50hvq-0"]{content:"dCJsww,"}/*!sc*/
-.jTKYkq{margin-top:6px;color:#adb5bd;font-size:0.85rem;}/*!sc*/
-data-styled.g23[id="PostTemplate__PostSub-sc-e50hvq-1"]{content:"jTKYkq,"}/*!sc*/
-.jzrhcw{margin-right:10px;}/*!sc*/
-data-styled.g24[id="PostTemplate__PostSubDetail-sc-e50hvq-2"]{content:"jzrhcw,"}/*!sc*/
-.dJGdZf{margin-top:48px;}/*!sc*/
-data-styled.g25[id="PostTemplate__PostCover-sc-e50hvq-3"]{content:"dJGdZf,"}/*!sc*/
-.cXzTfl{border-radius:8px;overflow:hidden;isolation:isolate;}/*!sc*/
-data-styled.g26[id="PostTemplate__PostCoverImage-sc-e50hvq-4"]{content:"cXzTfl,"}/*!sc*/
-.hICejF{margin-top:48px;}/*!sc*/
-data-styled.g27[id="PostTemplate__PostContent-sc-e50hvq-5"]{content:"hICejF,"}/*!sc*/
-.cAlDif{display:block;width:100%;padding:48px 0;}/*!sc*/
-data-styled.g28[id="PostTemplate__RecommendPost-sc-e50hvq-6"]{content:"cAlDif,"}/*!sc*/
-.bcassa{display:grid;margin:0 -12px;grid-template-columns:50% 50%;grid-row-gap:24px;}/*!sc*/
-@media only screen and (max-width:425px){.bcassa{grid-template-columns:100%;}}/*!sc*/
-data-styled.g29[id="PostTemplate__RecommendPostList-sc-e50hvq-7"]{content:"bcassa,"}/*!sc*/
-.hhAwAf{display:block;-webkit-text-decoration:none;text-decoration:none;opacity:1;-webkit-transition:opacity 0.2s ease;transition:opacity 0.2s ease;}/*!sc*/
-.hhAwAf:hover{opacity:0.7;}/*!sc*/
-data-styled.g30[id="PostTemplate__RecommendPostLink-sc-e50hvq-8"]{content:"hhAwAf,"}/*!sc*/
-.fdJalt{margin:0 12px;padding:10px 12px;border-radius:8px;background-color:var(--recommend-post);-webkit-transition:background-color 0.2s ease;transition:background-color 0.2s ease;}/*!sc*/
-data-styled.g31[id="PostTemplate__RecommendPrevious-sc-e50hvq-9"]{content:"fdJalt,"}/*!sc*/
-.jmplar{display:block;margin:0;color:var(--text-secondary);font-weight:300;font-size:0.85rem;}/*!sc*/
-data-styled.g33[id="PostTemplate__RecommendStepText-sc-e50hvq-11"]{content:"jmplar,"}/*!sc*/
-.cDzJwK{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}/*!sc*/
-.cDzJwK ion-icon{width:16px;height:16px;color:var(--text);vertical-align:middle;}/*!sc*/
-data-styled.g34[id="PostTemplate__RecommendPostContainer-sc-e50hvq-12"]{content:"cDzJwK,"}/*!sc*/
-.cKwOVX{display:block;margin-top:4px;color:var(--text);font-weight:800;font-size:1rem;word-break:break-word;white-space:normal;}/*!sc*/
-data-styled.g35[id="PostTemplate__RecommendPostTitle-sc-e50hvq-13"]{content:"cKwOVX,"}/*!sc*/
-</style><link rel="canonical" href="https://ohprettyhak.github.io/post/2022-03-19-test3/" data-baseprotocol="https:" data-basehost="ohprettyhak.github.io"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link as="script" rel="preload" href="/ohpretty-gatsby-blog/webpack-runtime-2d3db8ba6b0663622591.js"/><link as="script" rel="preload" href="/ohpretty-gatsby-blog/framework-22009291a557a89e8bc1.js"/><link as="script" rel="preload" href="/ohpretty-gatsby-blog/app-5837d3691e4956deed7f.js"/><link as="script" rel="preload" href="/ohpretty-gatsby-blog/dfcc8cd95b4f73aa78f9c3d4e5428122162d830b-0b6c31d5d1e836df7259.js"/><link as="script" rel="preload" href="/ohpretty-gatsby-blog/component---src-templates-post-template-tsx-b7b84ea7dd3bff95446b.js"/><link as="fetch" rel="preload" href="/ohpretty-gatsby-blog/page-data/post/2022-03-19-test3/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/ohpretty-gatsby-blog/page-data/app-data.json" crossorigin="anonymous"/></head><body class="light"><script>
+.hufWTm .before{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;top:auto;left:auto;padding-right:8px;margin:0;border-bottom:none;-webkit-transform:translateX(-150%);-ms-transform:translateX(-150%);transform:translateX(-150%);}/*!sc*/
+.hufWTm .before svg{fill:var(--text);}/*!sc*/
+@media only screen and (max-width:768px){.hufWTm .before{-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);transform:translateX(-100%);padding-right:4px;}}/*!sc*/
+.hufWTm .before:hover{background-color:transparent;border-radius:none;border-bottom:none;}/*!sc*/
+.hufWTm h1{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:var(--text);font-size:2.4rem;font-weight:800;line-height:1.2;padding-top:4px;padding-bottom:8px;word-break:break-word;white-space:normal;}/*!sc*/
+.hufWTm h2{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-top:4px;margin-bottom:8px;color:var(--text);font-size:2rem;word-break:break-word;white-space:normal;}/*!sc*/
+.hufWTm h3{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-top:2px;margin-bottom:4px;color:var(--text);font-size:1.5rem;word-break:break-word;white-space:normal;}/*!sc*/
+.hufWTm h4{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-top:1px;margin-bottom:2px;color:var(--text);font-size:1.05rem;word-break:break-word;white-space:normal;}/*!sc*/
+.hufWTm h5{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-top:1px;margin-bottom:2px;color:var(--text);font-size:1rem;word-break:break-word;white-space:normal;}/*!sc*/
+.hufWTm h6{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-bottom:2px;color:var(--text);word-break:break-word;white-space:normal;}/*!sc*/
+.hufWTm p{line-height:1.5;margin-bottom:8px;color:var(--text);font-weight:400;word-break:break-all;white-space:normal;}/*!sc*/
+.hufWTm code{padding:4px;color:var(--text);font-size:0.85rem;font-family:var(--code-font-family);font-weight:400;border-radius:4px;background-color:var(--recommend-post);-webkit-transition:background-color 0.2s ease;transition:background-color 0.2s ease;}/*!sc*/
+.hufWTm ul{padding-left:1.5rem;}/*!sc*/
+.hufWTm ol{padding-left:1.5rem;}/*!sc*/
+.hufWTm li{font-size:0.95rem;color:var(--text);font-weight:300;padding:4px 0;}/*!sc*/
+.hufWTm a{margin-bottom:8px;color:var(--text);-webkit-transition:0.3s;transition:0.3s;-webkit-text-decoration:none;text-decoration:none;border-bottom:1px dashed var(--text);border-radius:0px;background-color:transparent;}/*!sc*/
+.hufWTm a:hover{background-color:var(--selection);border-radius:2px;border-bottom:1px solid var(--text);}/*!sc*/
+.hufWTm table{width:100%;margin:8px 0 12px 0;padding:0;}/*!sc*/
+.hufWTm th{color:var(--text);font-weight:bold;}/*!sc*/
+.hufWTm td{color:var(--text);font-weight:400;}/*!sc*/
+.hufWTm img{display:block;max-width:100%;}/*!sc*/
+data-styled.g22[id="PostTemplate__PostArticle-sc-e50hvq-0"]{content:"hufWTm,"}/*!sc*/
+.cLJUyV{margin-top:48px;}/*!sc*/
+.cLJUyV ion-icon{height:16px;margin-right:4px;margin-bottom:2px;vertical-align:middle;}/*!sc*/
+data-styled.g23[id="PostTemplate__PostHeader-sc-e50hvq-1"]{content:"cLJUyV,"}/*!sc*/
+.jTEaUd{margin-top:6px;color:#adb5bd;font-size:0.85rem;}/*!sc*/
+data-styled.g24[id="PostTemplate__PostSub-sc-e50hvq-2"]{content:"jTEaUd,"}/*!sc*/
+.dTCFDB{margin-right:10px;}/*!sc*/
+data-styled.g25[id="PostTemplate__PostSubDetail-sc-e50hvq-3"]{content:"dTCFDB,"}/*!sc*/
+.UYhQE{margin-top:48px;}/*!sc*/
+data-styled.g26[id="PostTemplate__PostCover-sc-e50hvq-4"]{content:"UYhQE,"}/*!sc*/
+.hfjZmE{border-radius:8px;overflow:hidden;isolation:isolate;}/*!sc*/
+data-styled.g27[id="PostTemplate__PostCoverImage-sc-e50hvq-5"]{content:"hfjZmE,"}/*!sc*/
+.iMtHia{margin-top:48px;}/*!sc*/
+data-styled.g28[id="PostTemplate__PostContent-sc-e50hvq-6"]{content:"iMtHia,"}/*!sc*/
+.hkEWQS{display:block;width:100%;padding:48px 0;}/*!sc*/
+data-styled.g29[id="PostTemplate__RecommendPost-sc-e50hvq-7"]{content:"hkEWQS,"}/*!sc*/
+.dufYUV{display:grid;margin:0 -12px;grid-template-columns:50% 50%;grid-row-gap:24px;}/*!sc*/
+@media only screen and (max-width:425px){.dufYUV{grid-template-columns:100%;}}/*!sc*/
+data-styled.g30[id="PostTemplate__RecommendPostList-sc-e50hvq-8"]{content:"dufYUV,"}/*!sc*/
+.dxSFOC{display:block;-webkit-text-decoration:none;text-decoration:none;opacity:1;-webkit-transition:opacity 0.2s ease;transition:opacity 0.2s ease;}/*!sc*/
+.dxSFOC:hover{opacity:0.7;}/*!sc*/
+data-styled.g31[id="PostTemplate__RecommendPostLink-sc-e50hvq-9"]{content:"dxSFOC,"}/*!sc*/
+.jbHmEF{margin:0 12px;padding:10px 12px;border-radius:8px;background-color:var(--recommend-post);-webkit-transition:background-color 0.2s ease;transition:background-color 0.2s ease;}/*!sc*/
+data-styled.g32[id="PostTemplate__RecommendPrevious-sc-e50hvq-10"]{content:"jbHmEF,"}/*!sc*/
+.gHELJw{display:block;margin:0;color:var(--text-secondary);font-weight:300;font-size:0.85rem;}/*!sc*/
+data-styled.g34[id="PostTemplate__RecommendStepText-sc-e50hvq-12"]{content:"gHELJw,"}/*!sc*/
+.lpbrcv{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}/*!sc*/
+.lpbrcv ion-icon{width:16px;height:16px;color:var(--text);vertical-align:middle;}/*!sc*/
+data-styled.g35[id="PostTemplate__RecommendPostContainer-sc-e50hvq-13"]{content:"lpbrcv,"}/*!sc*/
+.izJnak{display:block;margin-top:4px;color:var(--text);font-weight:800;font-size:1rem;word-break:break-word;white-space:normal;}/*!sc*/
+data-styled.g36[id="PostTemplate__RecommendPostTitle-sc-e50hvq-14"]{content:"izJnak,"}/*!sc*/
+</style><link rel="canonical" href="https://ohprettyhak.github.io/post/2022-03-19-test3/" data-baseprotocol="https:" data-basehost="ohprettyhak.github.io"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link as="script" rel="preload" href="/ohpretty-gatsby-blog/webpack-runtime-0fec2bf8a3a61b165ebd.js"/><link as="script" rel="preload" href="/ohpretty-gatsby-blog/framework-22009291a557a89e8bc1.js"/><link as="script" rel="preload" href="/ohpretty-gatsby-blog/app-e9d019675a500533c5e6.js"/><link as="script" rel="preload" href="/ohpretty-gatsby-blog/dfcc8cd95b4f73aa78f9c3d4e5428122162d830b-95ee4a5d67a925425333.js"/><link as="script" rel="preload" href="/ohpretty-gatsby-blog/component---src-templates-post-template-tsx-7734c6c2d81fe987f92b.js"/><link as="fetch" rel="preload" href="/ohpretty-gatsby-blog/page-data/post/2022-03-19-test3/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/ohpretty-gatsby-blog/page-data/app-data.json" crossorigin="anonymous"/></head><body class="light"><script>
               (function() {
                 window.__onThemeChange = function() {};
                 function setTheme(newTheme) {
@@ -184,7 +197,209 @@ data-styled.g35[id="PostTemplate__RecommendPostTitle-sc-e50hvq-13"]{content:"cKw
                 });
                 setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
               })();
-            </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><nav class="Navigation__TopNavigation-sc-1mahtxu-0 dvsxYu"><div class="Navigation__TopNavigationContainer-sc-1mahtxu-1 kIEKEZ"><div class="Navigation__LogoContainer-sc-1mahtxu-6 iXaOoK"><a class="Navigation__Logo-sc-1mahtxu-5 dneQFL" href="/ohpretty-gatsby-blog/"><p>ohpretty-gatsby-blog</p></a></div><ul class="Navigation__TopLinkWrap-sc-1mahtxu-2 cyCAtk"><li class="Navigation__TopLinkList-sc-1mahtxu-3 jkvNtu"><a href="/ohpretty-gatsby-blog/post">Post</a></li><li class="Navigation__TopLinkList-sc-1mahtxu-3 jkvNtu"><a href="/ohpretty-gatsby-blog/about">About</a></li><li class="Navigation__TopLinkList-sc-1mahtxu-3 jkvNtu"><a href="https://github.com/ohprettyhak" target="_blank">Github</a></li><div class="Navigation__ThemeToggleContainer-sc-1mahtxu-4 hiHQsr"><div style="width:46px"></div></div></ul><div class="Navigation__Menu-sc-1mahtxu-7 lerCL"><ion-icon name="menu-outline"></ion-icon></div></div><div id="mobile-menu" class="Navigation__MobileMenu-sc-1mahtxu-8 iSRPFN"><section class="Navigation__MobileMenuContainer-sc-1mahtxu-9 hZByCw"><div class="Navigation__MobileMenuClose-sc-1mahtxu-10 rdvos"><div class="Navigation__Menu-sc-1mahtxu-7 Navigation__MenuAlignRight-sc-1mahtxu-11 lerCL eFWBKF"><ion-icon name="close-outline"></ion-icon></div></div><ul class="Navigation__MobileMenuWrap-sc-1mahtxu-12 hmgHBU"><li class="Navigation__MobileMenuList-sc-1mahtxu-13 eTsZBN"><a href="/ohpretty-gatsby-blog/post">Post</a></li><li class="Navigation__MobileMenuList-sc-1mahtxu-13 eTsZBN"><a href="/ohpretty-gatsby-blog/about">About</a></li><li class="Navigation__MobileMenuList-sc-1mahtxu-13 eTsZBN"><a href="https://github.com/ohprettyhak" target="_blank">Github</a></li></ul></section></div></nav><div class="PostLayout__Container-sc-q8288l-1 fdydkC"><main class="PostLayout__Main-sc-q8288l-0 jzvbJA"><article><section class="PostTemplate__PostHeader-sc-e50hvq-0 dCJsww"><h1>출근길 버스 안에서 70대 ‘심정지’ 승객 살린 병원 직원들</h1><div class="PostTemplate__PostSub-sc-e50hvq-1 jTKYkq"><span class="PostTemplate__PostSubDetail-sc-e50hvq-2 jzrhcw"><ion-icon name="time-outline"></ion-icon>1<!-- --> MIN READ</span><span class="PostTemplate__PostSubDetail-sc-e50hvq-2 jzrhcw"><ion-icon name="calendar-outline"></ion-icon>2022년 03월 19일</span></div></section><section class="PostTemplate__PostCover-sc-e50hvq-3 dJGdZf"><div data-gatsby-image-wrapper="" class="gatsby-image-wrapper gatsby-image-wrapper-constrained PostTemplate__PostCoverImage-sc-e50hvq-4 cXzTfl"><div style="max-width:1440px;display:block"><img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg height=&#x27;800&#x27; width=&#x27;1440&#x27; xmlns=&#x27;http://www.w3.org/2000/svg&#x27; version=&#x27;1.1&#x27;%3E%3C/svg%3E" style="max-width:100%;display:block;position:static"/></div><img aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear" decoding="async" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAEDBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAd6VUMA//8QAGBAAAgMAAAAAAAAAAAAAAAAAARAAAhH/2gAIAQEAAQUClSXi/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFxAAAwEAAAAAAAAAAAAAAAAAABEgIf/aAAgBAQAGPwI1T//EABoQAQACAwEAAAAAAAAAAAAAAAEAEBEhMXH/2gAIAQEAAT8hdEap5Ya7AHAr/9oADAMBAAIAAwAAABBXz//EABcRAQADAAAAAAAAAAAAAAAAAAEQESH/2gAIAQMBAT8QHKj/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAaEAEAAgMBAAAAAAAAAAAAAAABETEAEEFR/9oACAEBAAE/EFIqEdayv3xM6QCII2OJSJ9ANf/Z" alt=""/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 1440px) 1440px, 100vw" decoding="async" loading="lazy" data-src="/ohpretty-gatsby-blog/static/ea07d54d3e8b47795063283f2cd61d89/76d56/cover.jpg" data-srcset="/ohpretty-gatsby-blog/static/ea07d54d3e8b47795063283f2cd61d89/d5026/cover.jpg 360w,/ohpretty-gatsby-blog/static/ea07d54d3e8b47795063283f2cd61d89/7e69e/cover.jpg 720w,/ohpretty-gatsby-blog/static/ea07d54d3e8b47795063283f2cd61d89/76d56/cover.jpg 1440w" alt="출근길 버스 안에서 70대 ‘심정지’ 승객 살린 병원 직원들 Cover"/><noscript><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 1440px) 1440px, 100vw" decoding="async" loading="lazy" src="/ohpretty-gatsby-blog/static/ea07d54d3e8b47795063283f2cd61d89/76d56/cover.jpg" srcSet="/ohpretty-gatsby-blog/static/ea07d54d3e8b47795063283f2cd61d89/d5026/cover.jpg 360w,/ohpretty-gatsby-blog/static/ea07d54d3e8b47795063283f2cd61d89/7e69e/cover.jpg 720w,/ohpretty-gatsby-blog/static/ea07d54d3e8b47795063283f2cd61d89/76d56/cover.jpg 1440w" alt="출근길 버스 안에서 70대 ‘심정지’ 승객 살린 병원 직원들 Cover"/></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}</script></div></section><section class="PostTemplate__PostContent-sc-e50hvq-5 hICejF"><p>test</p>
+            </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><nav class="Navigation__TopNavigation-sc-1mahtxu-0 dvsxYu"><div class="Navigation__TopNavigationContainer-sc-1mahtxu-1 kIEKEZ"><div class="Navigation__LogoContainer-sc-1mahtxu-6 iXaOoK"><a class="Navigation__Logo-sc-1mahtxu-5 dneQFL" href="/ohpretty-gatsby-blog/"><p>ohpretty-gatsby-blog</p></a></div><ul class="Navigation__TopLinkWrap-sc-1mahtxu-2 cyCAtk"><li class="Navigation__TopLinkList-sc-1mahtxu-3 jkvNtu"><a href="/ohpretty-gatsby-blog/post">Post</a></li><li class="Navigation__TopLinkList-sc-1mahtxu-3 jkvNtu"><a href="/ohpretty-gatsby-blog/about">About</a></li><li class="Navigation__TopLinkList-sc-1mahtxu-3 jkvNtu"><a href="https://github.com/ohprettyhak" target="_blank">Github</a></li><div class="Navigation__ThemeToggleContainer-sc-1mahtxu-4 hiHQsr"><div style="width:46px"></div></div></ul><div class="Navigation__Menu-sc-1mahtxu-7 lerCL"><ion-icon name="menu-outline"></ion-icon></div></div><div id="mobile-menu" class="Navigation__MobileMenu-sc-1mahtxu-8 iSRPFN"><section class="Navigation__MobileMenuContainer-sc-1mahtxu-9 hZByCw"><div class="Navigation__MobileMenuClose-sc-1mahtxu-10 rdvos"><div class="Navigation__Menu-sc-1mahtxu-7 Navigation__MenuAlignRight-sc-1mahtxu-11 lerCL eFWBKF"><ion-icon name="close-outline"></ion-icon></div></div><ul class="Navigation__MobileMenuWrap-sc-1mahtxu-12 hmgHBU"><li class="Navigation__MobileMenuList-sc-1mahtxu-13 eTsZBN"><a href="/ohpretty-gatsby-blog/post">Post</a></li><li class="Navigation__MobileMenuList-sc-1mahtxu-13 eTsZBN"><a href="/ohpretty-gatsby-blog/about">About</a></li><li class="Navigation__MobileMenuList-sc-1mahtxu-13 eTsZBN"><a href="https://github.com/ohprettyhak" target="_blank">Github</a></li></ul></section></div></nav><div class="PostLayout__Container-sc-q8288l-1 fdydkC"><main class="PostLayout__Main-sc-q8288l-0 diTXkp"><article class="PostTemplate__PostArticle-sc-e50hvq-0 hufWTm"><section class="PostTemplate__PostHeader-sc-e50hvq-1 cLJUyV"><h1>출근길 버스 안에서 70대 ‘심정지’ 승객 살린 병원 직원들</h1><div class="PostTemplate__PostSub-sc-e50hvq-2 jTEaUd"><span class="PostTemplate__PostSubDetail-sc-e50hvq-3 dTCFDB"><ion-icon name="time-outline"></ion-icon>4<!-- --> MIN READ</span><span class="PostTemplate__PostSubDetail-sc-e50hvq-3 dTCFDB"><ion-icon name="calendar-outline"></ion-icon>2022년 03월 19일</span></div></section><section class="PostTemplate__PostCover-sc-e50hvq-4 UYhQE"><div data-gatsby-image-wrapper="" class="gatsby-image-wrapper gatsby-image-wrapper-constrained PostTemplate__PostCoverImage-sc-e50hvq-5 hfjZmE"><div style="max-width:1440px;display:block"><img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg height=&#x27;800&#x27; width=&#x27;1440&#x27; xmlns=&#x27;http://www.w3.org/2000/svg&#x27; version=&#x27;1.1&#x27;%3E%3C/svg%3E" style="max-width:100%;display:block;position:static"/></div><img aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear" decoding="async" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAEDBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAd6VUMA//8QAGBAAAgMAAAAAAAAAAAAAAAAAARAAAhH/2gAIAQEAAQUClSXi/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFxAAAwEAAAAAAAAAAAAAAAAAABEgIf/aAAgBAQAGPwI1T//EABoQAQACAwEAAAAAAAAAAAAAAAEAEBEhMXH/2gAIAQEAAT8hdEap5Ya7AHAr/9oADAMBAAIAAwAAABBXz//EABcRAQADAAAAAAAAAAAAAAAAAAEQESH/2gAIAQMBAT8QHKj/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAaEAEAAgMBAAAAAAAAAAAAAAABETEAEEFR/9oACAEBAAE/EFIqEdayv3xM6QCII2OJSJ9ANf/Z" alt=""/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 1440px) 1440px, 100vw" decoding="async" loading="lazy" data-src="/ohpretty-gatsby-blog/static/ea07d54d3e8b47795063283f2cd61d89/76d56/cover.jpg" data-srcset="/ohpretty-gatsby-blog/static/ea07d54d3e8b47795063283f2cd61d89/d5026/cover.jpg 360w,/ohpretty-gatsby-blog/static/ea07d54d3e8b47795063283f2cd61d89/7e69e/cover.jpg 720w,/ohpretty-gatsby-blog/static/ea07d54d3e8b47795063283f2cd61d89/76d56/cover.jpg 1440w" alt="출근길 버스 안에서 70대 ‘심정지’ 승객 살린 병원 직원들 Cover"/><noscript><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 1440px) 1440px, 100vw" decoding="async" loading="lazy" src="/ohpretty-gatsby-blog/static/ea07d54d3e8b47795063283f2cd61d89/76d56/cover.jpg" srcSet="/ohpretty-gatsby-blog/static/ea07d54d3e8b47795063283f2cd61d89/d5026/cover.jpg 360w,/ohpretty-gatsby-blog/static/ea07d54d3e8b47795063283f2cd61d89/7e69e/cover.jpg 720w,/ohpretty-gatsby-blog/static/ea07d54d3e8b47795063283f2cd61d89/76d56/cover.jpg 1440w" alt="출근길 버스 안에서 70대 ‘심정지’ 승객 살린 병원 직원들 Cover"/></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}</script></div></section><section class="PostTemplate__PostContent-sc-e50hvq-6 iMtHia"><hr>
+<p><strong>Advertisement :)</strong></p>
+<ul>
+<li><strong><a href="https://nodeca.github.io/pica/demo/">pica</a></strong> - high quality and fast image
+resize in browser.</li>
+<li><strong><a href="https://github.com/nodeca/babelfish/">babelfish</a></strong> - developer friendly
+i18n with plurals support and easy syntax.</li>
+</ul>
+<p>You will like those projects!</p>
+<hr>
+<h1 id="h1-Heading-8-" style="position:relative;"><a href="#h1-Heading-8-" aria-label="h1 Heading 8  permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>h1 Heading 8-)</h1>
+<h2 id="h2-Heading" style="position:relative;"><a href="#h2-Heading" aria-label="h2 Heading permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>h2 Heading</h2>
+<h3 id="h3-Heading" style="position:relative;"><a href="#h3-Heading" aria-label="h3 Heading permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>h3 Heading</h3>
+<h4 id="h4-Heading" style="position:relative;"><a href="#h4-Heading" aria-label="h4 Heading permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>h4 Heading</h4>
+<h5>h5 Heading</h5>
+<h6>h6 Heading</h6>
+<h2 id="Horizontal-Rules" style="position:relative;"><a href="#Horizontal-Rules" aria-label="Horizontal Rules permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Horizontal Rules</h2>
+<hr>
+<hr>
+<hr>
+<h2 id="Typographic-replacements" style="position:relative;"><a href="#Typographic-replacements" aria-label="Typographic replacements permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Typographic replacements</h2>
+<p>Enable typographer option to see result.</p>
+<p>(c) (C) (r) (R) (tm) (TM) (p) (P) +-</p>
+<p>test.. test... test..... test?..... test!....</p>
+<p>!!!!!! ???? ,, -- ---</p>
+<p>"Smartypants, double quotes" and 'single quotes'</p>
+<h2 id="Emphasis" style="position:relative;"><a href="#Emphasis" aria-label="Emphasis permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Emphasis</h2>
+<p><strong>This is bold text</strong></p>
+<p><strong>This is bold text</strong></p>
+<p><em>This is italic text</em></p>
+<p><em>This is italic text</em></p>
+<p><del>Strikethrough</del></p>
+<h2 id="Blockquotes" style="position:relative;"><a href="#Blockquotes" aria-label="Blockquotes permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Blockquotes</h2>
+<blockquote>
+<p>Blockquotes can also be nested...</p>
+<blockquote>
+<p>...by using additional greater-than signs right next to each other...</p>
+<blockquote>
+<p>...or with spaces between arrows.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="Lists" style="position:relative;"><a href="#Lists" aria-label="Lists permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lists</h2>
+<p>Unordered</p>
+<ul>
+<li>Create a list by starting a line with <code>+</code>, <code>-</code>, or <code>*</code></li>
+<li>Sub-lists are made by indenting 2 spaces:
+<ul>
+<li>Marker character change forces new list start:
+<ul>
+<li>Ac tristique libero volutpat at</li>
+</ul>
+<ul>
+<li>Facilisis in pretium nisl aliquet</li>
+</ul>
+<ul>
+<li>Nulla volutpat aliquam velit</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Very easy!</li>
+</ul>
+<p>Ordered</p>
+<ol>
+<li>
+<p>Lorem ipsum dolor sit amet</p>
+</li>
+<li>
+<p>Consectetur adipiscing elit</p>
+</li>
+<li>
+<p>Integer molestie lorem at massa</p>
+</li>
+<li>
+<p>You can use sequential numbers...</p>
+</li>
+<li>
+<p>...or keep all the numbers as <code>1.</code></p>
+</li>
+</ol>
+<p>Start numbering with offset:</p>
+<ol start="57">
+<li>foo</li>
+<li>bar</li>
+</ol>
+<h2 id="Code" style="position:relative;"><a href="#Code" aria-label="Code permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code</h2>
+<p>Inline <code>code</code></p>
+<p>Indented code</p>
+<pre class="grvsc-container default-dark" data-language="" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">// Some comments</span></span>
+<span class="grvsc-line"><span class="grvsc-source">line 1 of code</span></span>
+<span class="grvsc-line"><span class="grvsc-source">line 2 of code</span></span>
+<span class="grvsc-line"><span class="grvsc-source">line 3 of code</span></span></code></pre>
+<p>Block code "fences"</p>
+<pre class="grvsc-container default-dark" data-language="" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">Sample text here...</span></span></code></pre>
+<p>Syntax highlighting</p>
+<pre class="grvsc-container default-dark" data-language="js" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">var</span><span class="mtk1"> </span><span class="mtk11">foo</span><span class="mtk1"> = </span><span class="mtk4">function</span><span class="mtk1"> (</span><span class="mtk12">bar</span><span class="mtk1">) {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk15">return</span><span class="mtk1"> </span><span class="mtk12">bar</span><span class="mtk1">++;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">};</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk10">console</span><span class="mtk1">.</span><span class="mtk11">log</span><span class="mtk1">(</span><span class="mtk11">foo</span><span class="mtk1">(</span><span class="mtk7">5</span><span class="mtk1">));</span></span></span></code></pre>
+<h2 id="Tables" style="position:relative;"><a href="#Tables" aria-label="Tables permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tables</h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td>path to data files to supply the data that will be passed into templates.</td>
+</tr>
+<tr>
+<td>engine</td>
+<td>engine to be used for processing templates. Handlebars is the default.</td>
+</tr>
+<tr>
+<td>ext</td>
+<td>extension to be used for dest files.</td>
+</tr>
+</tbody>
+</table>
+<p>Right aligned columns</p>
+<table>
+<thead>
+<tr>
+<th align="right">Option</th>
+<th align="right">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">data</td>
+<td align="right">path to data files to supply the data that will be passed into templates.</td>
+</tr>
+<tr>
+<td align="right">engine</td>
+<td align="right">engine to be used for processing templates. Handlebars is the default.</td>
+</tr>
+<tr>
+<td align="right">ext</td>
+<td align="right">extension to be used for dest files.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Links" style="position:relative;"><a href="#Links" aria-label="Links permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Links</h2>
+<p><a href="http://dev.nodeca.com">link text</a></p>
+<p><a href="http://nodeca.github.io/pica/demo/" title="title text!">link with title</a></p>
+<p>Autoconverted link <a href="https://github.com/nodeca/pica">https://github.com/nodeca/pica</a> (enable linkify to see)</p>
+<h2 id="Images" style="position:relative;"><a href="#Images" aria-label="Images permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Images</h2>
+<p><img src="https://octodex.github.com/images/minion.png" alt="Minion">
+<img src="https://octodex.github.com/images/stormtroopocat.jpg" alt="Stormtroopocat" title="The Stormtroopocat"></p>
+<p>Like links, Images also have a footnote style syntax</p>
+<p><img src="https://octodex.github.com/images/dojocat.jpg" alt="Alt text" title="The Dojocat"></p>
+<p>With a reference later in the document defining the URL location:</p>
+<h2 id="Plugins" style="position:relative;"><a href="#Plugins" aria-label="Plugins permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plugins</h2>
+<p>The killer feature of <code>markdown-it</code> is very effective support of
+<a href="https://www.npmjs.org/browse/keyword/markdown-it-plugin">syntax plugins</a>.</p>
+<h3 id="Emojies" style="position:relative;"><a href="#Emojies" aria-label="Emojies permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://github.com/markdown-it/markdown-it-emoji">Emojies</a></h3>
+<blockquote>
+<p>Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum:</p>
+<p>Shortcuts (emoticons): :-) :-( 8-) ;)</p>
+</blockquote>
+<p>see <a href="https://github.com/markdown-it/markdown-it-emoji#change-output">how to change output</a> with twemoji.</p>
+<h3 id="Subscript--Superscript" style="position:relative;"><a href="#Subscript--Superscript" aria-label="Subscript  Superscript permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://github.com/markdown-it/markdown-it-sub">Subscript</a> / <a href="https://github.com/markdown-it/markdown-it-sup">Superscript</a></h3>
+<ul>
+<li>19^th^</li>
+<li>H<del>2</del>O</li>
+</ul>
+<h3 id="ins" style="position:relative;"><a href="#ins" aria-label="ins permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://github.com/markdown-it/markdown-it-ins">&#x3C;ins></a></h3>
+<p>++Inserted text++</p>
+<h3 id="mark" style="position:relative;"><a href="#mark" aria-label="mark permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://github.com/markdown-it/markdown-it-mark">&#x3C;mark></a></h3>
+<p>==Marked text==</p>
+<h3 id="Footnotes" style="position:relative;"><a href="#Footnotes" aria-label="Footnotes permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://github.com/markdown-it/markdown-it-footnote">Footnotes</a></h3>
+<p>Footnote 1 link<sup id="fnref-first"><a href="#fn-first" class="footnote-ref">first</a></sup>.</p>
+<p>Footnote 2 link<sup id="fnref-second"><a href="#fn-second" class="footnote-ref">second</a></sup>.</p>
+<p>Inline footnote<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup> definition.</p>
+<p>Duplicated footnote reference<sup id="fnref-second"><a href="#fn-second" class="footnote-ref">second</a></sup>.</p>
+<h3 id="Definition-lists" style="position:relative;"><a href="#Definition-lists" aria-label="Definition lists permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://github.com/markdown-it/markdown-it-deflist">Definition lists</a></h3>
+<p>Term 1</p>
+<p>: Definition 1
+with lazy continuation.</p>
+<p>Term 2 with <em>inline markup</em></p>
+<p>: Definition 2</p>
+<pre class="grvsc-container default-dark" data-language="" data-index="3"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">    { some code, part of Definition 2 }</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">Third paragraph of definition 2.</span></span></code></pre>
+<p><em>Compact style:</em></p>
+<p>Term 1
+~ Definition 1</p>
+<p>Term 2
+~ Definition 2a
+~ Definition 2b</p>
+<h3 id="Abbreviations" style="position:relative;"><a href="#Abbreviations" aria-label="Abbreviations permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://github.com/markdown-it/markdown-it-abbr">Abbreviations</a></h3>
+<p>This is HTML abbreviation example.</p>
+<p>It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.</p>
+<p>*[HTML]: Hyper Text Markup Language</p>
+<h3 id="Custom-containers" style="position:relative;"><a href="#Custom-containers" aria-label="Custom containers permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://github.com/markdown-it/markdown-it-container">Custom containers</a></h3>
+<p>::: warning
+<em>here be dragons</em>
+:::</p>
 <style class="grvsc-styles">
   .grvsc-container {
     overflow: auto;
@@ -274,4 +489,34 @@ data-styled.g35[id="PostTemplate__RecommendPostTitle-sc-e50hvq-13"]{content:"cKw
     opacity: 0.7;
   }
   
-</style></section></article><div class="PostTemplate__RecommendPost-sc-e50hvq-6 cAlDif"><div class="PostTemplate__RecommendPostList-sc-e50hvq-7 bcassa"><div class="PostTemplate__RecommendPrevious-sc-e50hvq-9 fdJalt"><a class="PostTemplate__RecommendPostLink-sc-e50hvq-8 hhAwAf" href="/ohpretty-gatsby-blog/post/2022-03-18-test2/"><div class="PostTemplate__RecommendPostContainer-sc-e50hvq-12 cDzJwK"><ion-icon name="arrow-back-outline"></ion-icon><div style="margin-left:16px"><span class="PostTemplate__RecommendStepText-sc-e50hvq-11 jmplar">Previous</span><span class="PostTemplate__RecommendPostTitle-sc-e50hvq-13 cKwOVX">‘수어 시상’에 ‘파란 리본’까지…윤여정의 품격</span></div></div></a></div><div></div></div></div></main></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/post/2022-03-19-test3/";window.___webpackCompilationHash="739796f995b550cf6876";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-4ff5ae5eb8e3fb7c897e.js"],"app":["/app-5837d3691e4956deed7f.js"],"component---src-lib-page-redirect-tsx":["/component---src-lib-page-redirect-tsx-444f9138da00f53ad597.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-c8378e48c39c09b0a017.js"],"component---src-pages-about-tsx":["/component---src-pages-about-tsx-2963eb0c6285ef51a0f0.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-946ed2fd28e86490c6d0.js"],"component---src-templates-post-list-template-tsx":["/component---src-templates-post-list-template-tsx-8e6c828a3cd71771d66f.js"],"component---src-templates-post-template-tsx":["/component---src-templates-post-template-tsx-b7b84ea7dd3bff95446b.js"]};/*]]>*/</script><script src="/ohpretty-gatsby-blog/polyfill-4ff5ae5eb8e3fb7c897e.js" nomodule=""></script><script src="/ohpretty-gatsby-blog/component---src-templates-post-template-tsx-b7b84ea7dd3bff95446b.js" async=""></script><script src="/ohpretty-gatsby-blog/dfcc8cd95b4f73aa78f9c3d4e5428122162d830b-0b6c31d5d1e836df7259.js" async=""></script><script src="/ohpretty-gatsby-blog/app-5837d3691e4956deed7f.js" async=""></script><script src="/ohpretty-gatsby-blog/framework-22009291a557a89e8bc1.js" async=""></script><script src="/ohpretty-gatsby-blog/webpack-runtime-2d3db8ba6b0663622591.js" async=""></script></body></html>
+  .default-dark {
+    background-color: #1E1E1E;
+    color: #D4D4D4;
+  }
+  .default-dark .mtk4 { color: #569CD6; }
+  .default-dark .mtk1 { color: #D4D4D4; }
+  .default-dark .mtk11 { color: #DCDCAA; }
+  .default-dark .mtk12 { color: #9CDCFE; }
+  .default-dark .mtk15 { color: #C586C0; }
+  .default-dark .mtk10 { color: #4EC9B0; }
+  .default-dark .mtk7 { color: #B5CEA8; }
+  .default-dark .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
+</style>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-first">
+<p>Footnote <strong>can have markup</strong></p>
+<p>and multiple paragraphs.<a href="#fnref-first" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn-second">
+<p>Footnote text.<a href="#fnref-second" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn-1">
+<p>Text of inline footnote<a href="#fnref-1" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</div></section></article><div class="PostTemplate__RecommendPost-sc-e50hvq-7 hkEWQS"><div class="PostTemplate__RecommendPostList-sc-e50hvq-8 dufYUV"><div class="PostTemplate__RecommendPrevious-sc-e50hvq-10 jbHmEF"><a class="PostTemplate__RecommendPostLink-sc-e50hvq-9 dxSFOC" href="/ohpretty-gatsby-blog/post/2022-03-18-test2/"><div class="PostTemplate__RecommendPostContainer-sc-e50hvq-13 lpbrcv"><ion-icon name="arrow-back-outline"></ion-icon><div style="margin-left:16px"><span class="PostTemplate__RecommendStepText-sc-e50hvq-12 gHELJw">Previous</span><span class="PostTemplate__RecommendPostTitle-sc-e50hvq-14 izJnak">‘수어 시상’에 ‘파란 리본’까지…윤여정의 품격</span></div></div></a></div><div></div></div></div></main></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/post/2022-03-19-test3/";window.___webpackCompilationHash="8e3409e1465217e174d8";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-4ff5ae5eb8e3fb7c897e.js"],"app":["/app-e9d019675a500533c5e6.js"],"component---src-lib-page-redirect-tsx":["/component---src-lib-page-redirect-tsx-444f9138da00f53ad597.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-c8378e48c39c09b0a017.js"],"component---src-pages-about-tsx":["/component---src-pages-about-tsx-2963eb0c6285ef51a0f0.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-946ed2fd28e86490c6d0.js"],"component---src-templates-post-list-template-tsx":["/component---src-templates-post-list-template-tsx-8e6c828a3cd71771d66f.js"],"component---src-templates-post-template-tsx":["/component---src-templates-post-template-tsx-7734c6c2d81fe987f92b.js"]};/*]]>*/</script><script src="/ohpretty-gatsby-blog/polyfill-4ff5ae5eb8e3fb7c897e.js" nomodule=""></script><script src="/ohpretty-gatsby-blog/component---src-templates-post-template-tsx-7734c6c2d81fe987f92b.js" async=""></script><script src="/ohpretty-gatsby-blog/dfcc8cd95b4f73aa78f9c3d4e5428122162d830b-95ee4a5d67a925425333.js" async=""></script><script src="/ohpretty-gatsby-blog/app-e9d019675a500533c5e6.js" async=""></script><script src="/ohpretty-gatsby-blog/framework-22009291a557a89e8bc1.js" async=""></script><script src="/ohpretty-gatsby-blog/webpack-runtime-0fec2bf8a3a61b165ebd.js" async=""></script></body></html>
