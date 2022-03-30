@@ -2,6 +2,7 @@ import { CreatePagesArgs } from 'gatsby';
 import { createFilePath } from 'gatsby-source-filesystem';
 import path from 'path';
 
+import metaConfig from '../../gatsby-meta-config';
 import { GetPostsDataQuery } from './graphql-types';
 
 export async function createNodes({ node, getNode, actions }) {
@@ -76,7 +77,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
   if (data.uncategorized.totalCount > 0)
     categories.push({ fieldValue: 'Uncategorized', totalCount: data.uncategorized.totalCount });
 
-  const postsPerPage: number = 1;
+  const postsPerPage: number = metaConfig.postPerPage;
   const postMaxPageSize: number = Math.ceil(posts.length / postsPerPage);
   Array.from({ length: postMaxPageSize }).forEach((_, i) => {
     createPage({

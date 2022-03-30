@@ -6,10 +6,13 @@ module.exports = {
   sitePathPrefix: `/ohpretty-gatsby-blog/`,
   repository: 'ohprettyhak/ohpretty-gatsby-blog',
 
-  // Main Page
+  postPerPage: 6,
+
+  // Index Page
   slogan: `ohpretty-gatsby-blog`,
   sloganDescription: `✍️ Pretty Gatsby Blog Template`,
 
+  // Social
   social: {
     github: `ohprettyhak`,
     linkedIn: `haklee`,
