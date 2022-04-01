@@ -22,7 +22,7 @@ const TopNavigation = styled.nav`
 const TopNavigationContainer = styled.div`
   display: flex;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1280px;
   height: 100%;
   margin: 0 auto;
   padding: 0 6%;

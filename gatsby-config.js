@@ -27,12 +27,10 @@ module.exports = {
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
-              offsetY: `64`,
-              maintainCase: true,
-              removeAccents: true,
-              elements: [`h1`, `h2`, `h3`, `h4`],
+              className: `anchor-header`,
             },
           },
+          `gatsby-remark-emoji`,
         ],
       },
     },

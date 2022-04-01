@@ -23,6 +23,7 @@ const ModeStyle = createGlobalStyle`
       --selection: #e9ecef;
 
       // post 
+      --toc-border: #ebebeb;
       --category-border: rgba(143, 144, 156, 0.5);
       --category-background: white;
       --recommend-post: rgb(248, 248, 248);
@@ -41,6 +42,7 @@ const ModeStyle = createGlobalStyle`
       --selection: rgba(255, 255, 255, 0.15);
 
       // post 
+      --toc-border: #444444;
       --category-border: rgba(143, 144, 156, 0.5);
       --category-background: #221e1a;
       --recommend-post: #1F1A18;

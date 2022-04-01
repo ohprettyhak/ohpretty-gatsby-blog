@@ -11,6 +11,7 @@
   ],
   "dependencies": {
     "@bonobolabs/gatsby-remark-images-custom-widths": "^0.0.6",
+    "add": "^2.0.6",
     "babel-plugin-styled-components": "^2.0.6",
     "gatsby": "^4.10.0",
     "gatsby-plugin-canonical-urls": "^4.10.0",
@@ -25,6 +26,7 @@
     "gatsby-plugin-styled-components": "^5.10.0",
     "gatsby-plugin-typescript": "^4.10.0",
     "gatsby-remark-autolink-headers": "^5.10.2",
+    "gatsby-remark-emoji": "^0.0.3",
     "gatsby-remark-vscode": "^3.3.1",
     "gatsby-source-filesystem": "^4.10.0",
     "gatsby-transformer-remark": "^5.10.0",
@@ -37,7 +39,8 @@
     "react-redux": "^7.2.6",
     "react-switch": "^6.0.0",
     "redux": "^4.1.2",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.3",
+    "yarn": "^1.22.18"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",

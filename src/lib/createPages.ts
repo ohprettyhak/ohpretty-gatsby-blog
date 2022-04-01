@@ -3,7 +3,7 @@ import { createFilePath } from 'gatsby-source-filesystem';
 import path from 'path';
 
 import metaConfig from '../../gatsby-meta-config';
-import { GetPostsDataQuery } from './graphql-types';
+//import { GetPostsDataQuery } from './graphql-types';
 
 export async function createNodes({ node, getNode, actions }) {
   const { createNodeField } = actions;
@@ -16,7 +16,7 @@ export async function createNodes({ node, getNode, actions }) {
 export async function createPages({ actions, graphql }: CreatePagesArgs) {
   const { createPage } = actions;
 
-  const { data, errors } = await graphql<GetPostsDataQuery>(`
+  const { data, errors } = await graphql<any, any>(`
     query getPostsData {
       posts: allMarkdownRemark(sort: { fields: frontmatter___date, order: ASC }) {
         edges {

@@ -6,7 +6,7 @@ import { HighlightStyle } from '../../styles';
 
 const Main = styled.main`
   width: 100%;
-  max-width: 960px;
+  max-width: 1280px;
   min-height: 100%;
   margin: 0 auto;
   padding: 0 6%;
