@@ -10,7 +10,6 @@ module.exports = {
           {
             resolve: `gatsby-remark-vscode`,
             options: {
-              theme: 'Default Dark+',
               inlineCode: {
                 marker: '•',
               },

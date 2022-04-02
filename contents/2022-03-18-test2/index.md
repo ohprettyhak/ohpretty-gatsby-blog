@@ -9,10 +9,36 @@ testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
 
 ## 🤔 테스트 서브
 
+```ts {diff}
+function add(x, y) {
+-  return x + x;
++  return x + y;
+}
+```
+
+```javascript
+const jane = { name: 'Jane', age: 20 };
+const serina = { name: 'Serina', age: 10 };
+```
+
 testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
 test
 
 ### 📱 테스트 3asfsdafafasfasfsafsafafdsafafdsafasfasfdsafdsafdsafasfas
+
+```javascript{1, 4-6}
+// In your gatsby-config.js
+plugins: [
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        `gatsby-remark-prismjs`,
+      ]
+    }
+  }
+]
+```
 
 asfsdafafasfasfsafsafafdsafafdsafasfasfdsafdsafdsafasfasasfsdafafasfasfsafsafafdsafafdsafasfasfdsafdsafdsafasfasasfsdafafasfasfsafsafafdsafafdsafasfasfdsafdsafdsafasfas
 
@@ -42,7 +68,7 @@ fun floyd() {
     for (k in 1..nodeCount) {
         for (i in 1..nodeCount) {
             for (j in 1..nodeCount) {
-                distances[i][j] = min(distances[i][j],  distances[i][k] + distances[k][j])
+                distances[i][j] = min(distances[i][j],  distances[i][k] + distances[k][j])41314141414114414141
             }
         }
     }

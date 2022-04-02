@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  html, body, span, figure, p, h1, h2, h3, h4, h5, h6, button, a {
+  html, body, figure, p, h1, h2, h3, h4, h5, h6, button, a {
     margin: 0;
     padding: 0;
     line-height: 1.5;

@@ -164,17 +164,6 @@ const PostContent = styled.section`
     white-space: normal;
   }
 
-  code {
-    padding: 4px;
-    color: var(--text);
-    font-size: 0.85rem;
-    font-family: var(--code-font-family);
-    font-weight: 400;
-    border-radius: 4px;
-    background-color: var(--recommend-post);
-    transition: background-color 0.2s ease;
-  }
-
   ul {
     padding-left: 1.5rem;
   }
@@ -225,6 +214,19 @@ const PostContent = styled.section`
   img {
     display: block;
     max-width: 100%;
+  }
+
+  code {
+    padding: 0.2rem 0.4rem;
+    margin: 0 0.2rem;
+    font-size: 0.8rem;
+    font-family: var(--code-font-family);
+    line-height: 1.4;
+    hyphens: auto;
+    border: 1px solid var(--grvsc-border);
+    border-radius: 4px;
+    background-color: var(--grvsc-background);
+    transition: all 0.2s ease;
   }
 `;
 
