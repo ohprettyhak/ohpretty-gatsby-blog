@@ -1,5 +1,5 @@
 {
-    "componentChunkName": "component---src-lib-page-redirect-tsx",
+    "componentChunkName": "component---src-utils-page-redirect-tsx",
     "path": "/category/algorithm/1/",
     "result": {"pageContext":{"toPage":"/category/algorithm/"}},
     "staticQueryHashes": []}
