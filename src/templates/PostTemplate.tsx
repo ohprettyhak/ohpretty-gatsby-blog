@@ -22,6 +22,11 @@ const Article = styled.article`
   flex-grow: 0;
   max-width: 75%;
   flex-basis: 75%;
+
+  @media only screen and (max-width: 960px) {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
 `;
 
 const PostHeader = styled.section`

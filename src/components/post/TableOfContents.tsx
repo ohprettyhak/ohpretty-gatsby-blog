@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const TableContainer = styled.div`
   position: sticky;
+  display: block;
   top: 56px;
   max-height: calc(100vh - 19rem);
   padding-top: 56px;
@@ -10,6 +11,10 @@ const TableContainer = styled.div`
   max-width: 25%;
   flex-basis: 25%;
   flex-grow: 0;
+
+  @media only screen and (max-width: 960px) {
+    display: none;
+  }
 `;
 
 const TableInner = styled.div`
