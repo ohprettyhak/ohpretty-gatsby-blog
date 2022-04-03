@@ -99,7 +99,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
     context: {
       toPage: '/post/',
     },
-    component: path.resolve(__dirname, '../lib/PageRedirect.tsx'),
+    component: path.resolve(__dirname, '../utils/page-redirect.tsx'),
   });
 
   categories.forEach((category) => {
@@ -127,7 +127,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
           context: {
             toPage: `/category/${name}/`,
           },
-          component: path.resolve(__dirname, '../lib/PageRedirect.tsx'),
+          component: path.resolve(__dirname, '../utils/page-redirect.tsx'),
         });
       }
     });

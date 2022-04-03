@@ -4,9 +4,9 @@ import { useDispatch } from 'react-redux';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 
-import { DefaultLayout } from '../components/layouts';
-import { GetPostListQuery } from '../lib/graphql-types';
-import { PageCategory, PagePagination } from '../components/includes';
+import { DefaultLayout } from '../layouts';
+import { GetPostListQuery } from '../utils/graphql-types';
+import { PageCategory, PagePagination } from '../components/post-list';
 
 const PostsList = styled.section`
   display: grid;

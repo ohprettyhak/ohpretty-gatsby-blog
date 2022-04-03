@@ -4,7 +4,7 @@ import { useLocation } from '@reach/router';
 import { Helmet } from 'react-helmet';
 
 import metaConfig from '../../../gatsby-meta-config';
-import useScript from '../../lib/hooks/useScript';
+import useScript from '../../hooks/useScript';
 import { RootState } from '../../redux/createStore';
 
 declare global {

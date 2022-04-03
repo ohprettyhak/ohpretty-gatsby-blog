@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
-import { DefaultLayout } from '../components/layouts';
+import { DefaultLayout } from '../layouts';
 
 const AboutPage = () => {
   const dispatch = useDispatch();

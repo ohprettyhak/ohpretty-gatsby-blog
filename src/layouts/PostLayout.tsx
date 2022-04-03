@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Head, Navigation } from '../common';
-import { HighlightStyle } from '../../styles';
+import Head from '../components/head';
+import Navigation from '../components/navigation';
+import { HighlightStyle } from '../styles';
 
 const Main = styled.main`
   width: 100%;

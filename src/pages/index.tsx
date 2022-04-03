@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 
 import metaConfig from '../../gatsby-meta-config';
-import { DefaultLayout } from '../components/layouts';
+import { DefaultLayout } from '../layouts';
 
 const Cover = styled.section`
   width: 100vw;

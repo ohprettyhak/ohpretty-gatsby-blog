@@ -6,10 +6,10 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 
 import metaConfig from '../../gatsby-meta-config';
-import { PostLayout } from '../components/layouts';
-import { toFit } from '../lib/EventManager';
-import { TableOfContents, RecommendPost } from '../components/includes';
-import { GetPostDetailQuery } from '../lib/graphql-types';
+import { PostLayout } from '../layouts';
+import { toFit } from '../utils/event-manager';
+import { TableOfContents, RecommendPost } from '../components/post';
+import { GetPostDetailQuery } from '../utils/graphql-types';
 
 const PostContainer = styled.div`
   display: flex;

@@ -6,7 +6,7 @@ import Switch from 'react-switch';
 
 import metaConfig from '../../../gatsby-meta-config';
 import { GlobalStyle, ModeStyle } from '../../styles';
-import { useDarkMode } from '../../lib/hooks/useDarkMode';
+import { useDarkMode } from '../../hooks/useDarkMode';
 
 const TopNavigation = styled.nav`
   position: fixed;

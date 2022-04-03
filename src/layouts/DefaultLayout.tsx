@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Head, Navigation } from '../common';
+import Head from '../components/head';
+import Navigation from '../components/navigation';
 
 const Main = styled.main`
   width: 100%;
