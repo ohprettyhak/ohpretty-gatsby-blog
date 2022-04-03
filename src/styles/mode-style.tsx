@@ -4,7 +4,7 @@ const ModeStyle = createGlobalStyle`
   :root {
     --mobile: 425px;
     --tablet: 768px;
-    --desktop: 1200px;
+    --desktop: 1280px;
     --default-font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Pretendard, Roboto, 'Noto Sans KR', 'Segoe UI', 'Malgun Gothic', sans-serif;
     --code-font-family: 'JetBrains Mono', SFMono-Regular, Pretendard, Menlo, Consolas, 'PT Mono', 'Liberation Mono', Courier, monospace;
   }
@@ -61,7 +61,7 @@ const ModeStyle = createGlobalStyle`
       --toc-border: #444444;
       --category-border: rgba(143, 144, 156, 0.5);
       --category-background: #221e1a;
-      --recommend-post: #1F1A18;
+      --recommend-post: rgba(0, 0, 0, 0.2);
 
       // code-highlight
       --grvsc-border: rgba(0, 0, 0, 0.3);
