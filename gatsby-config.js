@@ -30,6 +30,12 @@ module.exports = {
             },
           },
           `gatsby-remark-emoji`,
+          {
+            resolve: `gatsby-remark-katex`,
+            options: {
+              strict: `ignore`,
+            },
+          },
         ],
       },
     },

@@ -10,6 +10,7 @@ import { PostLayout } from '../layouts';
 import { toFit } from '../utils/event-manager';
 import { TableOfContents, RecommendPost } from '../components/post';
 import { GetPostDetailQuery } from '../utils/graphql-types';
+import 'katex/dist/katex.min.css';
 
 const PostContainer = styled.div`
   display: flex;
