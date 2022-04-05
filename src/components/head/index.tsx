@@ -25,7 +25,7 @@ const Head: React.FC = React.memo(() => {
   const title: string = useSelector((state: RootState) => state.title);
 
   return (
-    <Helmet>
+    <Helmet htmlAttributes={{ lang: metaConfig.lang }}>
       <title>{pathname === metaConfig.sitePathPrefix ? metaConfig.title : title + ' – ' + metaConfig.title}</title>
       <link
         rel="stylesheet"

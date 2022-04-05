@@ -1,6 +1,7 @@
 module.exports = {
   title: `ohpretty-gatsby-blog`,
   description: `Pretty Gatsby Blog Template`,
+  lang: `en`,
   siteUrl: `https://ohprettyhak.github.io/ohpretty-gatsby-blog`,
   siteBaseUrl: `https://ohprettyhak.github.io`,
   sitePathPrefix: `/ohpretty-gatsby-blog/`,
