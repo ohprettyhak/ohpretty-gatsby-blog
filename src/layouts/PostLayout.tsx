@@ -15,6 +15,15 @@ const Main = styled.main`
   .utterances {
     max-width: 100% !important;
   }
+
+  .katex {
+    font-size: 1.1rem !important;
+    font-family: 'Times New Roman', serif !important;
+  }
+
+  .katex .mathnormal {
+    font-family: 'Times New Roman', serif !important;
+  }
 `;
 
 const Container = styled.div`
