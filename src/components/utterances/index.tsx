@@ -1,5 +1,6 @@
 import React, { useRef, createRef, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import styled from 'styled-components';
 
 import metaConfig from '../../../gatsby-meta-config';
 import { RootState } from '../../redux/createStore';
@@ -7,18 +8,24 @@ import { RootState } from '../../redux/createStore';
 const src = 'https://utteranc.es/client.js';
 const utterancesSelector = 'iframe.utterances-frame';
 
+const UtterancesStyle = styled.div`
+  padding-top: 72px;
+`;
+
 const Utterances: React.FC = () => {
   const containerRef = createRef<HTMLDivElement>();
   const isUtterancesCreated = useRef(false);
 
-  const repo = metaConfig.utterances;
+  const repo: string | null = metaConfig.utterances;
   const theme: string = useSelector((state: RootState) => state.theme);
 
-  let themeMode: string;
-  if (theme === '') themeMode = document.body.dataset.theme === 'light' ? 'github-light' : 'github-dark';
-  else themeMode = theme === 'light' ? 'github-light' : 'github-dark';
-
   useEffect(() => {
+    if (!repo) return;
+
+    let themeMode: string;
+    if (theme === '') themeMode = document.body.dataset.theme === 'light' ? 'github-light' : 'github-dark';
+    else themeMode = theme === 'light' ? 'github-light' : 'github-dark';
+
     const createUtterancesEl = () => {
       const utterances = document.createElement('script');
 
@@ -51,7 +58,7 @@ const Utterances: React.FC = () => {
     isUtterancesCreated.current ? postThemeMessage() : createUtterancesEl();
   }, [repo, theme]);
 
-  return <div ref={containerRef} />;
+  return <UtterancesStyle ref={containerRef} />;
 };
 
 Utterances.displayName = 'Utterances';
