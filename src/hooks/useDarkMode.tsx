@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 declare global {
   interface Window {
@@ -9,6 +10,7 @@ declare global {
 }
 
 export const useDarkMode = () => {
+  const dispatch = useDispatch();
   const [theme, setTheme] = useState(null);
 
   const toggleTheme = useCallback(() => {
@@ -27,6 +29,12 @@ export const useDarkMode = () => {
       setTheme(newTheme);
     };
   }, []);
+
+  useEffect(() => {
+    if (theme !== null) {
+      dispatch({ type: 'CHANGETHEME', value: theme });
+    }
+  }, [theme]);
 
   return { theme, toggleTheme };
 };

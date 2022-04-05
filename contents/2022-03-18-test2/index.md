@@ -1,5 +1,5 @@
 ---
-title: '‘수어 시상’에 ‘파란 리본’까지…윤여정의 품격'
+title: 'Where does it come from?'
 categories: ['Algorithm']
 tags: ['BOJ']
 date: '2022-03-18'

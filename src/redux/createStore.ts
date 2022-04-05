@@ -7,10 +7,15 @@ const reducer = (state: any, action: { type: string; value: string }) => {
       title: action.value,
     });
   }
+  if (action.type === `CHANGETHEME`) {
+    return Object.assign({}, state, {
+      theme: action.value,
+    });
+  }
   return state;
 };
 
-const initialState = { title: GatsbyConfig.siteMetadata.title };
+const initialState = { title: GatsbyConfig.siteMetadata.title, theme: '' };
 
 const createStore = () => reduxCreateStore(reducer, initialState);
 export default createStore;

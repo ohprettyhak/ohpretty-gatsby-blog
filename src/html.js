@@ -11,7 +11,7 @@ export default class HTML extends React.Component {
           {this.props.headComponents}
         </head>
 
-        <body {...this.props.bodyAttributes} className="light">
+        <body {...this.props.bodyAttributes}>
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -21,6 +21,7 @@ export default class HTML extends React.Component {
                   window.__theme = newTheme;
                   preferredTheme = newTheme;
                   document.body.className = newTheme;
+                  document.body.dataset.theme = newTheme;    
                   window.__onThemeChange(newTheme);
                 }
                 var preferredTheme;

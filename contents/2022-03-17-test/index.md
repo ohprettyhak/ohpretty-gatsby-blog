@@ -1,5 +1,5 @@
 ---
-title: '尹 "靑 시대 마감 꼭 하고 싶다" 文 "예산 면밀히 살펴 협조"'
+title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
 categories: ['Algorithm']
 cover: './cover.jpg'
 tags: ['BOJ']

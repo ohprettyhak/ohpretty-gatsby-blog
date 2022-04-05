@@ -10,6 +10,7 @@ import { PostLayout } from '../layouts';
 import { toFit } from '../utils/event-manager';
 import { TableOfContents, RecommendPost } from '../components/post';
 import { GetPostDetailQuery } from '../utils/graphql-types';
+import Utterances from '../components/utterances';
 import 'katex/dist/katex.min.css';
 
 const PostContainer = styled.div`
@@ -309,6 +310,7 @@ const PostTemplate: React.FC<PageProps<GetPostDetailQuery, null>> = React.memo((
             </PostCover>
           )}
           <PostContent dangerouslySetInnerHTML={{ __html: node.html }} />
+          <Utterances />
           <RecommendPost next={next} previous={previous} />
         </Article>
         <TableOfContents items={node.tableOfContents} currentHeaderUrl={currentHeaderUrl} />

@@ -7,10 +7,7 @@ module.exports = {
   repository: 'ohprettyhak/ohpretty-gatsby-blog',
 
   postPerPage: 6,
-
-  // Index Page
-  slogan: `ohpretty-gatsby-blog`,
-  sloganDescription: `✍️ Pretty Gatsby Blog Template`,
+  utterances: 'ohprettyhak/ohpretty-gatsby-blog',
 
   // Social
   social: {
@@ -18,4 +15,8 @@ module.exports = {
     linkedIn: `haklee`,
     email: `haklee.googl@gmail.com`,
   },
+
+  // Index Page
+  slogan: `ohpretty-gatsby-blog`,
+  sloganDescription: `✍️ Pretty Gatsby Blog Template`,
 };

@@ -11,6 +11,10 @@ const Main = styled.main`
   min-height: 100%;
   margin: 0 auto;
   padding: 0 6%;
+
+  .utterances {
+    max-width: 100% !important;
+  }
 `;
 
 const Container = styled.div`
