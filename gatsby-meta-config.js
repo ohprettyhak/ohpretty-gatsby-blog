@@ -4,7 +4,7 @@ module.exports = {
   lang: `en`,
   siteUrl: `https://ohprettyhak.github.io/ohpretty-gatsby-blog`,
   siteBaseUrl: `https://ohprettyhak.github.io`,
-  sitePathPrefix: `/ohpretty-gatsby-blog/`,
+  sitePathPrefix: `/ohpretty-gatsby-blog`,
   repository: 'ohprettyhak/ohpretty-gatsby-blog',
 
   postPerPage: 6,

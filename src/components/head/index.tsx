@@ -26,7 +26,11 @@ const Head: React.FC = React.memo(() => {
 
   return (
     <Helmet htmlAttributes={{ lang: metaConfig.lang }}>
-      <title>{pathname === metaConfig.sitePathPrefix ? metaConfig.title : title + ' – ' + metaConfig.title}</title>
+      <title>
+        {pathname.replace('/', '') === metaConfig.sitePathPrefix.replace('/', '')
+          ? metaConfig.title
+          : title + ' – ' + metaConfig.title}
+      </title>
       <link
         rel="stylesheet"
         type="text/css"

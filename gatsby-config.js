@@ -2,6 +2,7 @@ const metaConfig = require('./gatsby-meta-config');
 
 module.exports = {
   siteMetadata: metaConfig,
+  pathPrefix: metaConfig.sitePathPrefix,
   plugins: [
     {
       resolve: `gatsby-transformer-remark`,
@@ -100,5 +101,4 @@ module.exports = {
       },
     },
   ],
-  pathPrefix: metaConfig.sitePathPrefix,
 };
