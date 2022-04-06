@@ -184,7 +184,7 @@ const Navigation: React.FC = () => {
       <ModeStyle />
       <TopNavigation>
         <TopNavigationContainer>
-          {pathname.replace('/', '') === metaConfig.sitePathPrefix.replace('/', '') ? (
+          {pathname.replace(/\//g, '') === metaConfig.sitePathPrefix.replace(/\//g, '') ? (
             <LogoContainer onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
               <p>ohpretty-gatsby-blog</p>
             </LogoContainer>

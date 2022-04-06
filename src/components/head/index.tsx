@@ -23,11 +23,11 @@ const Head: React.FC = React.memo(() => {
   useEffect(() => {}, [ionModule, ionNoModule]);
 
   const title: string = useSelector((state: RootState) => state.title);
-
+  
   return (
     <Helmet htmlAttributes={{ lang: metaConfig.lang }}>
       <title>
-        {pathname.replace('/', '') === metaConfig.sitePathPrefix.replace('/', '')
+        {pathname.replace(/\//g, '') === metaConfig.sitePathPrefix.replace(/\//g, '')
           ? metaConfig.title
           : title + ' – ' + metaConfig.title}
       </title>
