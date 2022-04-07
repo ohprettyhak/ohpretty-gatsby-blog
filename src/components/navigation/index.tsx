@@ -13,9 +13,10 @@ const TopNavigation = styled.nav`
   z-index: 9;
   width: 100%;
   height: 56px;
-  background-color: var(--primary);
+  background-color: var(--navigation);
   background-position: center center;
   border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(8px);
   transition: all 0.2s ease;
 `;
 

@@ -17,6 +17,7 @@ const ModeStyle = createGlobalStyle`
       --mobile-menu: rgba(245, 245, 245, 0.98);
       --text: #202020;
       --text-secondary: #868e96;
+      --navigation: rgba(255, 255, 255, 0.85);
 
       // index
       --cover: #fcfcfc;
@@ -52,6 +53,7 @@ const ModeStyle = createGlobalStyle`
       --mobile-menu: rgba(32, 32, 32, 0.98);
       --text: white;
       --text-secondary: #bbbbbb;
+      --navigation: rgba(32, 32, 32, 0.85);
 
       // index
       --cover: rgba(0, 0, 0, 0.2);
