@@ -117,6 +117,8 @@ const PostsExcerpt = styled.p`
   font-size: 0.9rem;
   overflow: hidden;
   text-overflow: ellipsis;
+  word-break: break-all;
+  white-space: normal;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 `;

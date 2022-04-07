@@ -195,10 +195,13 @@ const LatestPostsTitle = styled.h3`
 
 const LatestPostsExcerpt = styled.p`
   display: -webkit-box;
+  width: 100%;
   color: var(--text-secondary);
   font-size: 0.9rem;
   overflow: hidden;
   text-overflow: ellipsis;
+  word-break: break-all;
+  white-space: normal;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 `;
