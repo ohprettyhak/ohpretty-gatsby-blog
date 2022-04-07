@@ -10,7 +10,7 @@ const AboutPage = () => {
 
   return (
     <DefaultLayout>
-      <p>으앙</p>
+      <p></p>
     </DefaultLayout>
   );
 };
