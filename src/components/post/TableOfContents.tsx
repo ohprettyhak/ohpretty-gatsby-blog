@@ -32,7 +32,7 @@ const ContentTitle = styled.p`
 
   ion-icon {
     height: 16px;
-    margin-right: 4px;
+    margin-right: 6px;
     margin-bottom: 2px;
     vertical-align: middle;
   }
@@ -105,7 +105,7 @@ const TableOfContents: React.FC<TableElementDataProps> = ({ items, currentHeader
     <TableContainer>
       <TableInner>
         <ContentTitle>
-          <ion-icon name="bookmark" />
+          <ion-icon name="layers" />
           TABLE OF CONTENTS
         </ContentTitle>
         <ContentList dangerouslySetInnerHTML={{ __html: replaceItems }} />

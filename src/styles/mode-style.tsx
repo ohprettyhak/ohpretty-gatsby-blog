@@ -15,7 +15,7 @@ const ModeStyle = createGlobalStyle`
       --primary: white;
       --line: #eeeeee;
       --mobile-menu: rgba(245, 245, 245, 0.98);
-      --text: #25201d;
+      --text: #202020;
       --text-secondary: #868e96;
 
       // index
@@ -40,27 +40,27 @@ const ModeStyle = createGlobalStyle`
       --mtk8: #A31515; 
       --mtk7: #09885A; 
       --mtk3: #008000;
-      --grvsc-line-highlighted-background-color: rgba(37, 32, 29, 0.05);
-      --grvsc-line-highlighted-border-color: rgba(37, 32, 29, 0.2);
+      --grvsc-line-highlighted-background-color: rgba(32, 32, 32, 0.05);
+      --grvsc-line-highlighted-border-color: rgba(32, 32, 32, 0.2);
       --grvsc-line-highlighted-border-width: 4px;
     }
 
     &.dark {
       // common
-      --primary: #25201d;
-      --line: #1a1613;
-      --mobile-menu: rgba(37, 32, 29, 0.98);
+      --primary: #202020;
+      --line: #343434;
+      --mobile-menu: rgba(32, 32, 32, 0.98);
       --text: white;
       --text-secondary: #bbbbbb;
 
       // index
-      --cover: #221e1a;
+      --cover: rgba(0, 0, 0, 0.2);
       --selection: rgba(255, 255, 255, 0.15);
 
       // post 
       --toc-border: #444444;
-      --category-border: rgba(143, 144, 156, 0.5);
-      --category-background: #221e1a;
+      --category-border: rgba(255, 255, 255, 0.2);
+      --category-background: rgba(0, 0, 0, 0.3);
       --recommend-post: rgba(0, 0, 0, 0.2);
 
       // code-highlight
