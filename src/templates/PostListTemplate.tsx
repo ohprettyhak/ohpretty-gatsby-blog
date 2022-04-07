@@ -110,17 +110,12 @@ const PostsTitle = styled.h3`
   white-space: normal;
 `;
 
-const PostsExcerpt = styled.p`
-  display: -webkit-box;
+const PostsSubTitle = styled.p`
   margin-top: 4px;
   color: var(--text-secondary);
   font-size: 0.9rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
   word-break: break-all;
   white-space: normal;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
 `;
 
 const PostSub = styled.div`
@@ -147,7 +142,6 @@ type SitePageContext = {
 
 type NodeArray = {
   node: {
-    excerpt?: string | null;
     timeToRead?: number | null;
     id: string;
     fields?: {
@@ -155,6 +149,7 @@ type NodeArray = {
     } | null;
     frontmatter?: {
       title?: string | null;
+      subtitle?: string | null;
       categories?: Array<string | null> | null;
       date?: any | null;
       cover?: any | null;
@@ -201,7 +196,7 @@ const PostListTemplate: React.FC<PageProps<GetPostListQuery, SitePageContext>> =
               </PostsCategories>
               <PostsLink to={node.fields.slug}>
                 <PostsTitle>{node.frontmatter.title}</PostsTitle>
-                <PostsExcerpt>{node.excerpt}</PostsExcerpt>
+                <PostsSubTitle>{node.frontmatter.subtitle}</PostsSubTitle>
               </PostsLink>
               <PostSub>
                 <PostsReadTime>
@@ -224,12 +219,11 @@ const PostListTemplate: React.FC<PageProps<GetPostListQuery, SitePageContext>> =
 
 export default PostListTemplate;
 
-export const postListQuery = graphql`
+export const PostListQuery = graphql`
   query getPostList($skip: Int!, $limit: Int!, $categoryQuery: String = "") {
     defaultPosts: allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: $limit, skip: $skip) {
       edges {
         node {
-          excerpt(truncate: true, pruneLength: 100)
           timeToRead
           id
           fields {
@@ -237,6 +231,7 @@ export const postListQuery = graphql`
           }
           frontmatter {
             title
+            subtitle
             categories
             date(formatString: "YYYY년 MM월 DD일")
             cover {
@@ -257,7 +252,6 @@ export const postListQuery = graphql`
     ) {
       edges {
         node {
-          excerpt(truncate: true, pruneLength: 100)
           timeToRead
           id
           fields {
@@ -265,6 +259,7 @@ export const postListQuery = graphql`
           }
           frontmatter {
             title
+            subtitle
             categories
             date(formatString: "YYYY년 MM월 DD일")
             cover {
@@ -285,7 +280,6 @@ export const postListQuery = graphql`
     ) {
       edges {
         node {
-          excerpt(truncate: true, pruneLength: 100)
           timeToRead
           id
           fields {
@@ -293,6 +287,7 @@ export const postListQuery = graphql`
           }
           frontmatter {
             title
+            subtitle
             categories
             date(formatString: "YYYY년 MM월 DD일")
             cover {

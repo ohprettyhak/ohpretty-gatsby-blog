@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 
 import metaConfig from '../../gatsby-meta-config';
 import { DefaultLayout } from '../layouts';
+import { GetLatestPostsQuery } from 'lib/graphql-types';
 
 const Cover = styled.section`
   width: 100vw;
@@ -193,17 +194,12 @@ const LatestPostsTitle = styled.h3`
   white-space: nowrap;
 `;
 
-const LatestPostsExcerpt = styled.p`
-  display: -webkit-box;
+const LatestPostsSubTitle = styled.p`
   width: 100%;
   color: var(--text-secondary);
   font-size: 0.9rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
   word-break: break-all;
   white-space: normal;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
 `;
 
 const LatestPostsSub = styled.div`
@@ -221,11 +217,10 @@ const LatestPostsDate = styled.span`
 `;
 
 const LatestPostsQuery = graphql`
-  query getRecentPosts {
+  query getLatestPosts {
     allMarkdownRemark(limit: 3, sort: { fields: frontmatter___date, order: DESC }) {
       edges {
         node {
-          excerpt(truncate: true, pruneLength: 200)
           timeToRead
           id
           fields {
@@ -233,6 +228,7 @@ const LatestPostsQuery = graphql`
           }
           frontmatter {
             title
+            subtitle
             categories
             date(formatString: "YYYY년 MM월 DD일")
             cover {
@@ -251,7 +247,7 @@ const IndexPage: React.FC = () => {
   const dispatch = useDispatch();
   dispatch({ type: 'CHANGETITLE', value: 'index' });
 
-  const latestPosts = useStaticQuery<any>(LatestPostsQuery);
+  const latestPosts = useStaticQuery<GetLatestPostsQuery>(LatestPostsQuery);
   console.log(latestPosts);
 
   return (
@@ -302,7 +298,7 @@ const IndexPage: React.FC = () => {
                   </LatestPostsCategories>
                   <LatestPostsLink to={node.fields.slug}>
                     <LatestPostsTitle>{node.frontmatter.title}</LatestPostsTitle>
-                    <LatestPostsExcerpt>{node.excerpt}</LatestPostsExcerpt>
+                    <LatestPostsSubTitle>{node.frontmatter.subtitle}</LatestPostsSubTitle>
                     <LatestPostsSub>
                       <LatestPostsReadTime>
                         <ion-icon name="time-outline" />

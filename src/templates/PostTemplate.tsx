@@ -40,19 +40,26 @@ const PostHeader = styled.section`
     margin-bottom: 2px;
     vertical-align: middle;
   }
+`;
 
-  h1 {
-    display: flex;
-    align-items: center;
-    color: var(--text);
-    font-size: 2.4rem;
-    font-weight: 800;
-    line-height: 1.2;
-    padding-top: 4px;
-    padding-bottom: 8px;
-    word-break: break-word;
-    white-space: normal;
-  }
+const PostTitle = styled.h1`
+  display: flex;
+  padding: 4px 0;
+  align-items: center;
+  color: var(--text);
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.2;
+  word-break: break-word;
+  white-space: normal;
+`;
+
+const PostSubTitle = styled.p`
+  margin: 0.5rem 0 1rem 0;
+  color: var(--text-secondary);
+  font-size: 1.15rem;
+  word-break: break-word;
+  white-space: normal;
 `;
 
 const PostSub = styled.div`
@@ -286,7 +293,8 @@ const PostTemplate: React.FC<PageProps<GetPostDetailQuery, null>> = React.memo((
       <PostContainer>
         <Article>
           <PostHeader>
-            <h1>{node.frontmatter.title}</h1>
+            <PostTitle>{node.frontmatter.title}</PostTitle>
+            <PostSubTitle>{node.frontmatter.subtitle}</PostSubTitle>
             <PostSub>
               <PostSubDetail>
                 <ion-icon name="time-outline" />
@@ -325,7 +333,6 @@ export const postDetailQuery = graphql`
   query getPostDetail($id: String!, $prev: String, $next: String) {
     node: markdownRemark(id: { eq: $id }) {
       id
-      excerpt(pruneLength: 160)
       html
       timeToRead
       tableOfContents
@@ -334,6 +341,7 @@ export const postDetailQuery = graphql`
       }
       frontmatter {
         title
+        subtitle
         date(formatString: "YYYY년 MM월 DD일")
         cover {
           childImageSharp {

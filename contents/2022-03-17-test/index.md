@@ -1,5 +1,6 @@
 ---
 title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
+subtitle: 'Aldus PageMaker including versions of Lorem Ipsum'
 categories: ['Algorithm', 'BOJ']
 cover: './cover.jpg'
 tags: ['BOJ']

@@ -1,5 +1,6 @@
 ---
 title: 'Where does it come from?'
+subtitle: 'Various versions have evolved over the years.'
 categories: ['Algorithm']
 tags: ['BOJ']
 date: '2022-03-18'
