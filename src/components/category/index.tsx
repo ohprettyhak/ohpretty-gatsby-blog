@@ -54,7 +54,7 @@ type CategoryDataProps = {
   totalPosts: number;
 };
 
-const PageCategory: React.FC<CategoryDataProps> = React.memo(({ categories, categoryQuery, totalPosts }) => {
+const Category: React.FC<CategoryDataProps> = React.memo(({ categories, categoryQuery, totalPosts }) => {
   return (
     <CategoryList>
       <CategoryItem key="total">
@@ -81,4 +81,4 @@ const PageCategory: React.FC<CategoryDataProps> = React.memo(({ categories, cate
   );
 });
 
-export default PageCategory;
+export default Category;

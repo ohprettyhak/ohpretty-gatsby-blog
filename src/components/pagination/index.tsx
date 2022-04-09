@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-const Pagination = styled.div`
+const PaginationContainer = styled.div`
   display: flex;
   margin: 42px 0;
   align-items: center;
@@ -36,7 +36,7 @@ type PageDataProps = {
   categoryQuery: string;
 };
 
-const PagePagination: React.FC<PageDataProps> = ({ cur, max, categoryQuery }) => {
+const Pagination: React.FC<PageDataProps> = ({ cur, max, categoryQuery }) => {
   const path = categoryQuery ? categoryQuery.toLowerCase() : null;
   const rst = [];
 
@@ -64,7 +64,7 @@ const PagePagination: React.FC<PageDataProps> = ({ cur, max, categoryQuery }) =>
         Older Posts&nbsp;&nbsp;&rarr;
       </PaginationItem>,
     );
-  return <Pagination>{rst}</Pagination>;
+  return <PaginationContainer>{rst}</PaginationContainer>;
 };
 
-export default PagePagination;
+export default Pagination;

@@ -5,8 +5,9 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 
 import { DefaultLayout } from '../layouts';
+import Category from '../components/category';
+import Pagination from '../components/pagination';
 import { GetPostListQuery } from '../utils/graphql-types';
-import { PageCategory, PagePagination } from '../components/post-list';
 
 const PostsList = styled.section`
   display: grid;
@@ -171,7 +172,7 @@ const PostListTemplate: React.FC<PageProps<GetPostListQuery, SitePageContext>> =
 
   return (
     <DefaultLayout>
-      <PageCategory categories={categories} categoryQuery={categoryQuery} totalPosts={totalPosts} />
+      <Category categories={categories} categoryQuery={categoryQuery} totalPosts={totalPosts} />
       <PostsList>
         {postsList.map(({ node }) => (
           <PostsItem key={node.id} data-sal="slide-up" data-sal-duration="300" data-sal-easing="ease">
@@ -212,7 +213,7 @@ const PostListTemplate: React.FC<PageProps<GetPostListQuery, SitePageContext>> =
           </PostsItem>
         ))}
       </PostsList>
-      <PagePagination cur={cur} max={max} categoryQuery={categoryQuery} />
+      <Pagination cur={cur} max={max} categoryQuery={categoryQuery} />
     </DefaultLayout>
   );
 });

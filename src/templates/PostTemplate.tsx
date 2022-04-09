@@ -8,9 +8,10 @@ import styled from 'styled-components';
 import metaConfig from '../../gatsby-meta-config';
 import { PostLayout } from '../layouts';
 import { toFit } from '../utils/event-manager';
-import { TableOfContents, RecommendPost } from '../components/post';
-import { GetPostDetailQuery } from '../utils/graphql-types';
+import RecommendPosts from '../components/recommend-posts';
+import TableOfContents from '../components/table-of-contents';
 import Utterances from '../components/utterances';
+import { GetPostDetailQuery } from '../utils/graphql-types';
 import 'katex/dist/katex.min.css';
 
 const PostContainer = styled.div`
@@ -319,7 +320,7 @@ const PostTemplate: React.FC<PageProps<GetPostDetailQuery, null>> = React.memo((
           )}
           <PostContent dangerouslySetInnerHTML={{ __html: node.html }} />
           <Utterances />
-          <RecommendPost next={next} previous={previous} />
+          <RecommendPosts next={next} previous={previous} />
         </Article>
         <TableOfContents items={node.tableOfContents} currentHeaderUrl={currentHeaderUrl} />
       </PostContainer>

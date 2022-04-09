@@ -8,7 +8,7 @@ const Recommend = styled.div`
   padding: 48px 0;
 `;
 
-const RecommendPostList = styled.div`
+const RecommendPostsList = styled.div`
   display: grid;
   margin: 0 -12px;
   grid-template-columns: 50% 50%;
@@ -19,7 +19,7 @@ const RecommendPostList = styled.div`
   }
 `;
 
-const RecommendPostLink = styled(Link)`
+const RecommendPostsLink = styled(Link)`
   display: block;
   text-decoration: none;
   opacity: 1;
@@ -34,7 +34,7 @@ const RecommendPrevious = styled.div`
   margin: 0 12px;
   padding: 10px 12px;
   border-radius: 8px;
-  background-color: var(--recommend-post);
+  background-color: var(--recommend-posts);
   transition: background-color 0.2s ease;
 `;
 
@@ -50,7 +50,7 @@ const RecommendStepText = styled.span`
   font-size: 0.85rem;
 `;
 
-const RecommendPostContainer = styled.div`
+const RecommendPostsContainer = styled.div`
   display: inline-flex;
   align-items: center;
 
@@ -62,7 +62,7 @@ const RecommendPostContainer = styled.div`
   }
 `;
 
-const RecommendPostTitle = styled.span`
+const RecommendPostsTitle = styled.span`
   display: block;
   margin-top: 4px;
   color: var(--text);
@@ -77,43 +77,43 @@ type PostDataProps = {
   previous: { fields?: { slug?: string | null } | null; frontmatter?: { title?: string | null } | null } | null;
 };
 
-const RecommendPost: React.FC<PostDataProps> = ({ next, previous }) => {
+const RecommendPosts: React.FC<PostDataProps> = ({ next, previous }) => {
   return (
     <Recommend>
-      <RecommendPostList>
+      <RecommendPostsList>
         {previous !== null ? (
           <RecommendPrevious>
-            <RecommendPostLink to={previous.fields.slug}>
-              <RecommendPostContainer>
+            <RecommendPostsLink to={previous.fields.slug}>
+              <RecommendPostsContainer>
                 <ion-icon name="arrow-back-outline" />
                 <div style={{ marginLeft: '16px' }}>
                   <RecommendStepText>Previous</RecommendStepText>
-                  <RecommendPostTitle>{previous.frontmatter.title}</RecommendPostTitle>
+                  <RecommendPostsTitle>{previous.frontmatter.title}</RecommendPostsTitle>
                 </div>
-              </RecommendPostContainer>
-            </RecommendPostLink>
+              </RecommendPostsContainer>
+            </RecommendPostsLink>
           </RecommendPrevious>
         ) : (
           <div></div>
         )}
         {next !== null ? (
           <RecommendNext>
-            <RecommendPostLink to={next.fields.slug}>
-              <RecommendPostContainer>
+            <RecommendPostsLink to={next.fields.slug}>
+              <RecommendPostsContainer>
                 <div style={{ marginRight: '16px' }}>
                   <RecommendStepText>Next</RecommendStepText>
-                  <RecommendPostTitle>{next.frontmatter.title}</RecommendPostTitle>
+                  <RecommendPostsTitle>{next.frontmatter.title}</RecommendPostsTitle>
                 </div>
                 <ion-icon name="arrow-forward-outline" />
-              </RecommendPostContainer>
-            </RecommendPostLink>
+              </RecommendPostsContainer>
+            </RecommendPostsLink>
           </RecommendNext>
         ) : (
           <div></div>
         )}
-      </RecommendPostList>
+      </RecommendPostsList>
     </Recommend>
   );
 };
 
-export default RecommendPost;
+export default RecommendPosts;

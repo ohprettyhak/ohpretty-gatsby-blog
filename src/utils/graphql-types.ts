@@ -385,10 +385,6 @@ export type markdownremark = node & {
   timeToRead?: Maybe<Scalars['Int']>;
   tableOfContents?: Maybe<Scalars['String']>;
   wordCount?: Maybe<markdownwordcount>;
-  /** Returns all children nodes filtered by type GRVSCCodeBlock */
-  childrenGrvscCodeBlock?: Maybe<Array<Maybe<grvsccodeblock>>>;
-  /** Returns the first child node of type GRVSCCodeBlock or null if there are no children of given type on this node */
-  childGrvscCodeBlock?: Maybe<grvsccodeblock>;
   parent?: Maybe<node>;
   children: Array<node>;
   internal: internal;
@@ -480,7 +476,6 @@ export type grvsctokenizedline = {
   isHighlighted?: Maybe<Scalars['Boolean']>;
   lineNumber?: Maybe<Scalars['Int']>;
   diff?: Maybe<grvscdiff>;
-  setContainerClassName?: Maybe<Scalars['String']>;
 };
 
 export type grvscthemeconditionkind =
@@ -1070,8 +1065,6 @@ export type querymarkdownremarkargs = {
   timeToRead?: InputMaybe<intqueryoperatorinput>;
   tableOfContents?: InputMaybe<stringqueryoperatorinput>;
   wordCount?: InputMaybe<markdownwordcountfilterinput>;
-  childrenGrvscCodeBlock?: InputMaybe<grvsccodeblockfilterlistinput>;
-  childGrvscCodeBlock?: InputMaybe<grvsccodeblockfilterinput>;
   parent?: InputMaybe<nodefilterinput>;
   children?: InputMaybe<nodefilterlistinput>;
   internal?: InputMaybe<internalfilterinput>;
@@ -1240,8 +1233,6 @@ export type markdownremarkfilterinput = {
   timeToRead?: InputMaybe<intqueryoperatorinput>;
   tableOfContents?: InputMaybe<stringqueryoperatorinput>;
   wordCount?: InputMaybe<markdownwordcountfilterinput>;
-  childrenGrvscCodeBlock?: InputMaybe<grvsccodeblockfilterlistinput>;
-  childGrvscCodeBlock?: InputMaybe<grvsccodeblockfilterinput>;
   parent?: InputMaybe<nodefilterinput>;
   children?: InputMaybe<nodefilterlistinput>;
   internal?: InputMaybe<internalfilterinput>;
@@ -1418,116 +1409,6 @@ export type markdownwordcountfilterinput = {
   words?: InputMaybe<intqueryoperatorinput>;
 };
 
-export type grvsccodeblockfilterlistinput = {
-  elemMatch?: InputMaybe<grvsccodeblockfilterinput>;
-};
-
-export type grvsccodeblockfilterinput = {
-  index?: InputMaybe<intqueryoperatorinput>;
-  html?: InputMaybe<stringqueryoperatorinput>;
-  text?: InputMaybe<stringqueryoperatorinput>;
-  preClassName?: InputMaybe<stringqueryoperatorinput>;
-  codeClassName?: InputMaybe<stringqueryoperatorinput>;
-  language?: InputMaybe<stringqueryoperatorinput>;
-  meta?: InputMaybe<jsonqueryoperatorinput>;
-  defaultTheme?: InputMaybe<grvscthemefilterinput>;
-  additionalThemes?: InputMaybe<grvscthemefilterlistinput>;
-  tokenizedLines?: InputMaybe<grvsctokenizedlinefilterlistinput>;
-  id?: InputMaybe<stringqueryoperatorinput>;
-  parent?: InputMaybe<nodefilterinput>;
-  children?: InputMaybe<nodefilterlistinput>;
-  internal?: InputMaybe<internalfilterinput>;
-};
-
-export type grvscthemefilterinput = {
-  path?: InputMaybe<stringqueryoperatorinput>;
-  identifier?: InputMaybe<stringqueryoperatorinput>;
-  conditions?: InputMaybe<grvscthemeconditionfilterlistinput>;
-};
-
-export type grvscthemeconditionfilterlistinput = {
-  elemMatch?: InputMaybe<grvscthemeconditionfilterinput>;
-};
-
-export type grvscthemeconditionfilterinput = {
-  condition?: InputMaybe<grvscthemeconditionkindqueryoperatorinput>;
-  value?: InputMaybe<stringqueryoperatorinput>;
-};
-
-export type grvscthemeconditionkindqueryoperatorinput = {
-  eq?: InputMaybe<grvscthemeconditionkind>;
-  ne?: InputMaybe<grvscthemeconditionkind>;
-  in?: InputMaybe<Array<InputMaybe<grvscthemeconditionkind>>>;
-  nin?: InputMaybe<Array<InputMaybe<grvscthemeconditionkind>>>;
-};
-
-export type grvscthemefilterlistinput = {
-  elemMatch?: InputMaybe<grvscthemefilterinput>;
-};
-
-export type grvsctokenizedlinefilterlistinput = {
-  elemMatch?: InputMaybe<grvsctokenizedlinefilterinput>;
-};
-
-export type grvsctokenizedlinefilterinput = {
-  tokens?: InputMaybe<grvsctokenfilterlistinput>;
-  gutterCells?: InputMaybe<grvscguttercellfilterlistinput>;
-  text?: InputMaybe<stringqueryoperatorinput>;
-  html?: InputMaybe<stringqueryoperatorinput>;
-  attrs?: InputMaybe<jsonqueryoperatorinput>;
-  className?: InputMaybe<stringqueryoperatorinput>;
-  data?: InputMaybe<jsonqueryoperatorinput>;
-  isHighlighted?: InputMaybe<booleanqueryoperatorinput>;
-  lineNumber?: InputMaybe<intqueryoperatorinput>;
-  diff?: InputMaybe<grvscdiffqueryoperatorinput>;
-  setContainerClassName?: InputMaybe<stringqueryoperatorinput>;
-};
-
-export type grvsctokenfilterlistinput = {
-  elemMatch?: InputMaybe<grvsctokenfilterinput>;
-};
-
-export type grvsctokenfilterinput = {
-  text?: InputMaybe<stringqueryoperatorinput>;
-  startIndex?: InputMaybe<intqueryoperatorinput>;
-  endIndex?: InputMaybe<intqueryoperatorinput>;
-  scopes?: InputMaybe<stringqueryoperatorinput>;
-  html?: InputMaybe<stringqueryoperatorinput>;
-  className?: InputMaybe<stringqueryoperatorinput>;
-  defaultThemeTokenData?: InputMaybe<grvscthemetokendatafilterinput>;
-  additionalThemeTokenData?: InputMaybe<grvscthemetokendatafilterlistinput>;
-};
-
-export type grvscthemetokendatafilterinput = {
-  themeIdentifier?: InputMaybe<stringqueryoperatorinput>;
-  className?: InputMaybe<stringqueryoperatorinput>;
-  meta?: InputMaybe<intqueryoperatorinput>;
-  color?: InputMaybe<stringqueryoperatorinput>;
-  bold?: InputMaybe<booleanqueryoperatorinput>;
-  italic?: InputMaybe<booleanqueryoperatorinput>;
-  underline?: InputMaybe<booleanqueryoperatorinput>;
-};
-
-export type grvscthemetokendatafilterlistinput = {
-  elemMatch?: InputMaybe<grvscthemetokendatafilterinput>;
-};
-
-export type grvscguttercellfilterlistinput = {
-  elemMatch?: InputMaybe<grvscguttercellfilterinput>;
-};
-
-export type grvscguttercellfilterinput = {
-  className?: InputMaybe<stringqueryoperatorinput>;
-  text?: InputMaybe<stringqueryoperatorinput>;
-};
-
-export type grvscdiffqueryoperatorinput = {
-  eq?: InputMaybe<grvscdiff>;
-  ne?: InputMaybe<grvscdiff>;
-  in?: InputMaybe<Array<InputMaybe<grvscdiff>>>;
-  nin?: InputMaybe<Array<InputMaybe<grvscdiff>>>;
-};
-
 export type fileconnection = {
   totalCount: Scalars['Int'];
   edges: Array<fileedge>;
@@ -1679,87 +1560,6 @@ export type filefieldsenum =
   | 'childrenMarkdownRemark___wordCount___paragraphs'
   | 'childrenMarkdownRemark___wordCount___sentences'
   | 'childrenMarkdownRemark___wordCount___words'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___index'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___html'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___text'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___preClassName'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___codeClassName'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___language'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___meta'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___defaultTheme___path'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___defaultTheme___identifier'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___defaultTheme___conditions'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___additionalThemes'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___additionalThemes___path'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___additionalThemes___identifier'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___additionalThemes___conditions'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines___tokens'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines___gutterCells'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines___text'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines___html'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines___attrs'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines___className'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines___data'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines___isHighlighted'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines___lineNumber'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines___diff'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines___setContainerClassName'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___id'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___parent___id'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___parent___children'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___children'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___children___id'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___children___children'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___internal___content'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___internal___contentDigest'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___internal___description'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___internal___fieldOwners'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___internal___ignoreType'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___internal___mediaType'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___internal___owner'
-  | 'childrenMarkdownRemark___childrenGrvscCodeBlock___internal___type'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___index'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___html'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___text'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___preClassName'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___codeClassName'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___language'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___meta'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___defaultTheme___path'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___defaultTheme___identifier'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___defaultTheme___conditions'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___additionalThemes'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___additionalThemes___path'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___additionalThemes___identifier'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___additionalThemes___conditions'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___tokenizedLines'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___tokenizedLines___tokens'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___tokenizedLines___gutterCells'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___tokenizedLines___text'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___tokenizedLines___html'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___tokenizedLines___attrs'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___tokenizedLines___className'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___tokenizedLines___data'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___tokenizedLines___isHighlighted'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___tokenizedLines___lineNumber'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___tokenizedLines___diff'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___tokenizedLines___setContainerClassName'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___id'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___parent___id'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___parent___children'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___children'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___children___id'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___children___children'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___internal___content'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___internal___contentDigest'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___internal___description'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___internal___fieldOwners'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___internal___ignoreType'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___internal___mediaType'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___internal___owner'
-  | 'childrenMarkdownRemark___childGrvscCodeBlock___internal___type'
   | 'childrenMarkdownRemark___parent___id'
   | 'childrenMarkdownRemark___parent___parent___id'
   | 'childrenMarkdownRemark___parent___parent___children'
@@ -1857,87 +1657,6 @@ export type filefieldsenum =
   | 'childMarkdownRemark___wordCount___paragraphs'
   | 'childMarkdownRemark___wordCount___sentences'
   | 'childMarkdownRemark___wordCount___words'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___index'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___html'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___text'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___preClassName'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___codeClassName'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___language'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___meta'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___defaultTheme___path'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___defaultTheme___identifier'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___defaultTheme___conditions'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___additionalThemes'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___additionalThemes___path'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___additionalThemes___identifier'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___additionalThemes___conditions'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines___tokens'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines___gutterCells'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines___text'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines___html'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines___attrs'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines___className'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines___data'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines___isHighlighted'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines___lineNumber'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines___diff'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___tokenizedLines___setContainerClassName'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___id'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___parent___id'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___parent___children'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___children'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___children___id'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___children___children'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___internal___content'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___internal___contentDigest'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___internal___description'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___internal___fieldOwners'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___internal___ignoreType'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___internal___mediaType'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___internal___owner'
-  | 'childMarkdownRemark___childrenGrvscCodeBlock___internal___type'
-  | 'childMarkdownRemark___childGrvscCodeBlock___index'
-  | 'childMarkdownRemark___childGrvscCodeBlock___html'
-  | 'childMarkdownRemark___childGrvscCodeBlock___text'
-  | 'childMarkdownRemark___childGrvscCodeBlock___preClassName'
-  | 'childMarkdownRemark___childGrvscCodeBlock___codeClassName'
-  | 'childMarkdownRemark___childGrvscCodeBlock___language'
-  | 'childMarkdownRemark___childGrvscCodeBlock___meta'
-  | 'childMarkdownRemark___childGrvscCodeBlock___defaultTheme___path'
-  | 'childMarkdownRemark___childGrvscCodeBlock___defaultTheme___identifier'
-  | 'childMarkdownRemark___childGrvscCodeBlock___defaultTheme___conditions'
-  | 'childMarkdownRemark___childGrvscCodeBlock___additionalThemes'
-  | 'childMarkdownRemark___childGrvscCodeBlock___additionalThemes___path'
-  | 'childMarkdownRemark___childGrvscCodeBlock___additionalThemes___identifier'
-  | 'childMarkdownRemark___childGrvscCodeBlock___additionalThemes___conditions'
-  | 'childMarkdownRemark___childGrvscCodeBlock___tokenizedLines'
-  | 'childMarkdownRemark___childGrvscCodeBlock___tokenizedLines___tokens'
-  | 'childMarkdownRemark___childGrvscCodeBlock___tokenizedLines___gutterCells'
-  | 'childMarkdownRemark___childGrvscCodeBlock___tokenizedLines___text'
-  | 'childMarkdownRemark___childGrvscCodeBlock___tokenizedLines___html'
-  | 'childMarkdownRemark___childGrvscCodeBlock___tokenizedLines___attrs'
-  | 'childMarkdownRemark___childGrvscCodeBlock___tokenizedLines___className'
-  | 'childMarkdownRemark___childGrvscCodeBlock___tokenizedLines___data'
-  | 'childMarkdownRemark___childGrvscCodeBlock___tokenizedLines___isHighlighted'
-  | 'childMarkdownRemark___childGrvscCodeBlock___tokenizedLines___lineNumber'
-  | 'childMarkdownRemark___childGrvscCodeBlock___tokenizedLines___diff'
-  | 'childMarkdownRemark___childGrvscCodeBlock___tokenizedLines___setContainerClassName'
-  | 'childMarkdownRemark___childGrvscCodeBlock___id'
-  | 'childMarkdownRemark___childGrvscCodeBlock___parent___id'
-  | 'childMarkdownRemark___childGrvscCodeBlock___parent___children'
-  | 'childMarkdownRemark___childGrvscCodeBlock___children'
-  | 'childMarkdownRemark___childGrvscCodeBlock___children___id'
-  | 'childMarkdownRemark___childGrvscCodeBlock___children___children'
-  | 'childMarkdownRemark___childGrvscCodeBlock___internal___content'
-  | 'childMarkdownRemark___childGrvscCodeBlock___internal___contentDigest'
-  | 'childMarkdownRemark___childGrvscCodeBlock___internal___description'
-  | 'childMarkdownRemark___childGrvscCodeBlock___internal___fieldOwners'
-  | 'childMarkdownRemark___childGrvscCodeBlock___internal___ignoreType'
-  | 'childMarkdownRemark___childGrvscCodeBlock___internal___mediaType'
-  | 'childMarkdownRemark___childGrvscCodeBlock___internal___owner'
-  | 'childMarkdownRemark___childGrvscCodeBlock___internal___type'
   | 'childMarkdownRemark___parent___id'
   | 'childMarkdownRemark___parent___parent___id'
   | 'childMarkdownRemark___parent___parent___children'
@@ -3668,7 +3387,6 @@ export type markdownremarkfieldsenum =
   | 'frontmatter___cover___childrenMarkdownRemark___headings'
   | 'frontmatter___cover___childrenMarkdownRemark___timeToRead'
   | 'frontmatter___cover___childrenMarkdownRemark___tableOfContents'
-  | 'frontmatter___cover___childrenMarkdownRemark___childrenGrvscCodeBlock'
   | 'frontmatter___cover___childrenMarkdownRemark___children'
   | 'frontmatter___cover___childMarkdownRemark___id'
   | 'frontmatter___cover___childMarkdownRemark___excerpt'
@@ -3680,7 +3398,6 @@ export type markdownremarkfieldsenum =
   | 'frontmatter___cover___childMarkdownRemark___headings'
   | 'frontmatter___cover___childMarkdownRemark___timeToRead'
   | 'frontmatter___cover___childMarkdownRemark___tableOfContents'
-  | 'frontmatter___cover___childMarkdownRemark___childrenGrvscCodeBlock'
   | 'frontmatter___cover___childMarkdownRemark___children'
   | 'frontmatter___cover___childrenImageSharp'
   | 'frontmatter___cover___childrenImageSharp___gatsbyImageData'
@@ -3719,161 +3436,6 @@ export type markdownremarkfieldsenum =
   | 'wordCount___paragraphs'
   | 'wordCount___sentences'
   | 'wordCount___words'
-  | 'childrenGrvscCodeBlock'
-  | 'childrenGrvscCodeBlock___index'
-  | 'childrenGrvscCodeBlock___html'
-  | 'childrenGrvscCodeBlock___text'
-  | 'childrenGrvscCodeBlock___preClassName'
-  | 'childrenGrvscCodeBlock___codeClassName'
-  | 'childrenGrvscCodeBlock___language'
-  | 'childrenGrvscCodeBlock___meta'
-  | 'childrenGrvscCodeBlock___defaultTheme___path'
-  | 'childrenGrvscCodeBlock___defaultTheme___identifier'
-  | 'childrenGrvscCodeBlock___defaultTheme___conditions'
-  | 'childrenGrvscCodeBlock___defaultTheme___conditions___condition'
-  | 'childrenGrvscCodeBlock___defaultTheme___conditions___value'
-  | 'childrenGrvscCodeBlock___additionalThemes'
-  | 'childrenGrvscCodeBlock___additionalThemes___path'
-  | 'childrenGrvscCodeBlock___additionalThemes___identifier'
-  | 'childrenGrvscCodeBlock___additionalThemes___conditions'
-  | 'childrenGrvscCodeBlock___additionalThemes___conditions___condition'
-  | 'childrenGrvscCodeBlock___additionalThemes___conditions___value'
-  | 'childrenGrvscCodeBlock___tokenizedLines'
-  | 'childrenGrvscCodeBlock___tokenizedLines___tokens'
-  | 'childrenGrvscCodeBlock___tokenizedLines___tokens___text'
-  | 'childrenGrvscCodeBlock___tokenizedLines___tokens___startIndex'
-  | 'childrenGrvscCodeBlock___tokenizedLines___tokens___endIndex'
-  | 'childrenGrvscCodeBlock___tokenizedLines___tokens___scopes'
-  | 'childrenGrvscCodeBlock___tokenizedLines___tokens___html'
-  | 'childrenGrvscCodeBlock___tokenizedLines___tokens___className'
-  | 'childrenGrvscCodeBlock___tokenizedLines___tokens___additionalThemeTokenData'
-  | 'childrenGrvscCodeBlock___tokenizedLines___gutterCells'
-  | 'childrenGrvscCodeBlock___tokenizedLines___gutterCells___className'
-  | 'childrenGrvscCodeBlock___tokenizedLines___gutterCells___text'
-  | 'childrenGrvscCodeBlock___tokenizedLines___text'
-  | 'childrenGrvscCodeBlock___tokenizedLines___html'
-  | 'childrenGrvscCodeBlock___tokenizedLines___attrs'
-  | 'childrenGrvscCodeBlock___tokenizedLines___className'
-  | 'childrenGrvscCodeBlock___tokenizedLines___data'
-  | 'childrenGrvscCodeBlock___tokenizedLines___isHighlighted'
-  | 'childrenGrvscCodeBlock___tokenizedLines___lineNumber'
-  | 'childrenGrvscCodeBlock___tokenizedLines___diff'
-  | 'childrenGrvscCodeBlock___tokenizedLines___setContainerClassName'
-  | 'childrenGrvscCodeBlock___id'
-  | 'childrenGrvscCodeBlock___parent___id'
-  | 'childrenGrvscCodeBlock___parent___parent___id'
-  | 'childrenGrvscCodeBlock___parent___parent___children'
-  | 'childrenGrvscCodeBlock___parent___children'
-  | 'childrenGrvscCodeBlock___parent___children___id'
-  | 'childrenGrvscCodeBlock___parent___children___children'
-  | 'childrenGrvscCodeBlock___parent___internal___content'
-  | 'childrenGrvscCodeBlock___parent___internal___contentDigest'
-  | 'childrenGrvscCodeBlock___parent___internal___description'
-  | 'childrenGrvscCodeBlock___parent___internal___fieldOwners'
-  | 'childrenGrvscCodeBlock___parent___internal___ignoreType'
-  | 'childrenGrvscCodeBlock___parent___internal___mediaType'
-  | 'childrenGrvscCodeBlock___parent___internal___owner'
-  | 'childrenGrvscCodeBlock___parent___internal___type'
-  | 'childrenGrvscCodeBlock___children'
-  | 'childrenGrvscCodeBlock___children___id'
-  | 'childrenGrvscCodeBlock___children___parent___id'
-  | 'childrenGrvscCodeBlock___children___parent___children'
-  | 'childrenGrvscCodeBlock___children___children'
-  | 'childrenGrvscCodeBlock___children___children___id'
-  | 'childrenGrvscCodeBlock___children___children___children'
-  | 'childrenGrvscCodeBlock___children___internal___content'
-  | 'childrenGrvscCodeBlock___children___internal___contentDigest'
-  | 'childrenGrvscCodeBlock___children___internal___description'
-  | 'childrenGrvscCodeBlock___children___internal___fieldOwners'
-  | 'childrenGrvscCodeBlock___children___internal___ignoreType'
-  | 'childrenGrvscCodeBlock___children___internal___mediaType'
-  | 'childrenGrvscCodeBlock___children___internal___owner'
-  | 'childrenGrvscCodeBlock___children___internal___type'
-  | 'childrenGrvscCodeBlock___internal___content'
-  | 'childrenGrvscCodeBlock___internal___contentDigest'
-  | 'childrenGrvscCodeBlock___internal___description'
-  | 'childrenGrvscCodeBlock___internal___fieldOwners'
-  | 'childrenGrvscCodeBlock___internal___ignoreType'
-  | 'childrenGrvscCodeBlock___internal___mediaType'
-  | 'childrenGrvscCodeBlock___internal___owner'
-  | 'childrenGrvscCodeBlock___internal___type'
-  | 'childGrvscCodeBlock___index'
-  | 'childGrvscCodeBlock___html'
-  | 'childGrvscCodeBlock___text'
-  | 'childGrvscCodeBlock___preClassName'
-  | 'childGrvscCodeBlock___codeClassName'
-  | 'childGrvscCodeBlock___language'
-  | 'childGrvscCodeBlock___meta'
-  | 'childGrvscCodeBlock___defaultTheme___path'
-  | 'childGrvscCodeBlock___defaultTheme___identifier'
-  | 'childGrvscCodeBlock___defaultTheme___conditions'
-  | 'childGrvscCodeBlock___defaultTheme___conditions___condition'
-  | 'childGrvscCodeBlock___defaultTheme___conditions___value'
-  | 'childGrvscCodeBlock___additionalThemes'
-  | 'childGrvscCodeBlock___additionalThemes___path'
-  | 'childGrvscCodeBlock___additionalThemes___identifier'
-  | 'childGrvscCodeBlock___additionalThemes___conditions'
-  | 'childGrvscCodeBlock___additionalThemes___conditions___condition'
-  | 'childGrvscCodeBlock___additionalThemes___conditions___value'
-  | 'childGrvscCodeBlock___tokenizedLines'
-  | 'childGrvscCodeBlock___tokenizedLines___tokens'
-  | 'childGrvscCodeBlock___tokenizedLines___tokens___text'
-  | 'childGrvscCodeBlock___tokenizedLines___tokens___startIndex'
-  | 'childGrvscCodeBlock___tokenizedLines___tokens___endIndex'
-  | 'childGrvscCodeBlock___tokenizedLines___tokens___scopes'
-  | 'childGrvscCodeBlock___tokenizedLines___tokens___html'
-  | 'childGrvscCodeBlock___tokenizedLines___tokens___className'
-  | 'childGrvscCodeBlock___tokenizedLines___tokens___additionalThemeTokenData'
-  | 'childGrvscCodeBlock___tokenizedLines___gutterCells'
-  | 'childGrvscCodeBlock___tokenizedLines___gutterCells___className'
-  | 'childGrvscCodeBlock___tokenizedLines___gutterCells___text'
-  | 'childGrvscCodeBlock___tokenizedLines___text'
-  | 'childGrvscCodeBlock___tokenizedLines___html'
-  | 'childGrvscCodeBlock___tokenizedLines___attrs'
-  | 'childGrvscCodeBlock___tokenizedLines___className'
-  | 'childGrvscCodeBlock___tokenizedLines___data'
-  | 'childGrvscCodeBlock___tokenizedLines___isHighlighted'
-  | 'childGrvscCodeBlock___tokenizedLines___lineNumber'
-  | 'childGrvscCodeBlock___tokenizedLines___diff'
-  | 'childGrvscCodeBlock___tokenizedLines___setContainerClassName'
-  | 'childGrvscCodeBlock___id'
-  | 'childGrvscCodeBlock___parent___id'
-  | 'childGrvscCodeBlock___parent___parent___id'
-  | 'childGrvscCodeBlock___parent___parent___children'
-  | 'childGrvscCodeBlock___parent___children'
-  | 'childGrvscCodeBlock___parent___children___id'
-  | 'childGrvscCodeBlock___parent___children___children'
-  | 'childGrvscCodeBlock___parent___internal___content'
-  | 'childGrvscCodeBlock___parent___internal___contentDigest'
-  | 'childGrvscCodeBlock___parent___internal___description'
-  | 'childGrvscCodeBlock___parent___internal___fieldOwners'
-  | 'childGrvscCodeBlock___parent___internal___ignoreType'
-  | 'childGrvscCodeBlock___parent___internal___mediaType'
-  | 'childGrvscCodeBlock___parent___internal___owner'
-  | 'childGrvscCodeBlock___parent___internal___type'
-  | 'childGrvscCodeBlock___children'
-  | 'childGrvscCodeBlock___children___id'
-  | 'childGrvscCodeBlock___children___parent___id'
-  | 'childGrvscCodeBlock___children___parent___children'
-  | 'childGrvscCodeBlock___children___children'
-  | 'childGrvscCodeBlock___children___children___id'
-  | 'childGrvscCodeBlock___children___children___children'
-  | 'childGrvscCodeBlock___children___internal___content'
-  | 'childGrvscCodeBlock___children___internal___contentDigest'
-  | 'childGrvscCodeBlock___children___internal___description'
-  | 'childGrvscCodeBlock___children___internal___fieldOwners'
-  | 'childGrvscCodeBlock___children___internal___ignoreType'
-  | 'childGrvscCodeBlock___children___internal___mediaType'
-  | 'childGrvscCodeBlock___children___internal___owner'
-  | 'childGrvscCodeBlock___children___internal___type'
-  | 'childGrvscCodeBlock___internal___content'
-  | 'childGrvscCodeBlock___internal___contentDigest'
-  | 'childGrvscCodeBlock___internal___description'
-  | 'childGrvscCodeBlock___internal___fieldOwners'
-  | 'childGrvscCodeBlock___internal___ignoreType'
-  | 'childGrvscCodeBlock___internal___mediaType'
-  | 'childGrvscCodeBlock___internal___owner'
-  | 'childGrvscCodeBlock___internal___type'
   | 'parent___id'
   | 'parent___parent___id'
   | 'parent___parent___parent___id'
@@ -4006,6 +3568,94 @@ export type markdownremarksortinput = {
   order?: InputMaybe<Array<InputMaybe<sortorderenum>>>;
 };
 
+export type grvscthemefilterinput = {
+  path?: InputMaybe<stringqueryoperatorinput>;
+  identifier?: InputMaybe<stringqueryoperatorinput>;
+  conditions?: InputMaybe<grvscthemeconditionfilterlistinput>;
+};
+
+export type grvscthemeconditionfilterlistinput = {
+  elemMatch?: InputMaybe<grvscthemeconditionfilterinput>;
+};
+
+export type grvscthemeconditionfilterinput = {
+  condition?: InputMaybe<grvscthemeconditionkindqueryoperatorinput>;
+  value?: InputMaybe<stringqueryoperatorinput>;
+};
+
+export type grvscthemeconditionkindqueryoperatorinput = {
+  eq?: InputMaybe<grvscthemeconditionkind>;
+  ne?: InputMaybe<grvscthemeconditionkind>;
+  in?: InputMaybe<Array<InputMaybe<grvscthemeconditionkind>>>;
+  nin?: InputMaybe<Array<InputMaybe<grvscthemeconditionkind>>>;
+};
+
+export type grvscthemefilterlistinput = {
+  elemMatch?: InputMaybe<grvscthemefilterinput>;
+};
+
+export type grvsctokenizedlinefilterlistinput = {
+  elemMatch?: InputMaybe<grvsctokenizedlinefilterinput>;
+};
+
+export type grvsctokenizedlinefilterinput = {
+  tokens?: InputMaybe<grvsctokenfilterlistinput>;
+  gutterCells?: InputMaybe<grvscguttercellfilterlistinput>;
+  text?: InputMaybe<stringqueryoperatorinput>;
+  html?: InputMaybe<stringqueryoperatorinput>;
+  attrs?: InputMaybe<jsonqueryoperatorinput>;
+  className?: InputMaybe<stringqueryoperatorinput>;
+  data?: InputMaybe<jsonqueryoperatorinput>;
+  isHighlighted?: InputMaybe<booleanqueryoperatorinput>;
+  lineNumber?: InputMaybe<intqueryoperatorinput>;
+  diff?: InputMaybe<grvscdiffqueryoperatorinput>;
+};
+
+export type grvsctokenfilterlistinput = {
+  elemMatch?: InputMaybe<grvsctokenfilterinput>;
+};
+
+export type grvsctokenfilterinput = {
+  text?: InputMaybe<stringqueryoperatorinput>;
+  startIndex?: InputMaybe<intqueryoperatorinput>;
+  endIndex?: InputMaybe<intqueryoperatorinput>;
+  scopes?: InputMaybe<stringqueryoperatorinput>;
+  html?: InputMaybe<stringqueryoperatorinput>;
+  className?: InputMaybe<stringqueryoperatorinput>;
+  defaultThemeTokenData?: InputMaybe<grvscthemetokendatafilterinput>;
+  additionalThemeTokenData?: InputMaybe<grvscthemetokendatafilterlistinput>;
+};
+
+export type grvscthemetokendatafilterinput = {
+  themeIdentifier?: InputMaybe<stringqueryoperatorinput>;
+  className?: InputMaybe<stringqueryoperatorinput>;
+  meta?: InputMaybe<intqueryoperatorinput>;
+  color?: InputMaybe<stringqueryoperatorinput>;
+  bold?: InputMaybe<booleanqueryoperatorinput>;
+  italic?: InputMaybe<booleanqueryoperatorinput>;
+  underline?: InputMaybe<booleanqueryoperatorinput>;
+};
+
+export type grvscthemetokendatafilterlistinput = {
+  elemMatch?: InputMaybe<grvscthemetokendatafilterinput>;
+};
+
+export type grvscguttercellfilterlistinput = {
+  elemMatch?: InputMaybe<grvscguttercellfilterinput>;
+};
+
+export type grvscguttercellfilterinput = {
+  className?: InputMaybe<stringqueryoperatorinput>;
+  text?: InputMaybe<stringqueryoperatorinput>;
+};
+
+export type grvscdiffqueryoperatorinput = {
+  eq?: InputMaybe<grvscdiff>;
+  ne?: InputMaybe<grvscdiff>;
+  in?: InputMaybe<Array<InputMaybe<grvscdiff>>>;
+  nin?: InputMaybe<Array<InputMaybe<grvscdiff>>>;
+};
+
 export type grvsccodeblockconnection = {
   totalCount: Scalars['Int'];
   edges: Array<grvsccodeblockedge>;
@@ -4104,7 +3754,6 @@ export type grvsccodeblockfieldsenum =
   | 'tokenizedLines___isHighlighted'
   | 'tokenizedLines___lineNumber'
   | 'tokenizedLines___diff'
-  | 'tokenizedLines___setContainerClassName'
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -4231,6 +3880,23 @@ export type grvsccodeblockgroupconnectiongroupargs = {
   skip?: InputMaybe<Scalars['Int']>;
   limit?: InputMaybe<Scalars['Int']>;
   field: grvsccodeblockfieldsenum;
+};
+
+export type grvsccodeblockfilterinput = {
+  index?: InputMaybe<intqueryoperatorinput>;
+  html?: InputMaybe<stringqueryoperatorinput>;
+  text?: InputMaybe<stringqueryoperatorinput>;
+  preClassName?: InputMaybe<stringqueryoperatorinput>;
+  codeClassName?: InputMaybe<stringqueryoperatorinput>;
+  language?: InputMaybe<stringqueryoperatorinput>;
+  meta?: InputMaybe<jsonqueryoperatorinput>;
+  defaultTheme?: InputMaybe<grvscthemefilterinput>;
+  additionalThemes?: InputMaybe<grvscthemefilterlistinput>;
+  tokenizedLines?: InputMaybe<grvsctokenizedlinefilterlistinput>;
+  id?: InputMaybe<stringqueryoperatorinput>;
+  parent?: InputMaybe<nodefilterinput>;
+  children?: InputMaybe<nodefilterlistinput>;
+  internal?: InputMaybe<internalfilterinput>;
 };
 
 export type grvsccodeblocksortinput = {
