@@ -36,6 +36,13 @@ const GlobalStyle = createGlobalStyle`
     text-shadow: none;
   }
 
+  .intro-animation {
+    animation: fadein 0.75s ease-out;
+    -moz-animation: fadein 0.75s ease-out;
+    -webkit-animation: fadein 0.75s ease-out;
+    -o-animation: fadein 0.75s ease-out;
+  }
+
   @keyframes fadein-dropdown {
     0% {
       opacity: 0;

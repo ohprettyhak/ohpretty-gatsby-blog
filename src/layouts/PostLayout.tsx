@@ -44,7 +44,7 @@ const PostLayout: React.FC<SitePageContext> = React.memo(({ children }) => {
       <Navigation />
       <HighlightStyle />
       <Container>
-        <Main>{children}</Main>
+        <Main className="intro-animation">{children}</Main>
       </Container>
     </React.Fragment>
   );

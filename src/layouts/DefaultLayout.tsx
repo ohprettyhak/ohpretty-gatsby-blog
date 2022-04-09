@@ -29,7 +29,7 @@ const DefaultLayout: React.FC<SitePageContext> = ({ children }) => {
       <Head />
       <Navigation />
       <Container>
-        <Main>{children}</Main>
+        <Main className="intro-animation">{children}</Main>
       </Container>
     </React.Fragment>
   );

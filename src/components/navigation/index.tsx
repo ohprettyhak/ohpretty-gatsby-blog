@@ -123,11 +123,12 @@ const MobileMenu = styled.div`
   position: fixed;
   display: none;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   top: 0;
   left: 0;
   background: var(--mobile-menu);
   z-index: 9;
+  overflow: hidden;
   animation: fadein-dropdown 0.3s both 0.3s;
   -moz-animation: fadein-dropdown 0.3s both 0.3s;
   -webkit-animation: fadein-dropdown 0.3s both 0.3s;

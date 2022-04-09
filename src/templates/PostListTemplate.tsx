@@ -175,7 +175,7 @@ const PostListTemplate: React.FC<PageProps<GetPostListQuery, SitePageContext>> =
       <Category categories={categories} categoryQuery={categoryQuery} totalPosts={totalPosts} />
       <PostsList>
         {postsList.map(({ node }) => (
-          <PostsItem key={node.id} data-sal="slide-up" data-sal-duration="300" data-sal-easing="ease">
+          <PostsItem key={node.id}>
             <PostsLink to={node.fields.slug}>
               <PostsImageWapper>
                 <PostsImage image={getImage(node.frontmatter.cover)} alt={node.frontmatter.title} />

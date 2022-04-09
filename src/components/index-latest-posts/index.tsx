@@ -195,7 +195,9 @@ const IndexLatestPosts: React.FC = () => {
 
   return (
     <LatestPosts>
-      <h2>Latest Posts</h2>
+      <h2 data-sal="slide-up" data-sal-delay="800" data-sal-duration="300" data-sal-easing="ease">
+        Latest Posts
+      </h2>
       <LatestPostsList>
         {latestPosts.allMarkdownRemark.edges.map(({ node }) => (
           <LatestPostsItem key={node.id}>
@@ -240,7 +242,7 @@ const IndexLatestPosts: React.FC = () => {
           </LatestPostsItem>
         ))}
       </LatestPostsList>
-      <LatestPostsMoreLink to="/post">
+      <LatestPostsMoreLink to="/post" data-sal="slide-up" data-sal-duration="300" data-sal-easing="ease">
         <LatestPostsMore>
           View More Posts&nbsp;
           <ion-icon name="chevron-forward-outline" />
