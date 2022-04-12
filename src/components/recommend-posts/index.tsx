@@ -57,6 +57,7 @@ const RecommendPostsContainer = styled.div`
   ion-icon {
     width: 16px;
     height: 16px;
+    flex-shrink: 0;
     color: var(--text);
     vertical-align: middle;
   }
