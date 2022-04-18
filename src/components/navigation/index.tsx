@@ -3,6 +3,7 @@ import { useLocation } from '@reach/router';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Switch from 'react-switch';
+import { StaticImage } from 'gatsby-plugin-image';
 
 import metaConfig from '../../../gatsby-meta-config';
 import { GlobalStyle, ModeStyle } from '../../styles';
@@ -81,7 +82,7 @@ const Logo = styled(Link)`
   transition: opacity 0.2s ease;
 
   :hover {
-    opacity: 0.7;
+    opacity: 0.8;
   }
 `;
 
@@ -94,7 +95,7 @@ const LogoContainer = styled.div`
   cursor: pointer;
 
   :hover {
-    opacity: 0.7;
+    opacity: 0.8;
   }
 `;
 
@@ -188,12 +189,12 @@ const Navigation: React.FC = () => {
         <TopNavigationContainer>
           {pathname.replace(/\//g, '') === metaConfig.sitePathPrefix.replace(/\//g, '') ? (
             <LogoContainer onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-              <p>ohpretty-gatsby-blog</p>
+              <StaticImage src="../../assets/logo-haklee.png" alt="logo" placeholder="none" height={34} />
             </LogoContainer>
           ) : (
             <LogoContainer>
               <Logo to="/">
-                <p>ohpretty-gatsby-blog</p>
+                <StaticImage src="../../assets/logo-haklee.png" alt="logo" placeholder="none" height={34} />
               </Logo>
             </LogoContainer>
           )}
