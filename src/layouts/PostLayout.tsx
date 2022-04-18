@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Head from '../components/head';
 import Navigation from '../components/navigation';
+import Footer from '../components/footer';
 import { HighlightStyle } from '../styles';
 
 const Main = styled.main`
@@ -46,6 +47,7 @@ const PostLayout: React.FC<SitePageContext> = React.memo(({ children }) => {
       <Container>
         <Main className="intro-animation">{children}</Main>
       </Container>
+      <Footer />
     </React.Fragment>
   );
 });

@@ -10,11 +10,19 @@ module.exports = {
   postPerPage: 6,
   utterances: 'ohprettyhak/ohpretty-gatsby-blog', // comment repository
 
+  auther: {
+    name: `Hak Lee`,
+  },
+
   // social
   social: {
-    github: `ohprettyhak`,
-    linkedIn: `haklee`,
     email: `haklee.googl@gmail.com`,
+    github: `ohprettyhak`,
+    facebook: ``,
+    instagram: `ohprettyhak`,
+    linkedIn: `haklee`,
+    dribbble: ``,
+    behance: ``,
   },
 
   // index page

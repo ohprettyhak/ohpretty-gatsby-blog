@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Head from '../components/head';
 import Navigation from '../components/navigation';
+import Footer from '../components/footer';
 
 const Main = styled.main`
   width: 100%;
@@ -31,6 +32,7 @@ const DefaultLayout: React.FC<SitePageContext> = ({ children }) => {
       <Container>
         <Main className="intro-animation">{children}</Main>
       </Container>
+      <Footer />
     </React.Fragment>
   );
 };
