@@ -31,10 +31,11 @@ const Copyright = styled.p`
     text-decoration: none;
     opacity: 1;
     border-bottom: 2px dotted var(--text-secondary);
-    transition: opacity 0.2s ease;
+    transition: 0.2s ease-in-out;
+    background: linear-gradient(to bottom, transparent 75%, var(--category-border) 0) 0/0 100% no-repeat;
 
     :hover {
-      opacity: 0.7;
+      background-size: 100% 100%;
     }
   }
 `;
@@ -63,7 +64,7 @@ const Footer: React.FC = () => {
     <FooterContainer>
       <FooterWrap>
         <Copyright>
-          {`© 2022 ${metaConfig.auther.name} | Powered By `}{' '}
+          {`© ${new Date().getFullYear()} ${metaConfig.auther.name} | Powered By `}{' '}
           <a href="https://github.com/ohprettyhak/ohpretty-gatsby-blog" target="_blank">
             ohpretty-gatsby-blog
           </a>

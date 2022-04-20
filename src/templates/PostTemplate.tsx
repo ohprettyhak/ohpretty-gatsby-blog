@@ -116,7 +116,7 @@ const PostContent = styled.section`
     align-items: center;
     padding-top: 64px;
     margin-top: -64px;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
     color: var(--text);
     font-size: 2rem;
     word-break: break-word;
@@ -128,7 +128,7 @@ const PostContent = styled.section`
     align-items: center;
     padding-top: 64px;
     margin-top: -64px;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
     color: var(--text);
     font-size: 1.5rem;
     word-break: break-word;
@@ -140,7 +140,7 @@ const PostContent = styled.section`
     align-items: center;
     padding-top: 64px;
     margin-top: -64px;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
     color: var(--text);
     font-size: 1.05rem;
     word-break: break-word;
@@ -152,7 +152,7 @@ const PostContent = styled.section`
     align-items: center;
     padding-top: 64px;
     margin-top: -64px;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
     color: var(--text);
     font-size: 1rem;
     word-break: break-word;
@@ -164,7 +164,7 @@ const PostContent = styled.section`
     align-items: center;
     padding-top: 64px;
     margin-top: -64px;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
     color: var(--text);
     word-break: break-word;
     white-space: normal;
@@ -172,7 +172,7 @@ const PostContent = styled.section`
 
   p {
     line-height: 1.5;
-    margin-bottom: 8px;
+    margin-bottom: 24px;
     color: var(--text);
     font-weight: 400;
     word-break: break-all;
@@ -197,17 +197,15 @@ const PostContent = styled.section`
   a {
     margin-bottom: 8px;
     color: var(--text);
-    transition: 0.3s;
+    transition: 0.2s ease-in-out;
     text-decoration: none;
-    border-bottom: 1px dashed var(--text);
-    border-radius: 0px;
-    background-color: transparent;
+    border-bottom: 2px dotted var(--text-secondary);
+    transition: 0.2s ease-in-out;
+    background: linear-gradient(to bottom, transparent 75%, var(--category-border) 0) 0/0 100% no-repeat;
   }
 
   a:hover {
-    background-color: var(--selection);
-    border-radius: 2px;
-    border-bottom: 1px solid var(--text);
+    background-size: 100% 100%;
   }
 
   table {
@@ -242,6 +240,11 @@ const PostContent = styled.section`
     border-radius: 4px;
     background-color: var(--grvsc-background);
     transition: all 0.2s ease;
+  }
+
+  .anchor-header {
+    border-bottom: none;
+    background: transparent;
   }
 `;
 

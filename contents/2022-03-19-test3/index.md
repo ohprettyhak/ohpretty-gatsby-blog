@@ -14,32 +14,4 @@ asfsfdsafasfdasfdsafasdfds
 asffasffdasffdfssdfasd  
 asdfasdfdasfdasfdasfs
 
-## aaaa2
-
-$a^2 + b^2 = c^2$  
-asfsfdsafasfdasfdsafasdfds  
-asffasffdasffdfssdfasd  
-asdfasdfdasfdasfdasfs $a^2 + b^2 = c^2$  
-asfsfdsafasfdasfdsafasdfds  
-asffasffdasffdfssdfasd  
-asdfasdfdasfdasfdasfs
-
-## aaaa3
-
-$a^2 + b^2 = c^2$  
-asfsfdsafasfdasfdsafasdfds  
-asffasffdasffdfssdfasd  
-asdfasdfdasfdasfdasfs $a^2 + b^2 = c^2$  
-asfsfdsafasfdasfdsafasdfds  
-asffasffdasffdfssdfasd  
-asdfasdfdasfdasfdasfs
-
-## aaaa4
-
-$a^2 + b^2 = c^2$  
-asfsfdsafasfdasfdsafasdfds  
-asffasffdasffdfssdfasd  
-asdfasdfdasfdasfdasfs $a^2 + b^2 = c^2$  
-asfsfdsafasfdasfdsafasdfds  
-asffasffdasffdfssdfasd  
-asdfasdfdasfdasfdasfs
+[asdfsadf](dsafafasfsdf)
