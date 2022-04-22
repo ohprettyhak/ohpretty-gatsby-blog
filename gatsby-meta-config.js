@@ -20,7 +20,7 @@ module.exports = {
     github: `ohprettyhak`,
     facebook: ``,
     instagram: `ohprettyhak`,
-    linkedIn: `haklee`,
+    linkedIn: `hak-lee-1444a91b8`,
     dribbble: ``,
     behance: ``,
   },
