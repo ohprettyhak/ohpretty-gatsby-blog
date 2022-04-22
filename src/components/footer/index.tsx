@@ -20,7 +20,7 @@ const FooterWrap = styled.div`
   justify-content: space-between;
 `;
 
-const Copyright = styled.p`
+const Copyright = styled.div`
   color: var(--text);
   font-size: 0.9rem;
   font-weight: 300;
@@ -29,7 +29,6 @@ const Copyright = styled.p`
   a {
     color: var(--text);
     text-decoration: none;
-    opacity: 1;
     border-bottom: 2px dotted var(--text-secondary);
     transition: 0.2s ease-in-out;
     background: linear-gradient(to bottom, transparent 75%, var(--category-border) 0) 0/0 100% no-repeat;
@@ -40,6 +39,10 @@ const Copyright = styled.p`
   }
 `;
 
+const License = styled.p`
+  font-size: 0.85rem;
+`;
+
 const ScrollToTop = styled.span`
   cursor: pointer;
   opacity: 1;
@@ -48,15 +51,6 @@ const ScrollToTop = styled.span`
   :hover {
     opacity: 0.7;
   }
-
-  ion-icon {
-    width: 24px;
-    height: 24px;
-    margin: 0;
-    padding: 0;
-    color: var(--text);
-    vertical-align: middle;
-  }
 `;
 
 const Footer: React.FC = () => {
@@ -64,10 +58,24 @@ const Footer: React.FC = () => {
     <FooterContainer>
       <FooterWrap>
         <Copyright>
-          {`© ${new Date().getFullYear()} ${metaConfig.auther.name} | Powered By `}{' '}
-          <a href="https://github.com/ohprettyhak/ohpretty-gatsby-blog" target="_blank">
-            ohpretty-gatsby-blog
-          </a>
+          <License>
+            Icon by{' '}
+            <a href="https://ionic.io/ionicons" target="_blank">
+              ionicons
+            </a>
+          </License>
+          <License style={{ marginTop: '4px' }}>
+            Illustrations by{' '}
+            <a href="https://icons8.com/illustrations" target="_blank">
+              Ouch!
+            </a>
+          </License>
+          <p style={{ marginTop: '12px' }}>
+            {`© ${new Date().getFullYear()} ${metaConfig.auther.name} | Powered By `}{' '}
+            <a href="https://github.com/ohprettyhak/ohpretty-gatsby-blog" target="_blank">
+              ohpretty-gatsby-blog
+            </a>
+          </p>
         </Copyright>
         <ScrollToTop onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <ion-icon name="chevron-up" />
