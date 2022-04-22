@@ -99,12 +99,21 @@ const LogoContainer = styled.div`
   }
 `;
 
-const Menu = styled.div`
+const MenuContainer = styled.div`
   display: none;
+  align-items: center;
+
+  @media only screen and (max-width: 768px) {
+    display: flex;
+  }
+`;
+
+const Menu = styled.div`
+  padding: 16px 0;
+  margin-left: 16px;
   border-bottom: none;
   align-items: center;
   cursor: pointer;
-  padding: 16px 0;
 
   ion-icon {
     width: 24px;
@@ -113,10 +122,6 @@ const Menu = styled.div`
     padding: 0;
     color: var(--text);
     vertical-align: middle;
-  }
-
-  @media only screen and (max-width: 768px) {
-    display: flex;
   }
 `;
 
@@ -257,9 +262,54 @@ const Navigation: React.FC = () => {
               {!theme && <div style={{ width: '46px' }} />}
             </ThemeToggleContainer>
           </TopLinkWrap>
-          <Menu onClick={() => setMobileMenu(true)}>
-            <ion-icon name="menu-outline" />
-          </Menu>
+          <MenuContainer>
+            {theme && (
+              <Switch
+                checked={theme === 'light' ? false : true}
+                onChange={toggleTheme}
+                onColor="#ffffff"
+                offColor="#25201d"
+                onHandleColor="#25201d"
+                offHandleColor="#ffffff"
+                handleDiameter={20}
+                uncheckedIcon={false}
+                uncheckedHandleIcon={
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      height: '100%',
+                      fontSize: 12,
+                    }}
+                  >
+                    🌤️
+                  </div>
+                }
+                checkedIcon={false}
+                checkedHandleIcon={
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      height: '100%',
+                      fontSize: 12,
+                    }}
+                  >
+                    🌙
+                  </div>
+                }
+                height={22}
+                width={46}
+                boxShadow="0px 1px 5px rgba(37, 32, 29, 0.6)"
+                activeBoxShadow="0px 0px 1px 5px rgba(37, 32, 29, 0.2)"
+              />
+            )}
+            <Menu style={{ display: 'inline-block' }} onClick={() => setMobileMenu(true)}>
+              <ion-icon name="menu-outline" />
+            </Menu>
+          </MenuContainer>
         </TopNavigationContainer>
         <MobileMenu id="mobile-menu">
           <MobileMenuContainer>
