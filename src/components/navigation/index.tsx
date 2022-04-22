@@ -189,12 +189,12 @@ const Navigation: React.FC = () => {
         <TopNavigationContainer>
           {pathname.replace(/\//g, '') === metaConfig.sitePathPrefix.replace(/\//g, '') ? (
             <LogoContainer onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-              <StaticImage src="../../assets/logo-haklee.png" alt="logo" placeholder="none" height={34} />
+              <StaticImage src="../../assets/logo-eastwood-hamburger.png" alt="logo" placeholder="none" width={40} />
             </LogoContainer>
           ) : (
             <LogoContainer>
               <Logo to="/">
-                <StaticImage src="../../assets/logo-haklee.png" alt="logo" placeholder="none" height={34} />
+                <StaticImage src="../../assets/logo-eastwood-hamburger.png" alt="logo" placeholder="none" width={40} />
               </Logo>
             </LogoContainer>
           )}
