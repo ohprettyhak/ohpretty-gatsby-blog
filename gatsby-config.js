@@ -100,5 +100,13 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        theme_color: '#ffffff',
+        display: 'standalone',
+        icon: 'src/assets/logo-eastwood-hamburger.png',
+      },
+    },
   ],
 };
