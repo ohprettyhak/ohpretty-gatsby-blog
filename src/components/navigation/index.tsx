@@ -208,12 +208,10 @@ const Navigation: React.FC = () => {
               <Link to="/post">Post</Link>
             </TopLinkList>
             <TopLinkList>
-              <Link to="/about">About</Link>
+              <Link to="/work">Work</Link>
             </TopLinkList>
             <TopLinkList>
-              <a href={`https://github.com/${metaConfig.social.github}`} target="_blank">
-                Github
-              </a>
+              <Link to="/about">About</Link>
             </TopLinkList>
             <ThemeToggleContainer>
               {theme && (
@@ -323,12 +321,10 @@ const Navigation: React.FC = () => {
                 <Link to="/post">Post</Link>
               </MobileMenuList>
               <MobileMenuList>
-                <Link to="/about">About</Link>
+                <Link to="/work">Work</Link>
               </MobileMenuList>
               <MobileMenuList>
-                <a href="https://github.com/ohprettyhak" target="_blank" onClick={() => setMobileMenu(false)}>
-                  Github
-                </a>
+                <Link to="/about">About</Link>
               </MobileMenuList>
             </MobileMenuWrap>
           </MobileMenuContainer>
