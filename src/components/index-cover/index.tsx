@@ -4,8 +4,10 @@ import styled from 'styled-components';
 import metaConfig from '../../../gatsby-meta-config';
 
 const Cover = styled.section`
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
   padding: 100px 0;
   background-color: var(--cover);
   border-bottom: 1px solid var(--line);
@@ -74,7 +76,7 @@ const CoverContentLink = styled.a`
 
 const IndexCover: React.FC = () => {
   return (
-    <Cover>
+    <Cover id="cover">
       <CoverContents>
         <CoverContentTitle data-sal="slide-up" data-sal-delay="100" data-sal-duration="300" data-sal-easing="ease">
           {metaConfig.slogan}

@@ -6,6 +6,8 @@ import styled from 'styled-components';
 import { GetLatestPostsQuery } from '../../utils/graphql-types';
 
 const LatestPosts = styled.section`
+  position: relative;
+  top: 0;
   padding: 56px 0;
   transition: all 0.2s ease;
 
@@ -194,7 +196,7 @@ const IndexLatestPosts: React.FC = () => {
   const latestPosts = useStaticQuery<GetLatestPostsQuery>(LatestPostsQuery);
 
   return (
-    <LatestPosts>
+    <LatestPosts id="latest-posts">
       <h2 data-sal="slide-up" data-sal-delay="800" data-sal-duration="300" data-sal-easing="ease">
         Latest Posts
       </h2>
