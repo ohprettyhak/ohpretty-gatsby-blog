@@ -51,6 +51,15 @@ const ScrollToTop = styled.span`
   :hover {
     opacity: 0.7;
   }
+
+  ion-icon {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    color: var(--text);
+    vertical-align: middle;
+  }
 `;
 
 const Footer: React.FC = () => {
@@ -71,7 +80,7 @@ const Footer: React.FC = () => {
             </a>
           </License>
           <p style={{ marginTop: '12px' }}>
-            {`© ${new Date().getFullYear()} ${metaConfig.auther.name} | Powered By `}{' '}
+            {`© ${new Date().getFullYear()} ${metaConfig.auther.name} | Powered by `}{' '}
             <a href="https://github.com/ohprettyhak/ohpretty-gatsby-blog" target="_blank">
               ohpretty-gatsby-blog
             </a>

@@ -21,6 +21,8 @@ module.exports = {
             options: {
               maxWidth: 1200,
               linkImagesToOriginal: false,
+              formats: [`auto`, `webp`],
+              placeholder: `blurred`,
               quality: 80,
             },
           },
@@ -86,6 +88,13 @@ module.exports = {
       options: {
         name: 'contents',
         path: `${__dirname}/contents`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'works',
+        path: `${__dirname}/works`,
       },
     },
     `gatsby-plugin-image`,

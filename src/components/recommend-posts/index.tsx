@@ -84,7 +84,7 @@ const RecommendPosts: React.FC<PostDataProps> = ({ next, previous }) => {
       <RecommendPostsList>
         {previous !== null ? (
           <RecommendPrevious>
-            <RecommendPostsLink to={previous.fields.slug}>
+            <RecommendPostsLink to={`/post${previous.fields.slug}`}>
               <RecommendPostsContainer>
                 <ion-icon name="arrow-back-outline" />
                 <div style={{ marginLeft: '16px' }}>
@@ -99,7 +99,7 @@ const RecommendPosts: React.FC<PostDataProps> = ({ next, previous }) => {
         )}
         {next !== null ? (
           <RecommendNext>
-            <RecommendPostsLink to={next.fields.slug}>
+            <RecommendPostsLink to={`/post${next.fields.slug}`}>
               <RecommendPostsContainer>
                 <div style={{ marginRight: '16px' }}>
                   <RecommendStepText>Next</RecommendStepText>

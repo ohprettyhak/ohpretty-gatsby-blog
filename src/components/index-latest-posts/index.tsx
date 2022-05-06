@@ -167,7 +167,11 @@ const LatestPostsMore = styled.p`
 
 const LatestPostsQuery = graphql`
   query getLatestPosts {
-    allMarkdownRemark(limit: 3, sort: { fields: frontmatter___date, order: DESC }) {
+    allMarkdownRemark(
+      limit: 3
+      sort: { fields: frontmatter___date, order: DESC }
+      filter: { fileAbsolutePath: { regex: "/contents/" } }
+    ) {
       edges {
         node {
           timeToRead
@@ -204,7 +208,7 @@ const IndexLatestPosts: React.FC = () => {
         {latestPosts.allMarkdownRemark.edges.map(({ node }) => (
           <LatestPostsItem key={node.id}>
             <LatestPostsImageContainer>
-              <LatestPostsLink to={node.fields.slug}>
+              <LatestPostsLink to={`/post${node.fields.slug}`}>
                 <LatestPostsImage image={getImage(node.frontmatter.cover as any)} alt={node.frontmatter.title} />
               </LatestPostsLink>
             </LatestPostsImageContainer>
@@ -225,7 +229,7 @@ const IndexLatestPosts: React.FC = () => {
                     <LatestPostsCategoriesLink to={`/category/uncategorized`}>Uncategorized</LatestPostsCategoriesLink>
                   )}
                 </LatestPostsCategories>
-                <LatestPostsLink to={node.fields.slug}>
+                <LatestPostsLink to={`/post${node.fields.slug}`}>
                   <LatestPostsTitle>{node.frontmatter.title}</LatestPostsTitle>
                   <LatestPostsSubTitle>{node.frontmatter.subtitle}</LatestPostsSubTitle>
                   <LatestPostsSub>

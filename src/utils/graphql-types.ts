@@ -275,15 +275,24 @@ export type sitesitemetadata = {
   repository?: Maybe<Scalars['String']>;
   postPerPage?: Maybe<Scalars['Int']>;
   utterances?: Maybe<Scalars['String']>;
+  auther?: Maybe<sitesitemetadataauther>;
   social?: Maybe<sitesitemetadatasocial>;
   slogan?: Maybe<Scalars['String']>;
   sloganDescription?: Maybe<Scalars['String']>;
 };
 
+export type sitesitemetadataauther = {
+  name?: Maybe<Scalars['String']>;
+};
+
 export type sitesitemetadatasocial = {
-  github?: Maybe<Scalars['String']>;
-  linkedIn?: Maybe<Scalars['String']>;
   email?: Maybe<Scalars['String']>;
+  github?: Maybe<Scalars['String']>;
+  facebook?: Maybe<Scalars['String']>;
+  instagram?: Maybe<Scalars['String']>;
+  linkedIn?: Maybe<Scalars['String']>;
+  dribbble?: Maybe<Scalars['String']>;
+  behance?: Maybe<Scalars['String']>;
 };
 
 export type sitefunction = node & {
@@ -421,10 +430,15 @@ export type markdownremarktableofcontentsargs = {
 export type markdownremarkfrontmatter = {
   title?: Maybe<Scalars['String']>;
   subtitle?: Maybe<Scalars['String']>;
+  at?: Maybe<Scalars['String']>;
+  cover?: Maybe<file>;
+  date?: Maybe<Scalars['Date']>;
+  role?: Maybe<Scalars['String']>;
+  timeline?: Maybe<Scalars['String']>;
+  platform?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
   categories?: Maybe<Array<Maybe<Scalars['String']>>>;
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
-  date?: Maybe<Scalars['Date']>;
-  cover?: Maybe<file>;
 };
 
 
@@ -1241,10 +1255,15 @@ export type markdownremarkfilterinput = {
 export type markdownremarkfrontmatterfilterinput = {
   title?: InputMaybe<stringqueryoperatorinput>;
   subtitle?: InputMaybe<stringqueryoperatorinput>;
+  at?: InputMaybe<stringqueryoperatorinput>;
+  cover?: InputMaybe<filefilterinput>;
+  date?: InputMaybe<datequeryoperatorinput>;
+  role?: InputMaybe<stringqueryoperatorinput>;
+  timeline?: InputMaybe<stringqueryoperatorinput>;
+  platform?: InputMaybe<stringqueryoperatorinput>;
+  type?: InputMaybe<stringqueryoperatorinput>;
   categories?: InputMaybe<stringqueryoperatorinput>;
   tags?: InputMaybe<stringqueryoperatorinput>;
-  date?: InputMaybe<datequeryoperatorinput>;
-  cover?: InputMaybe<filefilterinput>;
 };
 
 export type filefilterinput = {
@@ -1503,9 +1522,7 @@ export type filefieldsenum =
   | 'childrenMarkdownRemark___id'
   | 'childrenMarkdownRemark___frontmatter___title'
   | 'childrenMarkdownRemark___frontmatter___subtitle'
-  | 'childrenMarkdownRemark___frontmatter___categories'
-  | 'childrenMarkdownRemark___frontmatter___tags'
-  | 'childrenMarkdownRemark___frontmatter___date'
+  | 'childrenMarkdownRemark___frontmatter___at'
   | 'childrenMarkdownRemark___frontmatter___cover___sourceInstanceName'
   | 'childrenMarkdownRemark___frontmatter___cover___absolutePath'
   | 'childrenMarkdownRemark___frontmatter___cover___relativePath'
@@ -1544,6 +1561,13 @@ export type filefieldsenum =
   | 'childrenMarkdownRemark___frontmatter___cover___childrenImageSharp'
   | 'childrenMarkdownRemark___frontmatter___cover___id'
   | 'childrenMarkdownRemark___frontmatter___cover___children'
+  | 'childrenMarkdownRemark___frontmatter___date'
+  | 'childrenMarkdownRemark___frontmatter___role'
+  | 'childrenMarkdownRemark___frontmatter___timeline'
+  | 'childrenMarkdownRemark___frontmatter___platform'
+  | 'childrenMarkdownRemark___frontmatter___type'
+  | 'childrenMarkdownRemark___frontmatter___categories'
+  | 'childrenMarkdownRemark___frontmatter___tags'
   | 'childrenMarkdownRemark___excerpt'
   | 'childrenMarkdownRemark___rawMarkdownBody'
   | 'childrenMarkdownRemark___fileAbsolutePath'
@@ -1600,9 +1624,7 @@ export type filefieldsenum =
   | 'childMarkdownRemark___id'
   | 'childMarkdownRemark___frontmatter___title'
   | 'childMarkdownRemark___frontmatter___subtitle'
-  | 'childMarkdownRemark___frontmatter___categories'
-  | 'childMarkdownRemark___frontmatter___tags'
-  | 'childMarkdownRemark___frontmatter___date'
+  | 'childMarkdownRemark___frontmatter___at'
   | 'childMarkdownRemark___frontmatter___cover___sourceInstanceName'
   | 'childMarkdownRemark___frontmatter___cover___absolutePath'
   | 'childMarkdownRemark___frontmatter___cover___relativePath'
@@ -1641,6 +1663,13 @@ export type filefieldsenum =
   | 'childMarkdownRemark___frontmatter___cover___childrenImageSharp'
   | 'childMarkdownRemark___frontmatter___cover___id'
   | 'childMarkdownRemark___frontmatter___cover___children'
+  | 'childMarkdownRemark___frontmatter___date'
+  | 'childMarkdownRemark___frontmatter___role'
+  | 'childMarkdownRemark___frontmatter___timeline'
+  | 'childMarkdownRemark___frontmatter___platform'
+  | 'childMarkdownRemark___frontmatter___type'
+  | 'childMarkdownRemark___frontmatter___categories'
+  | 'childMarkdownRemark___frontmatter___tags'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
@@ -2230,15 +2259,24 @@ export type sitesitemetadatafilterinput = {
   repository?: InputMaybe<stringqueryoperatorinput>;
   postPerPage?: InputMaybe<intqueryoperatorinput>;
   utterances?: InputMaybe<stringqueryoperatorinput>;
+  auther?: InputMaybe<sitesitemetadataautherfilterinput>;
   social?: InputMaybe<sitesitemetadatasocialfilterinput>;
   slogan?: InputMaybe<stringqueryoperatorinput>;
   sloganDescription?: InputMaybe<stringqueryoperatorinput>;
 };
 
+export type sitesitemetadataautherfilterinput = {
+  name?: InputMaybe<stringqueryoperatorinput>;
+};
+
 export type sitesitemetadatasocialfilterinput = {
-  github?: InputMaybe<stringqueryoperatorinput>;
-  linkedIn?: InputMaybe<stringqueryoperatorinput>;
   email?: InputMaybe<stringqueryoperatorinput>;
+  github?: InputMaybe<stringqueryoperatorinput>;
+  facebook?: InputMaybe<stringqueryoperatorinput>;
+  instagram?: InputMaybe<stringqueryoperatorinput>;
+  linkedIn?: InputMaybe<stringqueryoperatorinput>;
+  dribbble?: InputMaybe<stringqueryoperatorinput>;
+  behance?: InputMaybe<stringqueryoperatorinput>;
 };
 
 export type siteconnection = {
@@ -2297,9 +2335,14 @@ export type sitefieldsenum =
   | 'siteMetadata___repository'
   | 'siteMetadata___postPerPage'
   | 'siteMetadata___utterances'
-  | 'siteMetadata___social___github'
-  | 'siteMetadata___social___linkedIn'
+  | 'siteMetadata___auther___name'
   | 'siteMetadata___social___email'
+  | 'siteMetadata___social___github'
+  | 'siteMetadata___social___facebook'
+  | 'siteMetadata___social___instagram'
+  | 'siteMetadata___social___linkedIn'
+  | 'siteMetadata___social___dribbble'
+  | 'siteMetadata___social___behance'
   | 'siteMetadata___slogan'
   | 'siteMetadata___sloganDescription'
   | 'pathPrefix'
@@ -3339,9 +3382,7 @@ export type markdownremarkfieldsenum =
   | 'id'
   | 'frontmatter___title'
   | 'frontmatter___subtitle'
-  | 'frontmatter___categories'
-  | 'frontmatter___tags'
-  | 'frontmatter___date'
+  | 'frontmatter___at'
   | 'frontmatter___cover___sourceInstanceName'
   | 'frontmatter___cover___absolutePath'
   | 'frontmatter___cover___relativePath'
@@ -3420,6 +3461,13 @@ export type markdownremarkfieldsenum =
   | 'frontmatter___cover___internal___mediaType'
   | 'frontmatter___cover___internal___owner'
   | 'frontmatter___cover___internal___type'
+  | 'frontmatter___date'
+  | 'frontmatter___role'
+  | 'frontmatter___timeline'
+  | 'frontmatter___platform'
+  | 'frontmatter___type'
+  | 'frontmatter___categories'
+  | 'frontmatter___tags'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -4540,6 +4588,11 @@ export type GetLatestPostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetLatestPostsQuery = { allMarkdownRemark: { edges: Array<{ node: { timeToRead?: number | null, id: string, fields?: { slug?: string | null } | null, frontmatter?: { title?: string | null, subtitle?: string | null, categories?: Array<string | null> | null, date?: any | null, cover?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null } }> } };
 
+export type GetWorksQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetWorksQuery = { allMarkdownRemark: { edges: Array<{ node: { id: string, fields?: { slug?: string | null } | null, frontmatter?: { title?: string | null, subtitle?: string | null, at?: string | null, cover?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null } }> } };
+
 export type GetPostListQueryVariables = Exact<{
   skip: Scalars['Int'];
   limit: Scalars['Int'];
@@ -4558,10 +4611,17 @@ export type GetPostDetailQueryVariables = Exact<{
 
 export type GetPostDetailQuery = { node?: { id: string, html?: string | null, timeToRead?: number | null, tableOfContents?: string | null, fields?: { slug?: string | null } | null, frontmatter?: { title?: string | null, subtitle?: string | null, date?: any | null, cover?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null } | null, previous?: { fields?: { slug?: string | null } | null, frontmatter?: { title?: string | null } | null } | null, next?: { fields?: { slug?: string | null } | null, frontmatter?: { title?: string | null } | null } | null };
 
+export type GetWorkDetailQueryVariables = Exact<{
+  id: Scalars['String'];
+}>;
+
+
+export type GetWorkDetailQuery = { markdownRemark?: { id: string, html?: string | null, frontmatter?: { title?: string | null, subtitle?: string | null, at?: string | null, role?: string | null, timeline?: string | null, platform?: string | null, type?: string | null, cover?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null } | null };
+
 export type GetPostsDataQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPostsDataQuery = { posts: { edges: Array<{ node: { id: string, fields?: { slug?: string | null } | null, frontmatter?: { categories?: Array<string | null> | null } | null }, next?: { id: string } | null, previous?: { id: string } | null }> }, categories: { group: Array<{ fieldValue?: string | null, totalCount: number }> }, uncategorized: { totalCount: number } };
+export type GetPostsDataQuery = { post: { edges: Array<{ node: { id: string, fields?: { slug?: string | null } | null, frontmatter?: { categories?: Array<string | null> | null } | null }, next?: { id: string } | null, previous?: { id: string } | null }> }, categories: { group: Array<{ fieldValue?: string | null, totalCount: number }> }, uncategorized: { totalCount: number }, work: { edges: Array<{ node: { id: string, fields?: { slug?: string | null } | null } }> } };
 
 export type GatsbyImageSharpFixedFragment = { base64?: string | null, width: number, height: number, src: string, srcSet: string };
 

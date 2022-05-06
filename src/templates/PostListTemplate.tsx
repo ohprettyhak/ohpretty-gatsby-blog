@@ -176,7 +176,7 @@ const PostListTemplate: React.FC<PageProps<GetPostListQuery, SitePageContext>> =
       <PostsList>
         {postsList.map(({ node }) => (
           <PostsItem key={node.id}>
-            <PostsLink to={node.fields.slug}>
+            <PostsLink to={`/post${node.fields.slug}`}>
               <PostsImageWapper>
                 <PostsImage image={getImage(node.frontmatter.cover)} alt={node.frontmatter.title} />
               </PostsImageWapper>
@@ -195,7 +195,7 @@ const PostListTemplate: React.FC<PageProps<GetPostListQuery, SitePageContext>> =
                   <PostsCategoriesLink to={`/category/uncategorized`}>Uncategorized</PostsCategoriesLink>
                 )}
               </PostsCategories>
-              <PostsLink to={node.fields.slug}>
+              <PostsLink to={`/post${node.fields.slug}`}>
                 <PostsTitle>{node.frontmatter.title}</PostsTitle>
                 <PostsSubTitle>{node.frontmatter.subtitle}</PostsSubTitle>
               </PostsLink>
@@ -222,7 +222,12 @@ export default PostListTemplate;
 
 export const PostListQuery = graphql`
   query getPostList($skip: Int!, $limit: Int!, $categoryQuery: String = "") {
-    defaultPosts: allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: $limit, skip: $skip) {
+    defaultPosts: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $limit
+      skip: $skip
+      filter: { fileAbsolutePath: { regex: "/contents/" } }
+    ) {
       edges {
         node {
           timeToRead
@@ -249,7 +254,7 @@ export const PostListQuery = graphql`
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit
       skip: $skip
-      filter: { frontmatter: { categories: { eq: $categoryQuery } } }
+      filter: { frontmatter: { categories: { eq: $categoryQuery } }, fileAbsolutePath: { regex: "/contents/" } }
     ) {
       edges {
         node {
@@ -277,7 +282,7 @@ export const PostListQuery = graphql`
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit
       skip: $skip
-      filter: { frontmatter: { categories: { eq: null } } }
+      filter: { frontmatter: { categories: { eq: null } }, fileAbsolutePath: { regex: "/contents/" } }
     ) {
       edges {
         node {

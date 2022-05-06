@@ -12,7 +12,6 @@ import RecommendPosts from '../components/recommend-posts';
 import TableOfContents from '../components/table-of-contents';
 import Utterances from '../components/utterances';
 import { GetPostDetailQuery } from '../utils/graphql-types';
-import 'katex/dist/katex.min.css';
 
 const PostContainer = styled.div`
   display: flex;
@@ -55,7 +54,7 @@ const PostTitle = styled.h1`
   white-space: normal;
 `;
 
-const PostSubTitle = styled.p`
+const PostSubtitle = styled.p`
   margin: 0.5rem 0 1rem 0;
   color: var(--text-secondary);
   font-size: 1.15rem;
@@ -81,171 +80,6 @@ const PostCoverImage = styled(GatsbyImage)`
   border-radius: 8px;
   overflow: hidden;
   isolation: isolate;
-`;
-
-const PostContent = styled.section`
-  margin-top: 48px;
-
-  .before {
-    display: flex;
-    top: auto;
-    left: auto;
-    padding-right: 8px;
-    margin: 0;
-    border-bottom: none;
-    transform: translateX(-150%);
-
-    svg {
-      fill: var(--text);
-    }
-
-    @media only screen and (max-width: 768px) {
-      transform: translateX(-100%);
-      padding-right: 4px;
-    }
-  }
-
-  .before:hover {
-    background-color: transparent;
-    border-radius: none;
-    border-bottom: none;
-  }
-
-  h2 {
-    display: flex;
-    align-items: center;
-    padding-top: 64px;
-    margin-top: -64px;
-    margin-bottom: 16px;
-    color: var(--text);
-    font-size: 2rem;
-    word-break: break-word;
-    white-space: normal;
-  }
-
-  h3 {
-    display: flex;
-    align-items: center;
-    padding-top: 64px;
-    margin-top: -64px;
-    margin-bottom: 8px;
-    color: var(--text);
-    font-size: 1.5rem;
-    word-break: break-word;
-    white-space: normal;
-  }
-
-  h4 {
-    display: flex;
-    align-items: center;
-    padding-top: 64px;
-    margin-top: -64px;
-    margin-bottom: 8px;
-    color: var(--text);
-    font-size: 1.05rem;
-    word-break: break-word;
-    white-space: normal;
-  }
-
-  h5 {
-    display: flex;
-    align-items: center;
-    padding-top: 64px;
-    margin-top: -64px;
-    margin-bottom: 8px;
-    color: var(--text);
-    font-size: 1rem;
-    word-break: break-word;
-    white-space: normal;
-  }
-
-  h6 {
-    display: flex;
-    align-items: center;
-    padding-top: 64px;
-    margin-top: -64px;
-    margin-bottom: 8px;
-    color: var(--text);
-    word-break: break-word;
-    white-space: normal;
-  }
-
-  p {
-    line-height: 1.5;
-    margin-bottom: 24px;
-    color: var(--text);
-    font-weight: 400;
-    word-break: break-all;
-    white-space: normal;
-  }
-
-  ul {
-    padding-left: 1.5rem;
-  }
-
-  ol {
-    padding-left: 1.5rem;
-  }
-
-  li {
-    font-size: 0.95rem;
-    color: var(--text);
-    font-weight: 300;
-    padding: 4px 0;
-  }
-
-  a {
-    margin-bottom: 8px;
-    color: var(--text);
-    transition: 0.2s ease-in-out;
-    text-decoration: none;
-    border-bottom: 2px dotted var(--text-secondary);
-    transition: 0.2s ease-in-out;
-    background: linear-gradient(to bottom, transparent 75%, var(--category-border) 0) 0/0 100% no-repeat;
-  }
-
-  a:hover {
-    background-size: 100% 100%;
-  }
-
-  table {
-    width: 100%;
-    margin: 8px 0 12px 0;
-    padding: 0;
-  }
-
-  th {
-    color: var(--text);
-    font-weight: bold;
-  }
-
-  td {
-    color: var(--text);
-    font-weight: 400;
-  }
-
-  img {
-    display: block;
-    max-width: 100%;
-  }
-
-  code {
-    padding: 0.2rem 0.4rem;
-    margin: 0 0.2rem;
-    font-size: 0.8rem;
-    font-family: var(--code-font-family);
-    line-height: 1.4;
-    hyphens: auto;
-    border: 1px solid var(--grvsc-border);
-    border-radius: 4px;
-    background-color: var(--grvsc-background);
-    transition: all 0.2s ease;
-  }
-
-  .anchor-header {
-    border-bottom: none;
-    background: transparent;
-  }
 `;
 
 const PostTemplate: React.FC<PageProps<GetPostDetailQuery, null>> = React.memo(({ data }) => {
@@ -298,7 +132,7 @@ const PostTemplate: React.FC<PageProps<GetPostDetailQuery, null>> = React.memo((
         <Article>
           <PostHeader>
             <PostTitle>{node.frontmatter.title}</PostTitle>
-            <PostSubTitle>{node.frontmatter.subtitle}</PostSubTitle>
+            <PostSubtitle>{node.frontmatter.subtitle}</PostSubtitle>
             <PostSub>
               <PostSubDetail>
                 <ion-icon name="time-outline" />
@@ -321,7 +155,7 @@ const PostTemplate: React.FC<PageProps<GetPostDetailQuery, null>> = React.memo((
               <PostCoverImage image={getImage(node.frontmatter.cover as any)} alt={`${node.frontmatter.title} Cover`} />
             </PostCover>
           )}
-          <PostContent dangerouslySetInnerHTML={{ __html: node.html }} />
+          <section className="post-content" dangerouslySetInnerHTML={{ __html: node.html }} />
           <Utterances />
           <RecommendPosts next={next} previous={previous} />
         </Article>

@@ -90,7 +90,7 @@ const AboutPage = () => {
           <StaticImage src="../assets/img-eastwood-design.png" alt="Welcome" placeholder="none" />
         </Header>
         <p>
-          I am Hak Lee, software developer at xxx-compony.
+          I am Hak Lee, software developer at xxx-company.
           <br />
           This website is my blog where I share my thoughts and life.
         </p>
