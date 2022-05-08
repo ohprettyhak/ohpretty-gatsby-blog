@@ -43,6 +43,10 @@ const GlobalStyle = createGlobalStyle`
     -o-animation: fadein 0.75s ease-out;
   }
 
+  img.gatsby-resp-image-image {
+    box-shadow: none !important;
+  }
+
   @keyframes fadein-dropdown {
     0% {
       opacity: 0;
