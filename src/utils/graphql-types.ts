@@ -4588,6 +4588,11 @@ export type GetLatestPostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetLatestPostsQuery = { allMarkdownRemark: { edges: Array<{ node: { timeToRead?: number | null, id: string, fields?: { slug?: string | null } | null, frontmatter?: { title?: string | null, subtitle?: string | null, categories?: Array<string | null> | null, date?: any | null, cover?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null } }> } };
 
+export type GetSelectedWorksQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetSelectedWorksQuery = { allMarkdownRemark: { edges: Array<{ node: { id: string, fields?: { slug?: string | null } | null, frontmatter?: { title?: string | null, subtitle?: string | null, at?: string | null, timeline?: string | null, cover?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null } }> } };
+
 export type GetWorksQueryVariables = Exact<{ [key: string]: never; }>;
 
 

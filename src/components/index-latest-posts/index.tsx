@@ -150,7 +150,7 @@ const LatestPostsDate = styled.span`
 
 const LatestPostsMoreLink = styled(LatestPostsLink)`
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 24px;
   opacity: 1;
   transition: opacity 0.2s ease;
 

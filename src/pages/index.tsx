@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { DefaultLayout } from '../layouts';
 import IndexCover from '../components/index-cover';
 import IndexLatestPosts from '../components/index-latest-posts';
+import IndexSelectedWorks from '../components/index-selected-works';
 
 const IndexPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ const IndexPage: React.FC = () => {
   useEffect(() => {
     let cover = document.getElementById('cover').offsetHeight;
     let blank = document.getElementById('blank');
-    blank.style.height = cover + "px";
+    blank.style.height = cover + 'px';
   }, []);
 
   return (
@@ -20,6 +21,7 @@ const IndexPage: React.FC = () => {
       <IndexCover />
       <section id="blank" />
       <IndexLatestPosts />
+      <IndexSelectedWorks />
     </DefaultLayout>
   );
 };
