@@ -117,15 +117,17 @@ const LatestPostsCategoriesLink = styled(Link)`
 `;
 
 const LatestPostsTitle = styled.h3`
+  margin-top: 2px;
   overflow: hidden;
   color: var(--text);
   font-size: 1.2rem;
   letter-spacing: -1px;
-  white-space: nowrap;
+  white-space: break-all;
 `;
 
 const LatestPostsSubTitle = styled.p`
   width: 100%;
+  margin-top: 2px;
   color: var(--text-secondary);
   font-size: 0.9rem;
   word-break: break-all;
