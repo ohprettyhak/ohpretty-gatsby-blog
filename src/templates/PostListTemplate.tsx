@@ -1,137 +1,13 @@
 import React from 'react';
-import { graphql, Link, PageProps } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import { useDispatch } from 'react-redux';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import styled from 'styled-components';
+import { getImage } from 'gatsby-plugin-image';
 
 import { DefaultLayout } from '../layouts';
+import * as style from '../styles/templates/post-list';
 import Category from '../components/category';
 import Pagination from '../components/pagination';
 import { GetPostListQuery } from '../utils/graphql-types';
-
-const PostsList = styled.section`
-  display: grid;
-  margin: 0 -12px;
-  grid-template-columns: 33.3% 33.3% 33.3%;
-  grid-row-gap: 24px;
-  margin-top: 36px;
-
-  @media only screen and (max-width: 768px) {
-    grid-template-columns: 50% 50%;
-  }
-
-  @media only screen and (max-width: 425px) {
-    grid-template-columns: 100%;
-  }
-`;
-
-const PostsItem = styled.div`
-  width: 100%;
-  padding: 0 12px;
-  user-select: none;
-
-  ion-icon {
-    height: 16px;
-    margin-right: 4px;
-    margin-bottom: 2px;
-    vertical-align: middle;
-  }
-`;
-
-const PostsImageWapper = styled.div`
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-
-  @media only screen and (max-width: 1080px) {
-    height: calc(20vw - 25px);
-  }
-
-  @media only screen and (max-width: 768px) {
-    height: calc(30vw - 25px);
-  }
-
-  @media only screen and (max-width: 425px) {
-    height: calc(50vw);
-  }
-`;
-
-const PostsImage = styled(GatsbyImage)`
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-  isolation: isolate;
-  transition: transform 0.3s ease-out;
-  -webkit-transition: transform 0.3s ease-out;
-  -moz-transition: transform 0.3s ease-out;
-  -o-transition: transform 0.3s ease-out;
-
-  :hover {
-    transform: scale(0.97);
-    -ms-transform: scale(0.97);
-    -webkit-transform: scale(0.97);
-    -o-transform: scale(0.97);
-    -moz-transform: scale(0.97);
-    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.075);
-  }
-`;
-
-const PostsLink = styled(Link)`
-  text-decoration: none;
-`;
-
-const PostsContent = styled.div`
-  margin: 6px 0 0 0;
-`;
-
-const PostsCategories = styled.span`
-  font-size: 0.75rem;
-  color: #adb5bd;
-`;
-
-const PostsCategoriesLink = styled(Link)`
-  color: #adb5bd;
-  text-decoration: none;
-  transition: color 0.2s ease;
-
-  :hover {
-    color: #868e96;
-  }
-`;
-
-const PostsTitle = styled.h3`
-  width: 100%;
-  margin-top: 2px;
-  overflow: hidden;
-  color: var(--text);
-  font-size: 1.15rem;
-  letter-spacing: -1px;
-  word-break: break-all;
-  white-space: normal;
-`;
-
-const PostsSubTitle = styled.p`
-  margin-top: 4px;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  word-break: break-all;
-  white-space: normal;
-`;
-
-const PostSub = styled.div`
-  margin-top: 6px;
-  font-size: 0.8rem;
-`;
-
-const PostsReadTime = styled.span`
-  margin-right: 10px;
-  color: #adb5bd;
-`;
-
-const PostsDate = styled.span`
-  color: #adb5bd;
-`;
 
 type SitePageContext = {
   cur: number;
@@ -173,46 +49,48 @@ const PostListTemplate: React.FC<PageProps<GetPostListQuery, SitePageContext>> =
   return (
     <DefaultLayout>
       <Category categories={categories} categoryQuery={categoryQuery} totalPosts={totalPosts} />
-      <PostsList>
+      <style.PostsList>
         {postsList.map(({ node }) => (
-          <PostsItem key={node.id}>
-            <PostsLink to={`/post${node.fields.slug}`}>
-              <PostsImageWapper>
-                <PostsImage image={getImage(node.frontmatter.cover)} alt={node.frontmatter.title} />
-              </PostsImageWapper>
-            </PostsLink>
-            <PostsContent>
-              <PostsCategories>
+          <style.PostsItem key={node.id}>
+            <style.PostsLink to={`/post${node.fields.slug}`}>
+              <style.PostsImageWapper>
+                <style.PostsImage image={getImage(node.frontmatter.cover)} alt={node.frontmatter.title} />
+              </style.PostsImageWapper>
+            </style.PostsLink>
+            <style.PostsContent>
+              <style.PostsCategories>
                 <ion-icon name="bookmark-outline" />
                 {node.frontmatter.categories &&
                   node.frontmatter.categories.map((member: string, index: number) => (
                     <React.Fragment key={member}>
-                      <PostsCategoriesLink to={`/category/${member.toLowerCase()}`}>{member}</PostsCategoriesLink>
+                      <style.PostsCategoriesLink to={`/category/${member.toLowerCase()}`}>
+                        {member}
+                      </style.PostsCategoriesLink>
                       {index !== node.frontmatter.categories.length - 1 && ', '}
                     </React.Fragment>
                   ))}
                 {!node.frontmatter.categories && (
-                  <PostsCategoriesLink to={`/category/uncategorized`}>Uncategorized</PostsCategoriesLink>
+                  <style.PostsCategoriesLink to={`/category/uncategorized`}>Uncategorized</style.PostsCategoriesLink>
                 )}
-              </PostsCategories>
-              <PostsLink to={`/post${node.fields.slug}`}>
-                <PostsTitle>{node.frontmatter.title}</PostsTitle>
-                <PostsSubTitle>{node.frontmatter.subtitle}</PostsSubTitle>
-              </PostsLink>
-              <PostSub>
-                <PostsReadTime>
+              </style.PostsCategories>
+              <style.PostsLink to={`/post${node.fields.slug}`}>
+                <style.PostsTitle>{node.frontmatter.title}</style.PostsTitle>
+                <style.PostsSubTitle>{node.frontmatter.subtitle}</style.PostsSubTitle>
+              </style.PostsLink>
+              <style.PostSub>
+                <style.PostsReadTime>
                   <ion-icon name="time-outline" />
                   {node.timeToRead} MIN READ
-                </PostsReadTime>
-                <PostsDate>
+                </style.PostsReadTime>
+                <style.PostsDate>
                   <ion-icon name="calendar-outline" />
                   {node.frontmatter.date}
-                </PostsDate>
-              </PostSub>
-            </PostsContent>
-          </PostsItem>
+                </style.PostsDate>
+              </style.PostSub>
+            </style.PostsContent>
+          </style.PostsItem>
         ))}
-      </PostsList>
+      </style.PostsList>
       <Pagination cur={cur} max={max} categoryQuery={categoryQuery} />
     </DefaultLayout>
   );

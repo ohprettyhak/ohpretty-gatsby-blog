@@ -1,16 +1,12 @@
 import React, { useRef, createRef, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import styled from 'styled-components';
 
 import metaConfig from '../../../gatsby-meta-config';
+import * as style from './style';
 import { RootState } from '../../redux/createStore';
 
 const src = 'https://utteranc.es/client.js';
 const utterancesSelector = 'iframe.utterances-frame';
-
-const UtterancesStyle = styled.div`
-  padding-top: 72px;
-`;
 
 const Utterances: React.FC = () => {
   const containerRef = createRef<HTMLDivElement>();
@@ -58,7 +54,7 @@ const Utterances: React.FC = () => {
     isUtterancesCreated.current ? postThemeMessage() : createUtterancesEl();
   }, [repo, theme]);
 
-  return <UtterancesStyle ref={containerRef} />;
+  return <style.UtterancesStyle ref={containerRef} />;
 };
 
 Utterances.displayName = 'Utterances';
